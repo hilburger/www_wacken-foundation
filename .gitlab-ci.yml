@@ -56,7 +56,7 @@ Deploy to stage:
     - vendor/bin/dep deploy -vv
   environment:
     name: staging
-    url: https://staging.gcm.tnt-digitalagentur.de/
+    url: https://staging.wacken-foundation.tnt-digitalagentur.de/
   only:
     - develop
 
@@ -67,6 +67,6 @@ Deploy to Master:
     - echo "hello deploy production cached - START"
   environment:
     name: production
-    url: https://staging.gcm.tnt-digitalagentur.de/
+    url: https://staging.wacken-foundation.tnt-digitalagentur.de/
   only:
     - master
