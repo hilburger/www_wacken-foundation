@@ -11,7 +11,7 @@ set('release_name', function () {
 });
 
 // Project repository
-set('repository', 'git@gitlab.com:tnt_hilburger/www_gcm.git');
+set('repository', 'git@gitlab.com:tnt_hilburger/www_wacken-foundation.git');
 
 // [Optional] Allocate tty for git clone. Default value is false.
 set('git_tty', true);
@@ -26,13 +26,13 @@ set('allow_anonymous_stats', false);
 
 // Hosts
 
-host('staging.gcm.tnt-digitalagentur.de')
+host('staging.wacken-foundation.tnt-digitalagentur.de')
     ->user('p573155')
     ->forwardAgent(true)
     ->multiplexing(true)
     ->addSshOption('UserKnownHostsFile', '/dev/null')
     ->addSshOption('StrictHostKeyChecking', 'no')
-    ->set('deploy_path', '/home/www/p573155/html/staging-gcm');
+    ->set('deploy_path', '/home/www/p573155/html/staging-wacken-foundation');
 
 task('deploy', [
     'deploy:unlock',
