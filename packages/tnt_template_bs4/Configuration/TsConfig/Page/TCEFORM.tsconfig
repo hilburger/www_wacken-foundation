@@ -1,0 +1,124 @@
+#
+# TCEFORM
+#
+TCEFORM {
+    pages {
+        media {
+            config.appearance {
+                fileUploadAllowed = 0
+                fileByUrlAllowed = 0
+            }
+        }
+    }
+    tt_content {
+        layout {
+            removeItems = 1,2,3
+            addItems {
+                #1 = Full Width
+                #1 = Halbe Breite responsiv (zentriert)
+                #2 = 2/3 Breite responsiv (zentriert)
+                #3 = 3/4 Breite responsiv (zentriert)
+                #4 = 50% Breite immer (zentriert)
+                #5 = 75% Breite immer (zentriert)
+                ## Workaround fuer reponsive Videos
+                #7 = Responsive Video
+                container = Contentbreite - Hintergrund normal
+                container-fluid = Full Width
+                no-container = Standard innerhalb von Spalten
+                #no-container-corr = Full-Width Rand-Beheber
+                #w-75 = Breite 75%
+                #w-50 = Breite 50%
+                #w-25 = Breite 25%
+
+            }
+
+
+            altLabels {
+                0 = Contentbreite - Hintergrund voll
+                #1 = Full Width
+                #2 = 2/3 Breite responsiv (zentriert)
+                #3 = 3/4 Breite responsiv (zentriert)
+            }
+        }
+
+        frame_class {
+            removeItems = ruler-before,ruler-after,indent,indent-left,indent-right,none
+
+            addItems {
+                px-3 = Box Innen-Abstand Standard
+                p-5 = Box Innen-Abstand Big
+                #kino-bars = Kino-Balken + Box Innen-Abstand Big
+                noframe = Kein Hintergung+Abstände
+                #h-100 = Gleiche Höhen
+            }
+
+            altLabels {
+            }
+        }
+
+        space_before_class {
+            altLabels..= Kein
+        }
+
+        space_after_class {
+            altLabels..= Kein
+        }
+
+        background_color_class {
+            addItems {
+                #very-dark = very-dark
+                #black = black
+            }
+        }
+
+        imageborder {
+            disabled = 0
+        }
+
+        header_layout {
+            addItems {
+                10 = H2 NEWS-Rubrik Startseite
+                #15 = H2 mit Linie (nur Startseite)
+            }
+            altLabels {
+                0 = Standard (H2, Themen-Headline)
+                1 = Seientitel (H1)
+                2 =
+                3 = Headline 3 (h3)
+                4 = Headline 4 (h4)
+                5 = Headline 5 (h5)
+                10 = Headline 2: NEWS-Rubrik auf Startseite
+                #15 = Mit Logo und Linie
+            }
+            removeItems = 2,6
+        }
+    }
+}
+
+TCAdefaults {
+    tt_content {
+        space_before_class = medium
+        space_after_class = medium
+    }
+}
+
+#
+# News Templates
+#
+tx_news.templateLayouts {
+    10 = Cards 2-spaltig
+    11 = Cards 1-spaltig
+    13 = Cards 3-spaltig
+    20 = Cards mit Teil-Text-Overlay 2-spaltig
+    21 = Cards mit Teil-Text-Overlay 1-spaltig
+    24 = Cards mit Voll-Text-Overlay
+    25 = Cards mit Voll-Text-Overlay (Mini / Slider)
+    100 = Detail One-Column
+    #210 = Mega-Menu Cards 1-spaltig
+    #220 = Mega-Menu Cards 2-spaltig
+    #230 = Mega-Menu Cards 3-spaltig
+    #300 = Mini-Cards - No Picture
+    #310 = Mini-News - No Cards + No Picture
+    #1000 = News Slider
+    1010 = News-Text Slider
+}

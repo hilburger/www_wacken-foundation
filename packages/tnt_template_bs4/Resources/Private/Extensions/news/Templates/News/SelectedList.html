@@ -1,0 +1,114 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+	  xmlns:n="http://typo3.org/ns/GeorgRinger/News/ViewHelpers"
+	  data-namespace-typo3-fluid="true">
+<f:layout name="General" />
+<!--
+	=====================
+		Templates/News/SelectedList.html
+-->
+
+<f:section name="content">
+	<!--TYPO3SEARCH_end-->
+	<f:if condition="{news}">
+		<f:then>
+            <f:switch expression="{settings.templateLayout}">
+                <f:case value="10">
+                    <!-- TEMPLATE 10: Cards 2-spaltig -->
+                    <div class="list-unstyled news-list-view bs4" id="news-container-{contentObjectData.uid}">
+                        <!--<div class="container">-->
+                        <div class="row">
+                            <f:if condition="{settings.hidePagination}">
+                                <f:then>
+                                    <f:for each="{news}" as="newsItem" iteration="iterator">
+                                        <f:render partial="List/Card-Item"
+                                                  arguments="{newsItem: newsItem,settings:settings,iterator:iterator}"/>
+                                    </f:for>
+                                </f:then>
+                                <f:else>
+                                    <n:widget.paginate objects="{news}" as="paginatedNews"
+                                                       configuration="{settings.list.paginate}"
+                                                       initial="{offset:settings.offset,limit:settings.limit,recordId:contentObjectData.uid}">
+                                        <f:for each="{paginatedNews}" as="newsItem" iteration="iterator">
+                                            <f:render partial="List/Card-Item"
+                                                      arguments="{newsItem: newsItem,settings:settings,iterator:iterator}"/>
+                                        </f:for>
+                                    </n:widget.paginate>
+                                </f:else>
+                            </f:if>
+                        </div>
+                        <!--</div>-->
+                    </div>
+                </f:case>
+
+                <f:case value="1010">
+                    <f:variable name="ceUid">{contentObjectData.uid}</f:variable>
+                    <f:variable name="columnConfig">{contentObjectData.colPos}</f:variable>
+                    <f:variable name="backgroundImages">{contentObjectData.background_image}</f:variable>
+
+                    <!-- TEMPLATE 1010: Text-Slider -->
+                    <f:if condition="{backgroundImages} > 0">
+                        <f:format.raw><style>#c</f:format.raw>{ceUid}<f:format.raw>{margin-top: -104px;padding-top:0;}</style></f:format.raw>
+                    </f:if>
+
+                    <div class="text-slider {f:if(condition: '{columnConfig} == 3', then: 'header-slider')}">
+                            <div class="row">
+                                <div class="col-12 col-md-6 col-lg-6"><h2 class="element-header mt-4 mt-sm-5 pt-sm-3 ml-0 ml-sm-3 ml-md-0 display-4">{contentObjectData.header}</h2></div>
+                                <div class="the-content col-12 col-md-6 col-lg-6 d-flex align-items-end">
+                                    <div id="news-container-{contentObjectData.uid}" class="carousel slide carousel-fade w-100 mb-4 mb-md-0"
+                                         data-ride="carousel">
+                                        <div class="carousel-inner">
+                                            <f:for each="{news}" as="newsItem" iteration="iterator">
+                                                <f:render partial="List/Slider-Item"
+                                                          arguments="{newsItem: newsItem,settings:settings,iterator:iterator}"/>
+                                            </f:for>
+                                        </div>
+                                        <ol class="carousel-indicators" style="opacity: initial;">
+                                            {f:variable(name: 'count', value: 0)}
+                                            <f:for each="{news}" as="newsItem" iteration="iterator">
+                                                <li data-target="#news-container-{contentObjectData.uid}"
+                                                    data-slide-to="{count}"
+                                                    class="{f:if(condition:iterator.isFirst, then: 'active')}"></li>
+                                                {f:variable(name: 'count', value: '{count + 1}')}
+                                            </f:for>
+                                        </ol>
+                                    </div>
+                                </div>
+                            </div>
+                    </div>
+                </f:case>
+
+                <f:defaultCase>
+                    <!-- TEMPLATE DEFAULT: Simple List -->
+                    <div class="news-list-view" id="news-container-{contentObjectData.uid}">
+                        <f:if condition="{settings.hidePagination}">
+                            <f:then>
+                                <f:for each="{news}" as="newsItem" iteration="iterator">
+                                    <f:render partial="List/Item"
+                                              arguments="{newsItem: newsItem,settings:settings,iterator:iterator}"/>
+                                </f:for>
+                            </f:then>
+                            <f:else>
+                                <n:widget.paginate objects="{news}" as="paginatedNews"
+                                                   configuration="{settings.list.paginate}"
+                                                   initial="{offset:settings.offset,limit:settings.limit,recordId:contentObjectData.uid}">
+                                    <f:for each="{paginatedNews}" as="newsItem" iteration="iterator">
+                                        <f:render partial="List/Item"
+                                                  arguments="{newsItem: newsItem,settings:settings,iterator:iterator}"/>
+                                    </f:for>
+                                </n:widget.paginate>
+                            </f:else>
+                        </f:if>
+                    </div>
+                </f:defaultCase>
+
+            </f:switch>
+		</f:then>
+		<f:else>
+			<div class="alert ">
+				<f:translate key="list_nonewsfound" />
+			</div>
+		</f:else>
+	</f:if>
+	<!--TYPO3SEARCH_begin-->
+</f:section>
+</html>

@@ -1,0 +1,23 @@
+.ce-container {
+    [class*="frame-background-"] .frame-container {
+      padding: 20px;
+    }
+
+    .frame-background-none .frame-container {
+      /*padding-left: 0px;
+      padding-right: 0px;*/
+        padding:0;
+    }
+
+  div[class*="frame-background-"] {
+    //border: solid 3px red!important;
+  }
+
+  .frame.frame-default .frame-container {
+      padding:0;
+  }
+
+  .frame-backgroundimage-container + .frame-container {
+    padding: 20px!important;
+  }
+}

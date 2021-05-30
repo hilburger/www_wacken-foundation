@@ -1,0 +1,32 @@
+@mixin dark-theme-settings($theme) {
+	@if $theme {
+		color: $body-color;
+		background-color: rgba(0, 0, 0, 0.75) !important;
+	}
+}
+
+@mixin dark-drop-downs($theme) {
+	@if $theme {
+		background-color: $gray-950;
+		color: $navbar-dark-color;
+
+		a, a:visited, a.dropdown-item {
+			color: $navbar-dark-color;
+		}
+
+		a:hover, a:active {
+			color: $link-hover-color;
+			background-color: transparent;
+		}
+	}
+}
+
+@mixin dark-theme-simple-box {
+	background-color: $mini-cards-color-bg;
+	border-color: $mini-cards-color-border;
+}
+
+@mixin dark-dialogues($theme) {
+	@include dark-drop-downs(true);
+	background-color: transparentize($gray-950, 0.04);
+}

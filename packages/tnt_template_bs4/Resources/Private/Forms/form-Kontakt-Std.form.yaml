@@ -1,0 +1,109 @@
+
+renderingOptions:
+  submitButtonLabel: 'Jetzt absenden'
+identifier: form-Kontakt-Std
+label: Form-Kontakt-Std
+type: Form
+prototypeName: standard
+finishers:
+  -
+    options:
+      subject: 'Nachricht via Website: {subject}'
+      recipients:
+        info@tnt-digitalagentur.de: GCM
+      senderAddress: '{email}'
+      senderName: '{name}'
+      attachUploads: false
+      translation:
+        language: ''
+      useFluidEmail: true
+      title: 'Bestätigung Ihrer Nachricht'
+      addHtmlPart: true
+    identifier: EmailToReceiver
+  -
+    options:
+      message: "Vielen Dank für Ihre Nachricht, \nwir kümmern uns so schnell es geht um Ihr Anliegen. "
+      contentElementUid: ''
+    identifier: Confirmation
+renderables:
+  -
+    renderingOptions:
+      previousButtonLabel: Vor
+      nextButtonLabel: Zurück
+    identifier: page-1
+    label: ''
+    type: Page
+    renderables:
+      -
+        properties:
+          options:
+            Frau: Frau
+            Herr: Herr
+            Divers: Divers
+          prependOptionLabel: 'Bitte wählen Sie Ihre Anrede'
+        type: SingleSelect
+        identifier: singleselect-1
+        label: Anrede
+      -
+        defaultValue: ''
+        identifier: name
+        label: 'Ihr Name'
+        type: Text
+        properties:
+          fluidAdditionalAttributes:
+            placeholder: Nachname
+            required: required
+          validationErrorMessages:
+            -
+              code: 1221560910
+              message: 'Bitte geben Sie Ihren Nachnamen ein.'
+            -
+              code: 1221560718
+              message: 'Bitte geben Sie Ihren Nachnamen ein.'
+            -
+              code: 1347992400
+              message: 'Bitte geben Sie Ihren Nachnamen ein.'
+            -
+              code: 1347992453
+              message: 'Bitte geben Sie Ihren Nachnamen ein.'
+        validators:
+          -
+            identifier: NotEmpty
+      -
+        defaultValue: ''
+        identifier: subject
+        label: 'Ihr Anliegen'
+        type: Text
+        properties:
+          fluidAdditionalAttributes:
+            placeholder: 'Betreff Ihrer Nachricht'
+            required: required
+        validators:
+          -
+            identifier: NotEmpty
+      -
+        defaultValue: ''
+        identifier: email
+        label: 'Ihre E-Mail'
+        type: Text
+        properties:
+          fluidAdditionalAttributes:
+            placeholder: ihr-name@domain.de
+            required: required
+        validators:
+          -
+            identifier: NotEmpty
+          -
+            identifier: EmailAddress
+      -
+        defaultValue: ''
+        identifier: message
+        label: 'Ihre Nachricht an uns'
+        type: Textarea
+        properties:
+          fluidAdditionalAttributes:
+            placeholder: ''
+            required: required
+        validators:
+          -
+            identifier: NotEmpty

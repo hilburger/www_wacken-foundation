@@ -1,0 +1,38 @@
+.card {
+	color: unset;
+
+	.element-header,
+	.card-title {
+		a:not(.btn) {
+			color: $headings-base-color;
+			@include hover {
+				color: $headings-base-link-color;
+			}
+		}
+	}
+
+	.card-img-overlay {
+		&.part-height {
+			top: inherit;
+			min-height: 31%;
+			max-height: 50%;
+			overflow: hidden;
+			padding-top: 0.7rem;
+			padding-bottom: 0.7rem;
+
+			.element-header {
+				font-size: 1.25rem;
+			}
+		}
+	}
+
+	&.card-small {
+		.card-img-overlay {
+			&.part-height {
+
+					min-height: 27%;
+					max-height: 37%;
+				}
+			}
+	}
+}

@@ -1,0 +1,21 @@
+/* Colors for forms */
+
+@mixin form-colors($dark-theme) {
+	@if $dark-theme {
+		color: scale-color($gray-600, $lightness: 25%);
+	} @else {
+		color: $gray-600;
+	}
+}
+
+
+/* Default stuff for forms */
+
+$form-ani-placeholder: opacity .5s;
+
+@mixin form-defaults {
+	@include form-colors(true);
+
+	opacity: 1;
+	transition: opacity .5s;
+}

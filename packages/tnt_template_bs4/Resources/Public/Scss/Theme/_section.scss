@@ -1,0 +1,18 @@
+//
+// Section
+//
+
+#page-content > .section,
+#page-content-after > .section {
+	overflow: unset;
+}
+
+
+body, .section-light {
+	background-color: $gray-100;
+}
+/*
+.section-light {
+	background: none;
+}
+*/

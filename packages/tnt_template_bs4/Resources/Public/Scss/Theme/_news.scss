@@ -1,0 +1,378 @@
+.news {
+
+	.badge {
+		text-transform: uppercase;
+	}
+
+	.news-category-nav {
+		//font-size: font-size: 1.05rem;;
+	}
+
+	.news-list-view {
+
+		.news-list-item {
+			.card-img-top {
+				width: inherit;
+			}
+
+			.element-header {
+				//font-size: 1.5rem;
+				a {
+					color: $black;
+					&:hover {
+						text-decoration: none;
+					}
+				}
+			}
+		}
+		.news-list-item, .card {
+			a {
+				&.pin-l, &.pin-l {
+					text-decoration: none;
+				}
+			}
+		}
+		&.news-template- {
+			&11, &24 {
+				.card-img-overlay {
+					padding-top: 2rem;
+				}
+			}
+			&24 {
+				.card-text p:last-child {
+					margin-bottom: 0;
+				}
+			}
+			&21 {
+				.card-img-overlay {
+					&.part-height {
+						min-height: 20%;
+						max-height: 25%;
+						padding: 1rem 2rem 0.65rem;
+					}
+				}
+			}
+			&20 {
+				.card-img-overlay {
+					&.part-height {
+						min-height: 23%;
+						max-height: 27%;
+						padding: 1rem 2rem 0.65rem;
+
+						.mb-2 { margin-bottom: 0!important; }
+					}
+				}
+			}
+		}
+	}
+	.card-group {
+		.line-breaker {
+			margin-bottom: $spacer * 1.5;
+		}
+		.card {
+			&.card-small {
+				.element-header {
+					font-size: 1rem;
+				}
+
+				.card-text {
+					font-size: 0.85rem;
+				}
+			}
+		}
+	}
+	.news-template-25 {
+		.line-breaker {
+			margin-bottom: $spacer * 3;
+		}
+		.line-breaker:not(:last-child) {
+			margin-bottom: 0;
+		}
+	}
+	.card {
+		border: none;
+		background: none;
+
+		.card-img-overlay {
+			background-color: rgba(0, 0, 0, 0.4);
+		}
+
+		.card-header {
+			flex-shrink: initial;
+			overflow: initial;
+			background: none;
+			border: none;
+			top:0;
+			left:0;
+
+			.badge {
+				font-weight: 500;
+				&.badge-dark {
+					background-color: rgba(43,43,43,0.75);
+				}
+			}
+		}
+	}
+	.news-template-0 {
+		.card-header {
+			flex-shrink: initial;
+			overflow: initial;
+			background: none;
+			border: none;
+			top:0;
+			left:0;
+
+			.badge {
+				&.badge-dark {
+					background-color: rgba(43,43,43,0.75);
+				}
+			}
+		}
+	}
+	.news-template-11 {
+		.card {
+			.card-img-overlay {
+				background-color: rgba(0, 0, 0, 0.35);
+			}
+		}
+	}
+
+	&.news-single {
+		.frame-inner > *:last-child {
+			margin-bottom: revert;
+		}
+	}
+
+	.text-slider {
+
+		&.header-slider {
+			@each $breakpoint in map-keys($navbar-heights) {
+				@include media-breakpoint-up($breakpoint) {
+					padding-top: map-get($navbar-heights, $breakpoint) + $top-bar-height;
+				}
+			}
+		}
+
+		.element-header {
+			color: white;
+			font-weight: 600;
+			text-transform: uppercase;
+		}
+		.the-content {
+			height: 422px;
+		}
+
+		.carousel {
+			height: 320px;
+
+			.carousel-item {
+				height: 220px;
+				transition: transform 2s ease, opacity .5s ease-out;
+			}
+
+			.card-body {
+				/*h4 {
+					font-size: $h5-font-size;
+				}*/
+			}
+			.card-text {
+				font-size: 1.1rem;
+			}
+		}
+	}
+
+	.page-item.active {
+		a {
+			color: $white;
+		}
+	}
+}
+
+@include media-breakpoint-down(sm) {
+	.card-body {
+		padding-left: 0;
+		padding-right: 0;
+	}
+
+	.news {
+		.card-group {
+			.card {
+				.element-header {
+					font-size: 1.1rem;
+				}
+				.card-text {
+					font-size: 1.0rem;
+				}
+			}
+		}
+
+		.text-slider {
+			.carousel {
+				height: 270px;
+
+				.carousel-item {
+					//height: 220px;
+				}
+			}
+
+			.the-content {
+				height: 300px;
+			}
+		}
+	}
+}
+
+@include media-breakpoint-only(sm) {
+	.news {
+		.card-group {
+			.card {
+				.element-header {
+					font-size: 1.0rem;
+				}
+			}
+		}
+	}
+}
+
+@include media-breakpoint-up(sm) {
+	.flex-shrink-0 {
+		max-width: 14vw;
+	}
+	.news {
+		.card-group {
+			.card {
+				.element-header {
+					font-size: 1.25rem;
+				}
+
+				.card-text {
+					font-size: 1.0rem;
+				}
+			}
+		}
+	}
+}
+
+
+@include media-breakpoint-down(md) {
+	.news {
+		.text-slider {
+			.display-4 {
+				@include font-size($display5-size);
+			}
+
+			.the-content {
+				//height: 350px;
+			}
+
+			.carousel {
+				background-color: rgba(255, 255, 255, 0.75);
+
+				.card-body {
+					//padding-left: 0;
+					//padding-right: 0;
+
+					h4 {
+						font-size: $h4-font-size;
+					}
+
+					.card-text {
+						font-size: 0.95rem;
+					}
+				}
+			}
+		}
+	}
+}
+
+@include media-breakpoint-only(md) {
+	.news {
+		.card .card-img-overlay {
+			padding: 0.65rem;
+			padding-top: 1.8rem;
+			.element-header {
+				//font-size: 1.1rem;
+			}
+		}
+		.card-group {
+			.card {
+				.card-img-overlay {
+					padding: 0.65rem;
+					padding-top: 1.95rem;
+				}
+			}
+		}
+
+		.text-slider {
+			.the-content {
+				height: 350px;
+			}
+		}
+	}
+}
+
+@include media-breakpoint-up(md) {
+	.news {
+		.card-group {
+			.card {
+				.element-header {
+					font-size: 1.15rem;
+				}
+			}
+		}
+	}
+}
+
+@include media-breakpoint-up(lg) {
+	.news {
+		.text-slider .carousel .card-body {
+			padding-right: 0;
+		}
+		.card-group {
+			.card {
+				.element-header {
+					font-size: 1.5rem;
+				}
+
+				&.card-small {
+
+				}
+			}
+		}
+	}
+}
+/* Im Slider muss die h3 so sein:
+@media (min-width: 992px)
+.news .card-group .card .element-header {
+    font-size: 1.3rem;
+}
+CHECK noch mal die anderen Screenbreiten!
+ */
+
+
+@include media-breakpoint-down(xl) {
+	.news {
+		.card-group {
+			.card.card-small {
+				.card-text {
+					p {
+						display: none;
+					}
+				}
+			}
+		}
+	}
+}
+@include media-breakpoint-only(xs) {
+	.news {
+		.card-group {
+			.card.card-small {
+				.card-text {
+					p {
+						display: block;
+					}
+				}
+			}
+		}
+	}
+}

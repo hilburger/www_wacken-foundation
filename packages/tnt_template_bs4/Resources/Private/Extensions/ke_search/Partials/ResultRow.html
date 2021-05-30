@@ -1,0 +1,60 @@
+<!--
+	=====================
+	Partials/ResultRow.html
+-->
+<div class="row position-relative result-list-item result-list-item-type-{resultrow.type} pt-5 mb-5 news"
+     xmlns:f="http://www.w3.org/1999/html">
+
+    <a href="{resultrow.url}" class="position-absolute pin-t pin-l w-100 h-100 z-index-hover"></a>
+
+        <f:render
+            section="typeIconOrPreviewImage"
+            arguments="{icon: resultrow.typeIconPath, filePreviewId: resultrow.filePreviewId, treatIdAsReference:resultrow.treatIdAsReference, hasMedia: resultrow.orig_row.media, type: resultrow.type, iconConf: conf.showTypeIcon, dateConf: conf.showDate, dateOn: resultrow.date_timestamp}"
+        />
+
+    <div class="col d-flex flex-column justify-content-between"  itemscope="itemscope" itemtype="http://schema.org/Article">
+
+        <h3 class="order-1 element-header mt-lg-n1" itemprop="headline">
+            <!--Title-->
+            <span class="result-title"><f:format.raw>{resultrow.title_text}</f:format.raw></span>
+        </h3>
+
+        <!-- teaser -->
+        <div class="flex-fill lead order-2 pr-lg-5 mr-lg-5" itemprop="description">
+            <span class="result-teaser"><f:format.raw>{resultrow.teaser}</f:format.raw></span>
+        </div>
+
+        <div class="order-12 d-none d-sm-block">
+            <f:if condition="{conf.showResultUrl}">
+                    <div class="border-top extra d-flex justify-content-between mt-2">
+                        <small>
+                            <b>{f:translate(key: 'LLL:EXT:ke_search/Resources/Private/Language/locallang_searchbox.xml:label_resulturl')}:</b>
+                            <f:format.raw>{f:cObject(typoscriptObjectPath: 'lib.currentDomain', data: '167')}{resultrow.url}</f:format.raw>
+                            <f:comment><f:if condition="{conf.showDate}"><f:format.date>{resultrow.date_timestamp}</f:format.date></f:if></f:comment>
+                        </small>
+                    </div>
+            </f:if>
+        </div>
+    </div>
+</div>
+
+<f:section name="typeIconOrPreviewImage">
+    <f:if condition="{iconConf} && !{filePreviewId}">
+        <f:then>
+        </f:then>
+        <f:else>
+            <div class="{f:if(condition: '{hasMedia} || {type} == \'news\'', then:'col-md-5 pr-md-2 position-relative')}">
+                <f:if condition="{dateConf} && {type} == 'news'">
+                    <div class="extra position-absolute"><small class="badge badge-primary"><b><f:format.date>{dateOn}</f:format.date></b></small></div>
+                </f:if>
+                <f:if condition="{filePreviewId}">
+                    <f:image class="img-fluid" src="{filePreviewId}"
+                             title="{resultrow.title}"
+                             alt="{resultrow.title}"
+                             treatIdAsReference="{treatIdAsReference}"
+                             width="435" />
+                </f:if>
+            </div>
+        </f:else>
+    </f:if>
+</f:section>

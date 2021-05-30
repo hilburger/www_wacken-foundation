@@ -1,0 +1,146 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+      xmlns:n="http://typo3.org/ns/GeorgRinger/News/ViewHelpers"
+      data-namespace-typo3-fluid="true">
+
+<n:excludeDisplayedNews newsItem="{newsItem}"/>
+    <f:if condition="{settings.templateLayout} == 25">
+        <f:then><f:variable name="bottomMargin">'mb-1'</f:variable></f:then>
+        <f:else if="{settings.templateLayout} == 21"><f:variable name="bottomMargin">'mb-0'</f:variable></f:else>
+        <f:else><f:variable name="bottomMargin">mb-5</f:variable></f:else>
+    </f:if>
+    <div class="card {f:if(condition: '{settings.templateLayout} == 25', then: 'mb-1 ', else: 'mb-5 ')}{f:if(condition: '{newsItemsPerRow} > 2', then: 'card-small ')}bg-dark text-white{f:if(condition: '{settings.templateLayout} == 25 && {iterator.isLast} != 1', then: ' mr-sm-1')}">
+
+            <n:link newsItem="{newsItem}" settings="{settings}" title="{newsItem.title}"
+                class="position-absolute pin-t pin-l w-100 h-100 z-index-hover">&nbsp;</n:link>
+
+        <div class="{f:if(condition: '{settings.templateLayout} == 11 || {settings.templateLayout} == 21', then: 'twenty-ten', else: 'three-two')}">
+            <div class="aspect-ratio-wrapper">
+                <f:if condition="{newsItem.mediaPreviews}">
+                    <f:then>
+                        <f:render partial="General/imgWrapSrcset"
+                                  arguments="{settings:settings,newsItem:newsItem,class:card-img-top}"/>
+                    </f:then>
+                    <f:else>
+                        <f:if condition="{settings.displayDummyIfNoMedia}">
+                            <f:image class="img-fluid card-img-top" src="{settings.list.media.dummyImage}"
+                                     title="Default Image"
+                                     alt="" maxWidth="{settings.list.media.image.maxWidth}"
+                                     maxHeight="{settings.list.media.image.maxHeight}"/>
+                        </f:if>
+                    </f:else>
+                </f:if>
+            </div>
+            <f:if condition="{settings.templateLayout} == 20 || {settings.templateLayout} == 21 || {settings.templateLayout} == 25">
+                <f:render partial="General/AdditionalInformation"
+                          arguments="{settings:settings,newsItem:newsItem}"/>
+            </f:if>
+            <f:comment>
+                <f:if condition="{newsItem.firstCategory}">
+                    <div class="news-category px-3 py-0" style="position: absolute; bottom: 0; left:0;">
+                        <small>{newsItem.firstCategory.title}</small>
+                    </div>
+                </f:if>
+            </f:comment>
+        </div>
+
+        <f:if condition="{settings.templateLayout} == 11 || {settings.templateLayout} == 24">
+            <f:then>
+                <div class="card-img-overlay d-flex flex-column justify-content-end">
+            </f:then>
+            <f:else>
+                <div class="card-img-overlay {f:if(condition: '{settings.templateLayout} == 20 || {settings.templateLayout} == 21 || {settings.templateLayout} == 25', then: 'part-height d-flex flex-column', else: 'd-flex flex-column align-content-between')}">
+            </f:else>
+        </f:if>
+            <h3 itemprop="headline" class="element-header card-title text-white {f:if(condition: '{settings.templateLayout} != 25', then: 'mb-2', else: 'mb-0')}">
+                <f:format.raw>{newsItem.title}</f:format.raw>
+            </h3>
+
+            <f:if condition="{settings.hideTeaser} != 1">
+                <!-- teaser -->
+                <f:if condition="{settings.templateLayout} == 24 || {settings.templateLayout} == 25">
+                    <div class="card-text {f:if(condition: '{settings.templateLayout} != 24', then: 'flex-fill ')}d-none d-sm-block">
+                        <n:removeMediaTags>
+                            <f:if condition="{newsItem.teaser}">
+                                <f:then>
+                                    {newsItem.teaser -> f:format.crop(maxCharacters: '{settings.cropMaxCharacters}',
+                                    respectWordBoundaries:'1') -> f:format.html()}
+                                </f:then>
+                                <f:else>
+                                    {newsItem.bodytext -> f:format.crop(maxCharacters: '{settings.cropMaxCharacters}',
+                                    respectWordBoundaries:'1') -> f:format.html()}
+                                </f:else>
+                            </f:if>
+                        </n:removeMediaTags>
+                    </div>
+                </f:if>
+            </f:if>
+
+            <f:if condition="{settings.templateLayout} != 20 && {settings.templateLayout} != 21 && {settings.templateLayout} != 25">
+                <f:render partial="General/AdditionalInformation" arguments="{settings:settings,newsItem:newsItem}"/>
+            </f:if>
+        </div>
+    </div>
+
+    <f:comment>
+    <div class="card mb-4 position-relative">
+        <n:link newsItem="{newsItem}" settings="{settings}" title="{newsItem.title}" class="position-absolute pin-t pin-l w-100 h-100 z-index-hover">&nbsp;</n:link>
+
+        <div class="card-header px-0 pt-1 pb-0">
+            <f:render partial="General/AdditionalInformation" arguments="{settings:settings,newsItem:newsItem}"/>
+        </div>
+
+        <div class="sixteen-nine">
+            <div class="aspect-ratio-wrapper">
+                <f:if condition="{newsItem.mediaPreviews}">
+                    <f:then>
+                        <f:render partial="General/imgWrapSrcset" arguments="{settings:settings,newsItem:newsItem,class:card-img-top}"/>
+                    </f:then>
+                    <f:else>
+                        <f:if condition="{settings.displayDummyIfNoMedia}">
+                            <f:image class="img-fluid card-img-top" src="{settings.list.media.dummyImage}" title="Default Image"
+                                     alt="" maxWidth="{settings.list.media.image.maxWidth}"
+                                     maxHeight="{settings.list.media.image.maxHeight}"/>
+                        </f:if>
+                    </f:else>
+                </f:if>
+            </div>
+            <f:comment>
+            <f:if condition="{newsItem.firstCategory}">
+                <div class="news-category px-3 py-0" style="position: absolute; bottom: 0; left:0;">
+                    <small>{newsItem.firstCategory.title}</small>
+                </div>
+            </f:if>
+            </f:comment>
+        </div>
+
+        <div class="card-body px-0 pt-2 pb-4 articletype-{newsItem.type}{f:if(condition: newsItem.istopnews, then: ' topnews')}"
+             itemscope="itemscope" itemtype="http://schema.org/Article">
+            <h3 itemprop="headline" class="element-header card-title text-white mb-2">
+                <f:format.raw>{newsItem.title}</f:format.raw>
+            </h3>
+
+            <!-- teaser -->
+            <div class="card-text">
+                <n:removeMediaTags>
+                    <f:if condition="{newsItem.teaser}">
+                        <f:then>
+                            {newsItem.teaser -> f:format.crop(maxCharacters: '{settings.cropMaxCharacters}',
+                            respectWordBoundaries:'1') -> f:format.html()}
+                        </f:then>
+                        <f:else>
+                            {newsItem.bodytext -> f:format.crop(maxCharacters: '{settings.cropMaxCharacters}',
+                            respectWordBoundaries:'1') -> f:format.html()}
+                        </f:else>
+                    </f:if>
+                </n:removeMediaTags>
+            </div>
+            <!--
+            <n:link newsItem="{newsItem}" settings="{settings}" class="btn btn-default btn-read-more" title="{newsItem.title}">
+                <f:translate key="more-link"/>
+            </n:link>
+            -->
+        </div>
+    </div>
+    </f:comment>
+
+</html>

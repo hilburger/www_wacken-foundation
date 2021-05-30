@@ -1,0 +1,7 @@
+.bg-white {
+	background-color: $white;
+}
+
+.bg-white-transparent {
+	background-color: opacify($white, 0.5) !important;
+}

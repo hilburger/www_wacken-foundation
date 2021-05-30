@@ -1,0 +1,182 @@
+.frame {
+	padding-top: 0;
+	padding-bottom: 0;
+
+	&.frame-p-5 {
+		padding: 0.5rem 0.5rem 0.25rem 0.5rem;
+	}
+
+	// Reset background-colors of wrong BS-Package definition
+	&.frame-background-primary,
+	&.frame-background-secondary,
+	&.frame-background-light,
+	&.frame-background-dark,
+	&.frame-has-backgroundimage,
+	&.frame-background-black {
+		background-color: initial;
+	}
+
+	@mixin make-frame-background($name, $settings) {
+		$background: map-get($settings, 'background');
+		//$color: map-get($settings, color-yiq($background));
+		//$link-color: map-get($settings, 'link-color');
+		//$link-hover-color: map-get($settings, 'link-hover-color');
+		&.frame-layout-0.frame-background-#{$name},
+		&.frame-layout-container.frame-background-#{$name} {
+			@extend %frame-has-backgroundimage;
+			//color: $color;
+			background-color: $background;
+			/*a:not(.btn) {
+				color: $link-color;
+				@include hover {
+					color: $link-hover-color;
+				}
+			}*/
+			padding-top: 2.75rem;
+			padding-bottom: 3rem;
+
+			//
+			// NEWS
+			//
+			.news {
+				.news-template-10,
+				.news-template-20,
+				.news-template-25:not(.slider-active) {
+					// Correct bottom within color frames
+					margin-bottom: $spacer * -3;
+				}
+
+			}
+		}
+		&.frame-layout-container.frame-background-#{$name} {
+			background-color: transparent;
+			.frame-container {
+				background-color: $background;
+			}
+		}
+		@include make-frame-spacing($name);
+	}
+	.news-template-20 {
+		// Correct bottom within color frames
+		margin-bottom: $spacer * -3;
+	}
+
+	@mixin make-frame-colors($name, $settings) {
+		$color: map-get($settings, 'text-color');
+		$headline-color: map-get($settings, 'headline-color');
+		$link-color: map-get($settings, 'link-color');
+		$link-hover-color: map-get($settings, 'link-hover-color');
+		&.frame-layout-0.frame-background-#{$name},
+		&.frame-layout-container.frame-background-#{$name},
+		&.frame-background-#{$name} .slick-prev:before,
+		&.frame-background-#{$name} .slick-next:before {
+			color: $color;
+			//.element-header:not(.card-title),
+			//div:not(card-img-overlay).element-header .card-title {
+			.element-header,
+			.card-title {
+				color: $headline-color;
+			}
+			a:not(.btn) {
+				color: $link-color;
+				@include hover {
+					color: $link-hover-color;
+				}
+			}
+		}
+	}
+
+	@each $name, $settings in $frame-backgrounds {
+		@include make-frame-background($name, $settings);
+	}
+	@each $name, $settings in $frame-text-color {
+		@include make-frame-colors($name, $settings);
+	}
+
+	&.frame-layout-container {
+		&.frame-background-primary,
+		&.frame-background-secondary,
+		&.frame-background-light,
+		&.frame-background-dark,
+		&.frame-has-backgroundimage,
+		&.frame-background-black {
+			.frame-container {
+				padding-top: $grid-gutter-width / 2;
+				padding-bottom: $grid-gutter-width / 2;
+			}
+			.news {
+				// Correct bottom within color frames
+				//margin-bottom: -3.5rem;
+			}
+		}
+	}
+
+	/*
+	&.frame-layout-0.frame-background-dark,
+	&.frame-layout-container.frame-background-dark .frame-container {
+		background-color: black;
+	}
+	*/
+	// Additional background-colors
+	/*
+	&.frame-layout-0.frame-background-black,
+	&.frame-layout-container.frame-background-black .frame-container {
+		background-color: black;
+	}
+	*/
+
+	// Font colors
+	//@each $frame-color, $frame-font-color in map-keys($frame-font-colors) {
+	//	&.frame-background-#{$frame-color} {
+	//		color: $frame-font-color;
+	//	}
+	//}
+	//@each $name, $settings in $frame-backgrounds {
+	//	@include make-frame-background($name, $settings);
+	//}
+
+	/*
+	&.frame-background-primary,
+	&.frame-background-secondary,
+	&.frame-background-dark,
+	&.frame-background-black {
+		color: $white;
+	}
+	*/
+
+	.frame-backgroundimage-container .frame-backgroundimage-fade {
+		opacity: 0.25;
+	}
+}
+
+.frame .frame-background-none,
+.frame-background-none.frame-space-after-none:not(.frame-ruler-after):not(.frame-has-backgroundimage) + .frame-background-none.frame-space-before-none:not(.frame-ruler-before):not(.frame-has-backgroundimage) {
+	// Correct bottom within no color frames
+	margin-top: 0;
+}
+
+.frame {
+	&.frame-noframe {
+		padding:0!important;
+		hr { margin:0; }
+	}
+	&.frame-layout-container-fluid .frame-container {
+		width: 100%;
+		max-width: 100%;
+		padding:0;
+		margin:0;
+		overflow: hidden;
+	}
+}
+
+//
+// Space
+//
+@each $name, $scaling in $frame-outer-spacing-scaling {
+	.frame-space-before-#{$name} {
+		margin-top: ($frame-outer-spacing * $scaling);
+	}
+	.frame-space-after-#{$name} {
+		margin-bottom: ($frame-outer-spacing * $scaling);
+	}
+}

@@ -1,0 +1,19 @@
+<f:if condition="{banner.assets}">
+    <f:then>
+        <f:for each="{banner.assets}" as="asset">
+            <div class="banner banner-{banner.uid}">
+                <p class="banner-skip-text p-0 m-0"><small><span class="text-muted">Anzeige</span> - Unten weiterlesen</small></p>
+                <f:if condition="{asset.originalResource.properties.link}">
+                    <f:then>
+                        <f:link.action action="click" arguments="{banner: banner}" target="{banner.linkTarget}" pageType="{settings.clickPageTypeNum}" rel="nofollow">
+                            <f:image image="{asset}" class="img-fluid" />
+                        </f:link.action>
+                    </f:then>
+                    <f:else>
+                        <f:image image="{asset}" class="img-fluid" />
+                    </f:else>
+                </f:if>
+            </div>
+        </f:for>
+    </f:then>
+</f:if>

@@ -1,0 +1,19 @@
+TYPO3:
+    CMS:
+        Form:
+            prototypes:
+                standard:
+                    formElementsDefinition:
+                        Form:
+                            renderingOptions:
+                                templateRootPaths:
+                                    20: 'EXT:tnt_template_bs4/Resources/Private/Extesions/forms/Templates/Frontend/'
+                                partialRootPaths:
+                                    20: 'EXT:tnt_template_bs4/Resources/Private/Extesions/forms/Partials/Frontend/'
+                                layoutRootPaths:
+                                    20: 'EXT:tnt_template_bs4/Resources/Private/Extesions/forms/Layouts/Frontend/'
+            persistenceManager:
+                allowedExtensionPaths:
+                    110: EXT:tnt_template_bs4/Resources/Private/Forms/
+                allowSaveToExtensionPaths: true
+                allowDeleteFromExtensionPaths: true

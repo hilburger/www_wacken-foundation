@@ -1,0 +1,63 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+      xmlns:n="http://typo3.org/ns/GeorgRinger/News/ViewHelpers"
+      data-namespace-typo3-fluid="true">
+
+<n:excludeDisplayedNews newsItem="{newsItem}"/>
+<!--<div class="d-inline-block">-->
+
+    <div class="card position-relative">
+        <n:link newsItem="{newsItem}" settings="{settings}" title="{newsItem.title}" class="position-absolute pin-t pin-l w-100 h-100 z-index-hover">&nbsp;</n:link>
+
+        <div class="sixteen-nine">
+            <div class="aspect-ratio-wrapper">
+                <f:if condition="{newsItem.mediaPreviews}">
+                    <f:then>
+                        <f:render partial="General/imgWrapSrcset" arguments="{settings:settings,newsItem:newsItem,class:card-img-top}"/>
+                    </f:then>
+                    <f:else>
+                        <f:if condition="{settings.displayDummyIfNoMedia}">
+                            <f:image class="img-fluid card-img-top" src="{settings.list.media.dummyImage}" title="Default Image"
+                                     alt="" maxWidth="{settings.list.media.image.maxWidth}"
+                                     maxHeight="{settings.list.media.image.maxHeight}"/>
+                        </f:if>
+                    </f:else>
+                </f:if>
+            </div>
+            <f:render partial="General/AdditionalInformation" arguments="{settings:settings,newsItem:newsItem}"/>
+
+            <f:comment>
+            <f:if condition="{newsItem.firstCategory}">
+                <div class="news-category px-3 py-0" style="position: absolute; bottom: 0; left:0;">
+                    <small>{newsItem.firstCategory.title}</small>
+                </div>
+            </f:if>
+            </f:comment>
+        </div>
+
+        <div class="card-body px-0 pt-2 pb-4 articletype-{newsItem.type}{f:if(condition: newsItem.istopnews, then: ' topnews')}"
+             itemscope="itemscope" itemtype="http://schema.org/Article">
+            <h3 itemprop="headline" class="element-header card-title mb-1">
+                <f:format.raw>{newsItem.title}</f:format.raw>
+            </h3>
+
+            <f:if condition="{settings.hideTeaser} != 1">
+                <!-- teaser -->
+                <div class="card-text">
+                    <n:removeMediaTags>
+                        <f:if condition="{newsItem.teaser}">
+                            <f:then>
+                                {newsItem.teaser -> f:format.crop(maxCharacters: '{settings.cropMaxCharacters}',
+                                respectWordBoundaries:'1') -> f:format.html()}
+                            </f:then>
+                            <f:else>
+                                {newsItem.bodytext -> f:format.crop(maxCharacters: '{settings.cropMaxCharacters}',
+                                respectWordBoundaries:'1') -> f:format.html()}
+                            </f:else>
+                        </f:if>
+                    </n:removeMediaTags>
+                </div>
+            </f:if>
+        </div>
+    </div>
+
+</html>

@@ -1,0 +1,102 @@
+######################
+#### DEPENDENCIES ####
+######################
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:bootstrap_package/Configuration/TypoScript/constants.typoscript">
+
+################################
+#### Site Package Constants ####
+################################
+
+tnt_template_bs4 {
+    ### ke_search
+    searchId = 25
+
+    ### sfBanners
+    # Dev 22 / Live 15
+    sfBanner1 = 15
+    # Dev 23 / Live 16
+    sfBanner3 = 16
+}
+
+############
+### PAGE ###
+############
+page {
+    logo {
+        file = EXT:tnt_template_bs4/Resources/Public/Images/logo.svg
+        fileInverted = EXT:tnt_template_bs4/Resources/Public/Images/logo-inverted.svg
+        height = 52
+        width = 192
+        alt = TNT Template BS4
+        linktitle = TNT Template BS4
+    }
+    favicon {
+        file = EXT:tnt_template_bs4/Resources/Public/Icons/favicon.ico
+    }
+    preloader {
+        logo {
+            file = EXT:tnt_template_bs4/Resources/Public/Images/logo-inverted.svg
+            height = 104
+            width = 384
+        }
+    }
+    fluidtemplate {
+        layoutRootPath = EXT:tnt_template_bs4/Resources/Private/Layouts/Page/
+        partialRootPath = EXT:tnt_template_bs4/Resources/Private/Partials/Page/
+        templateRootPath = EXT:tnt_template_bs4/Resources/Private/Templates/Page/
+    }
+}
+
+
+##################
+### EXTENSIONS ###
+##################
+plugin.bootstrap_package {
+    view {
+        layoutRootPath = EXT:tnt_template_bs4/Resources/Private/Layouts/
+        partialRootPath = EXT:tnt_template_bs4/Resources/Private/Partials/
+        templateRootPath = EXT:tnt_template_bs4/Resources/Private/Templates/
+    }
+}
+
+plugin.tx_news {
+    view.twb {
+        # cat=plugin.tx_news/file; type=string; label=Path to template root (FE)
+        templateRootPath = EXT:tnt_template_bs4/Resources/Private/Extensions/news/Templates/
+        # cat=plugin.tx_news/file; type=string; label=Path to template partials (FE)
+        partialRootPath = EXT:tnt_template_bs4/Resources/Private/Extensions/news/Partials/
+        # cat=plugin.tx_news/file; type=string; label=Path to template layouts (FE)
+        layoutRootPath = EXT:tnt_template_bs4/Resources/Private/Extensions/news/Layouts/
+    }
+}
+
+plugin.tx_kesearch {
+    templateRootPath = EXT:tnt_template_bs4/Resources/Private/Extensions/ke_search/Templates/
+    partialRootPath = EXT:tnt_template_bs4/Resources/Private/Extensions/ke_search/Partials/
+    layoutRootPath = EXT:tnt_template_bs4/Resources/Private/Extensions/ke_search/Layouts/
+}
+
+
+########################
+### CONTENT ELEMENTS ###
+########################
+plugin.bootstrap_package_contentelements {
+    view {
+        layoutRootPath = EXT:tnt_template_bs4/Resources/Private/Layouts/ContentElements/
+        partialRootPath = EXT:tnt_template_bs4/Resources/Private/Partials/ContentElements/
+        templateRootPath = EXT:tnt_template_bs4/Resources/Private/Templates/ContentElements/
+    }
+}
+
+
+################################
+### BOOTSTRAP SCSS CONSTANTS ###
+################################
+plugin.bootstrap_package.settings.scss {
+    primary = #eb3e4a
+    secondary = #013859
+}
+
+plugin.tx_sfbanners.view {
+    partialRootPath = EXT:tnt_template_bs4/Resources/Private/Extensions/sf_banners/Partials/
+}

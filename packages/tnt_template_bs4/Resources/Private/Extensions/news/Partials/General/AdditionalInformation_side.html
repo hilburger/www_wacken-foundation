@@ -1,0 +1,36 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+
+<div style="font-size: 1rem;">
+
+    <p>
+        <time itemprop="datePublished" datetime="{f:format.date(date:newsItem.datetime, format:'Y-m-d')}">
+            <f:format.date format="{f:translate(key:'dateFormat')}">{newsItem.datetime}</f:format.date>
+        </time>
+    <p>
+
+            <f:comment>
+            <strong>{newsItem.firstCategory.title}</strong><br>
+            <f:if condition="{newsItem.firstCategory.parentcategory.title} == 'Themen'">
+                <f:then>JA: {newsItem.firstCategory.parentcategory.title}</f:then>
+                <f:else>NEIN</f:else>
+            </f:if>
+            </f:comment>
+
+        <f:for each="{newsItem.categories}" as="category" iteration="iterator">
+            <f:if condition="{category.parentcategory.title} != 'Themen'">
+                <f:then>
+                    <b>{category.title}</b><br>
+                </f:then>
+                <f:else>
+                    {category.title}<br>
+                </f:else>
+            </f:if>
+        </f:for>
+    </p>
+
+    <f:if condition="{newsItem.author}">
+        <p>
+            {newsItem.author}
+        </p>
+    </f:if>
+</div>

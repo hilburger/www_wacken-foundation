@@ -1,0 +1,151 @@
+//
+// Navigation
+//
+.nav-item {
+	> a {
+		font-family: $font-family-sans-serif;
+	}
+	.dropdown-menu .dropdown-item {
+		font-size: smaller;
+	}
+}
+
+//
+// Content
+//
+/*
+.element-header {
+	color: $headings-base-link-color;
+
+	a {
+		color: $headings-base-link-color;
+	}
+}
+*/
+
+hr {
+	border-top: 2px solid $gray-600;
+}
+
+//
+// Footer
+//
+#page-footer {
+	font-family: "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+	h5 {
+		margin-bottom: $headings-margin-bottom;
+	}
+	p {
+		font-size: 1rem;
+	}
+}
+
+//
+// NEWS
+//
+
+.news {
+	// General
+	.card .card-header,
+	&.news-single .side-information,
+	.extra {
+		font-family: $font-family-sans-serif;
+	}
+
+	// Cards
+	// .card {}
+
+	.news-list-view {
+		.news-list-item {
+			.lead {
+				font-size: inherit;
+			}
+		}
+		.card{
+			@each $breakpoint in map-keys($headline-scaling) {
+				@include media-breakpoint-up($breakpoint) {
+					$scaling: map-get($headline-scaling, $breakpoint);
+					h1,
+					.h1 { font-size: $h1-font-size * $scaling; }
+					h2,
+					.h2 { font-size: $h2-font-size * $scaling; }
+					h3,
+					.h3 { font-size: $h3-font-size * $scaling - 0.15; }
+					h4,
+					.h4 { font-size: $h4-font-size * $scaling; }
+					h5,
+					.h5 { font-size: $h5-font-size * $scaling; }
+					h6,
+					.h6 { font-size: $h6-font-size * $scaling; }
+					.card-text { font-size: $font-size-base - 0.2; }
+				}
+			}
+		}
+		.col-lg-4 .card {
+			h3, .h3 {
+				font-size: 1.3rem;;
+			}
+		}
+		&.news-template-11, &.news-template-21 .card-img-overlay.part-height {
+			@each $breakpoint in map-keys($headline-scaling) {
+				@include media-breakpoint-up($breakpoint) {
+					$scaling: map-get($headline-scaling, $breakpoint);
+					h3,
+					.h3 { font-size: $h3-font-size * $scaling * 1.2; }
+				}
+			}
+		}
+	}
+
+	&.news-single {
+		@each $breakpoint in map-keys($headline-scaling) {
+			@include media-breakpoint-up($breakpoint) {
+				$scaling: map-get($headline-scaling, $breakpoint);
+				h1,
+				.h1 { font-size: $h1-font-size * $scaling - 0.3; }
+				h2,
+				.h2 { font-size: $h2-font-size * $scaling - 0.3; }
+				h3,
+				.h3 { font-size: $h3-font-size * $scaling - 0.3; }
+				h4,
+				.h4 { font-size: $h4-font-size * $scaling - 0.3; }
+				h5,
+				.h5 { font-size: $h5-font-size * $scaling - 0.3; }
+				h6,
+				.h6 { font-size: $h6-font-size * $scaling - 0.3; }
+			}
+		}
+	}
+}
+
+//
+// Special Headlines
+//
+
+.section header {
+	h2.special-headline-h2-01 {
+		text-transform: uppercase;
+		/*
+		&::after {
+			background: #ccc;
+			content: "";
+			display: block;
+			height: 1px;
+			position: absolute;
+			bottom: 4px;
+			width: 100%;
+			left: 0;
+		}
+		span {
+			background: #fff;
+			padding-right: 8px;
+			position: relative;
+			z-index: 1;
+		}
+		*/
+	}
+}
+
+.caption {
+	font-family: $headings-font-family;
+}

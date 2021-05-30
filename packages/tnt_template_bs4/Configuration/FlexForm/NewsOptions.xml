@@ -1,0 +1,46 @@
+<extra>
+    <ROOT>
+        <TCEforms>
+            <sheetTitle>Options</sheetTitle>
+        </TCEforms>
+        <type>array</type>
+        <el>
+            <settings.slider>
+                <TCEforms>
+                    <label>Slider</label>
+                    <config>
+                        <type>check</type>
+                        <default>0</default>
+                    </config>
+                </TCEforms>
+            </settings.slider>
+            <settings.hideCategory>
+                <TCEforms>
+                    <label>Kategorie ausblenden</label>
+                    <config>
+                        <type>check</type>
+                        <default>0</default>
+                    </config>
+                </TCEforms>
+            </settings.hideCategory>
+            <settings.hideDate>
+                <TCEforms>
+                    <label>Datum ausblenden</label>
+                    <config>
+                        <type>check</type>
+                        <default>0</default>
+                    </config>
+                </TCEforms>
+            </settings.hideDate>
+            <settings.hideTeaser>
+                <TCEforms>
+                    <label>Teaser ausblenden</label>
+                    <config>
+                        <type>check</type>
+                        <default>0</default>
+                    </config>
+                </TCEforms>
+            </settings.hideTeaser>
+        </el>
+    </ROOT>
+</extra>

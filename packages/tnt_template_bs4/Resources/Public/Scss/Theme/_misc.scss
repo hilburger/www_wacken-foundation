@@ -1,0 +1,45 @@
+.z-index-hover {
+  z-index: $z-index-hover-value;
+}
+
+.scroll-top {
+  right:0;
+  bottom: 0;
+}
+
+.banner-skip-text {
+    font-size: 90%;
+}
+
+.page-navigation, .pagination {
+    font-family: $font-family-sans-serif;
+
+    .page-link, .page-item {
+        border: none;
+        background: none!important;
+
+        &.active a{
+            color: $black!important;
+            border-bottom: solid 1px $primary;
+        }
+    }
+}
+
+.tx-kesearch-pi1 {
+    #kesearch_results {
+        margin-bottom: 5rem;
+    }
+
+    a.page-link.active {
+        color: $black !important;
+        border-bottom: solid 1px $primary;
+    }
+}
+
+.pages_total {
+    font-family: $font-family-sans-serif;
+
+    .result_txt, &.result_txt {
+        font-weight: 600;
+    }
+}

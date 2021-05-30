@@ -1,0 +1,14 @@
+/.env
+/vendor
+/var
+/public/fileadmin/
+/public/uploads/
+/public/typo3/
+/public/typo3conf/ext/
+/public/typo3conf/ENABLE_INSTALL_TOOL
+/public/typo3conf/typo3conf/deprecation.log
+/public/index.php
+/public/typo3temp
+/shared
+config.codekit3
+/2021-02-20_ke-search-2.gz

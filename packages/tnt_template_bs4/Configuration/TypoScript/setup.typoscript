@@ -1,0 +1,233 @@
+######################
+#### DEPENDENCIES ####
+######################
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:bootstrap_package/Configuration/TypoScript/setup.typoscript">
+
+
+##############
+#### PAGE ####
+##############
+page {
+    includeCSS {
+        theme = EXT:tnt_template_bs4/Resources/Public/Scss/Theme/theme.scss
+    }
+
+    includeJSLibs {
+    }
+
+    includeJS {
+        fontawesome = https://kit.fontawesome.com/457c59d659.js
+        fontawesome.external = 1
+        #fontawesome.crossorigin = "anonymous"
+    }
+
+    includeJSFooterlibs {
+    }
+
+    includeJSFooter {
+        tnt_template_bs4_scripts = EXT:tnt_template_bs4/Resources/Public/JavaScript/Dist/scripts.js
+        slick_slider = EXT:tnt_template_bs4/Resources/Public/JavaScript/Features/slick/slick.js
+        slick_slider_init = EXT:tnt_template_bs4/Resources/Public/JavaScript/Features/slick/slick-tnt.js
+    }
+}
+
+lib.currentDomain = TEXT
+lib.currentDomain {
+    dataWrap = {getIndpEnv:TYPO3_REQUEST_HOST}|
+    typolink.parameter.current = 1
+    typolink.returnLast = url
+}
+
+#################
+### EXTENSIONS ###
+#################
+
+### Container
+
+tt_content.1col-container < lib.contentElement
+tt_content.1col-container {
+    templateName = 1col-container
+    templateRootPaths.10 = EXT:tnt_template_bs4/Resources/Private/Extensions/container/Templates
+    dataProcessing {
+        201 = B13\Container\DataProcessing\ContainerProcessor
+        201 {
+            colPos = 201
+            as = childrenLeft
+        }
+    }
+}
+
+tt_content.2col-container < lib.contentElement
+tt_content.2col-container {
+    templateName = 2col-container
+    templateRootPaths.10 = EXT:tnt_template_bs4/Resources/Private/Extensions/container/Templates
+    dataProcessing {
+        201 = B13\Container\DataProcessing\ContainerProcessor
+        201 {
+            colPos = 201
+            as = childrenLeft
+        }
+        202 = B13\Container\DataProcessing\ContainerProcessor
+        202 {
+            colPos = 202
+            as = childrenRight
+        }
+    }
+}
+
+tt_content.2col-container-66-33 < tt_content.2col-container
+tt_content.2col-container-66-33 {
+    templateName = 2col-container-66-33
+    templateRootPaths.10 = EXT:tnt_template_bs4/Resources/Private/Extensions/container/Templates
+    dataProcessing {
+        201 = B13\Container\DataProcessing\ContainerProcessor
+        201 {
+            colPos = 201
+            as = childrenLeft
+        }
+        202 = B13\Container\DataProcessing\ContainerProcessor
+        202 {
+            colPos = 202
+            as = childrenRight
+        }
+    }
+}
+
+tt_content.3col-container < lib.contentElement
+tt_content.3col-container {
+    templateName = 3col-container
+    templateRootPaths.10 = EXT:tnt_template_bs4/Resources/Private/Extensions/container/Templates
+    dataProcessing {
+        201 = B13\Container\DataProcessing\ContainerProcessor
+        201 {
+            colPos = 201
+            as = childrenLeft
+        }
+        202 = B13\Container\DataProcessing\ContainerProcessor
+        202 {
+            colPos = 202
+            as = childrenCenter
+        }
+        203 = B13\Container\DataProcessing\ContainerProcessor
+        203 {
+            colPos = 203
+            as = childrenRight
+        }
+    }
+}
+
+
+
+### FORMS
+
+plugin.tx_form {
+    settings {
+        yamlConfigurations {
+            120 = EXT:tnt_template_bs4/Configuration/Form/CustomFormSetup.yaml
+        }
+    }
+}
+
+module.tx_form {
+    settings {
+        yamlConfigurations {
+            120 = EXT:tnt_template_bs4/Configuration/Form/CustomFormSetup.yaml
+        }
+    }
+}
+
+
+
+### NEWS
+
+module.tx_news {
+    settings {
+        list {
+            media {
+                dummyImage = EXT:tnt_template_bs4/Resources/Public/Images/placeholder-image_16-9.jpg
+                image.maxWidth = 400c
+                image.maxHeight =
+            }
+        }
+    }
+}
+
+plugin.tx_news {
+    settings {
+        list {
+            media {
+                dummyImage = EXT:tnt_template_bs4/Resources/Public/Images/placeholder-image_16-9.jpg
+                #image.width = 200c
+                #image.height = 200
+                image.width = 475c
+                image.height =
+                image.maxWidth = 475c
+                image.maxHeight =
+            }
+
+            paginate {
+                itemsPerPage = 10
+                insertAbove = 0
+            }
+        }
+    }
+}
+
+### KE_SEARCH
+
+plugin.tx_kesearch_pi1.cssFile >
+plugin.tx_kesearch_pi2.cssFile >
+
+lib.searchBoxHeader = COA
+lib.searchBoxHeader {
+    10 = TEXT
+    10 {
+        typolink.parameter = {$tnt_template_bs4.searchId}
+        typolink.returnLast = url
+        wrap = <form class="form-inline my-2 my-lg-0" method="get" id="form_kesearch_searchfield" name="form_kesearch_searchfield" action="|">
+    }
+
+    20 = TEXT
+    20 {
+        value = Suche nach
+        wrap (
+            <label class="sr-only" for="tx_kesearch_pi1[sword]">|</label>
+        )
+    }
+    25 = TEXT
+    25 < .20
+    25 {
+        wrap (
+            <input class="form-control" type="text" id="form_kesearch_searchfield_sword" name="tx_kesearch_pi1[sword]" placeholder="|">
+        )
+    }
+
+    30 = TEXT
+    30 {
+        value = Finde
+        wrap = <div class="input-group-append"><input class="btn btn-primary" type="submit" id="form_kesearch_searchfield_submit" value="|"></div></form>
+    }
+}
+
+page.10.variables.searchBoxHeader < lib.searchBoxHeader
+
+[page["uid"] == {$tnt_template_bs4.searchId}]
+page.10.variables.searchBoxHeader >
+[END]
+
+### SF Banners
+
+lib.sfBannerNews.1 < plugin.tx_sfbanners.widgets.bannerWidget
+lib.sfBannerNews.3 < plugin.tx_sfbanners.widgets.bannerWidget
+lib.sfBannerNews {
+    1.settings {
+        displayMode = allRandom
+        startingPoint = {$tnt_template_bs4.sfBanner1}
+        maxResults = 1
+    }
+    3.settings {
+        displayMode = allRandom
+        startingPoint = {$tnt_template_bs4.sfBanner3}
+        maxResults = 1
+    }
+}

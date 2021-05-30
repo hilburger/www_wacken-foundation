@@ -1,0 +1,9 @@
+#
+# TCEMAIN
+#
+TCEMAIN {
+    permissions {
+        groupid = 3
+        group = show, editcontent, edit, new, delete
+    }
+}
