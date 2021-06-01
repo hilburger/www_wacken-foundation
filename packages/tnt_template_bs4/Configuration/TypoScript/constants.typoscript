@@ -23,10 +23,10 @@ tnt_template_bs4 {
 ############
 page {
     logo {
-        file = EXT:tnt_template_bs4/Resources/Public/Images/logo.svg
-        fileInverted = EXT:tnt_template_bs4/Resources/Public/Images/logo-inverted.svg
-        height = 52
-        width = 192
+        file = EXT:tnt_template_bs4/Resources/Public/Images/logo_dummy.png
+        fileInverted = EXT:tnt_template_bs4/Resources/Public/Images/logo_dummy.png
+        height = 200
+        width = 307
         alt = TNT Template BS4
         linktitle = TNT Template BS4
     }
@@ -35,9 +35,9 @@ page {
     }
     preloader {
         logo {
-            file = EXT:tnt_template_bs4/Resources/Public/Images/logo-inverted.svg
-            height = 104
-            width = 384
+            file = EXT:tnt_template_bs4/Resources/Public/Images/logo_dummy.png
+            height = 200
+            width = 307
         }
     }
     fluidtemplate {

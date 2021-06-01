@@ -3,21 +3,75 @@
 //
 $enable-responsive-font-sizes: true;
 
-$black: rgb(26, 26, 26);
+$black: rgb(16, 16, 16);
 $white: rgb(250, 250, 250);
 $gray-200: #eaebec;
 $gray-550: #808080 !default;
-$gray-900:                     #2b2b2b !default;
-$dark:                         $gray-900 !default;
+$gray-600: #6c757d !default;
+$gray-800: #343a40 !default;
+$gray-900: #2b2b2b !default;
+$dark:     $gray-900 !default;
 
 $red: rgba(175,27,63,1);
 $red-transparent: rgba(175,27,63,0.4);
 $blue: #007bff;
+$indigo: #6610f2;
+$purple: #6f42c1 !default;
+$pink: #e83e8c !default;
+$orange: #fd7e14 !default;
+$yellow: #ffc107 !default;
+$green: #28a745 !default;
+$teal: #20c997 !default;
+$cyan: #17a2b8 !default;
 
 $primary: $red;
 $secondary: rgb(171,171,159);
 $light: rgb(223,219,208);
 //$dark: $gray-900 !default;
+
+$colors: ();
+$colors: map-merge(
+	(
+		"blue": $blue,
+		"indigo": $indigo,
+		"purple": $purple,
+		"pink": $pink,
+		"red": $red,
+		"orange": $orange,
+		"yellow": $yellow,
+		"green": $green,
+		"teal": $teal,
+		"cyan": $cyan,
+		"white": $white,
+		"gray": $gray-600,
+		"gray-dark": $gray-800
+	),
+	$colors
+);
+
+$success: $green !default;
+$info: $cyan !default;
+$warning: $yellow !default;
+$danger: $red !default;
+
+$theme-colors: ();
+$theme-colors: map-merge(
+	(
+		"primary": $primary,
+		"secondary": $secondary,
+		"success": $success,
+		"info": $info,
+		"warning": $warning,
+		"danger": $danger,
+		"light": $light,
+		"dark": $dark,
+		"black": $black
+	),
+	$theme-colors
+);
+
+$body-bg:  $black!default;
+$body-color: $white !default;
 
 //$navbar-dark-color: rgba($white, .5);
 $navbar-dark-active-color: $red;
@@ -206,13 +260,13 @@ $frame-outer-spacing-scaling: map-merge(
 $footer-sections: ();
 $footer-sections: map-merge((
 		content: (
-				background: $navbar-light-color,
+				background: $black,
 				color: $white,
 				link-color: $white,
 				link-hover-color: $navbar-dark-active-color
 		),
 		meta: (
-				background: $navbar-light-color,
+				background: $black,
 				color: $white,
 				link-color: $white,
 				link-hover-color: $navbar-dark-active-color
