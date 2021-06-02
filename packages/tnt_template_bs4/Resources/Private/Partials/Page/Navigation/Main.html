@@ -21,8 +21,8 @@
                 </div>
         </div>
 
-    <div class="container align-items-end">
-        <f:link.page pageUid="{rootPage}" class="navbar-brand navbar-brand-{f:if(condition: logo.normal, then: 'image', else: 'text')}" title="{settings.logo.linktitle}">
+    <div class="container align-items-end navbar-dark bg-black">
+        <f:link.page pageUid="{rootPage}" class="d-block d-md-none navbar-brand navbar-brand-{f:if(condition: logo.normal, then: 'image', else: 'text')}" title="{settings.logo.linktitle}">
             <f:if condition="{logo.normal}">
                 <f:then>
                     <img class="navbar-brand-logo-normal" src="{f:uri.image(image: logo.normal)}" alt="{logoAlt}" height="{settings.logo.height}" width="{settings.logo.width}">
@@ -41,7 +41,8 @@
             </button>
             <nav id="mainnavigation" class="collapse navbar-collapse">
                 <f:render partial="DropIn/Navigation/MainBefore" arguments="{_all}" />
-                <f:render section="MainNavigation" arguments="{menu: mainnavigation, theme: theme}" />
+                <f:debug>{_all}</f:debug>
+                <f:render section="MainNavigation" arguments="{menu: mainnavigation, theme: theme, rootPage: rootPage, logo: logo}" />
                 <f:render partial="DropIn/Navigation/MainAfter" arguments="{_all}" />
             </nav>
         </f:if>
@@ -49,16 +50,37 @@
 </header>
 
 <f:section name="MainNavigation">
+    <f:debug>{_all}</f:debug>
     <f:if condition="{menu}">
-        <ul class="navbar-nav">
+        <!-- = <f:count subject="{menu}"/> -->
+        <!-- = {menu -> f:count()} -->
+        <f:variable name="navItemCount" value="{menu -> f:count()}"/>
+
+        <!-- <b>Modulo: {navItemCount % 2}&nbsp;</b> -->
+        <f:if condition="{navItemCount} % 2 == 0">
+            <f:then>
+                <!--[Anzahl: {menu -> f:count()} - ist GERADE: {navItemCount / 2}]-->
+                <f:variable name="logoPart" value="{navItemCount / 2}"/>
+                <!--Wechsel bei: {logoPart}-->
+            </f:then>
+            <f:else>
+                <!--[Anzahl: {menu -> f:count()} - ist unGERADE: {navItemCount / 2}]-->
+                <f:variable name="logoPart" value="{navItemCount / 2 + 0.5}"/>
+                <!--Wechsel bei: {logoPart}-->
+            </f:else>
+        </f:if>
+        <ul class="navbar-nav text-center justify-content-center w-100">
+            <f:variable name="idx" value="0"/>
             <f:for each="{menu}" as="item">
+                <f:variable name="idx" value="{idx + 1}"/>
                 <f:if condition="{item.spacer}">
                     <f:then>
                         </ul>
                         <ul class="navbar-nav">
                     </f:then>
                     <f:else>
-                        <li class="nav-item{f:if(condition: item.active, then:' active')}{f:if(condition: item.children, then:' dropdown dropdown-hover')}">
+                        <f:if condition="{idx} == 1"><div class="d-flex"></f:if>
+                        <li class="{idx} nav-item{f:if(condition: item.active, then:' active')}{f:if(condition: item.children, then:' dropdown dropdown-hover')}">
                             <a href="{item.link}" id="nav-item-{item.data.uid}" class="nav-link{f:if(condition: item.children, then:' dropdown-toggle')}"{f:if(condition: item.target, then: ' target="{item.target}"')} title="{item.title}"{f:if(condition: item.children, then:' aria-haspopup="true" aria-expanded="false"')}>
                                 <f:if condition="{theme.navigation.icon.enable} && {item.icon}">
                                     <span class="nav-link-icon">
@@ -104,8 +126,37 @@
                                     </f:for>
                                 </ul>
                             </f:if>
+                            <f:if condition="">
+
+                            </f:if>
                         </li>
+                        <f:if condition="{idx} == {newsItemCount}"></div></f:if>
                     </f:else>
+                </f:if>
+                <f:if condition="{logoPart} == {idx}">
+                    </div>
+                    <div style="width: 310px;">
+                        <f:link.page pageUid="{rootPage}"
+                                     class="d-none d-md-block mr-md-0 navbar-brand navbar-brand-{f:if(condition: logo.normal, then: 'image', else: 'text')}"
+                                     title="{settings.logo.linktitle}">
+                            <f:if condition="{logo.normal}">
+                                <f:then>
+                                    <img class="navbar-brand-logo-normal" src="{f:uri.image(image: logo.normal)}"
+                                         alt="{logoAlt}" height="{settings.logo.height}" width="{settings.logo.width}"
+                                         style="max-height: 200px; width: 307px;">
+                                    <f:if condition="{logo.inverted}">
+                                        <img class="navbar-brand-logo-inverted"
+                                             src="{f:uri.image(image: logo.inverted)}" alt="{logoAlt}"
+                                             height="{settings.logo.height}" width="{settings.logo.width}">
+                                    </f:if>
+                                </f:then>
+                                <f:else>
+                                    <span>-{siteTitle}-</span>
+                                </f:else>
+                            </f:if>
+                        </f:link.page>
+                    </div>
+                    <div class="d-flex">
                 </f:if>
             </f:for>
         </ul>
