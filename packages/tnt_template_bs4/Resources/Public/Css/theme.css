@@ -15184,7 +15184,7 @@ a.pswp__share--download:hover {
 
 .navbar-default, .navbar-default-transition,
 .navbar-default-transition.navbar-transition {
-  background-color: rgba(250, 250, 250, 0.85) !important;
+  background-color: transparent !important;
 }
 
 /*
