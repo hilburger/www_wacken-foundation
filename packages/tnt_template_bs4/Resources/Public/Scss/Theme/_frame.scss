@@ -180,3 +180,12 @@
 		margin-bottom: ($frame-outer-spacing * $scaling);
 	}
 }
+
+//
+// Correct frame-container width XXL und HD
+//
+@include media-breakpoint-up(xxl) {
+	.frame-container {
+		max-width: map-get($container-max-widths,"xl");
+	}
+}

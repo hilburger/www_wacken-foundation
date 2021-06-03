@@ -73,7 +73,7 @@ $theme-colors: map-merge(
 $body-bg:  $black!default;
 $body-color: $white !default;
 
-//$navbar-dark-color: rgba($white, .5);
+$navbar-dark-color: rgba($white, .8);
 $navbar-dark-active-color: $red;
 
 $link-color:                   $primary !default;
@@ -177,6 +177,13 @@ $frame-text-color: map-merge(
 	$frame-text-color
 );
 
+//
+// Shadows
+//
+//$box-shadow-lg: 0 -3px 10px rgba(10,10,10,0.75), -5px 0 12px rgba(10, 10, 10, 0.75), 5px 0 12px rgba(10, 10, 10, 0.75), 0 5px 12px rgba(10, 10, 10, 0.75), 0 -18px 8px rgba(10, 10, 10, 0.75)!important;
+$box-shadow-lg: 0 -3px 10px rgba(10, 10, 10, 0.7), -5px 0 12px rgba(10, 10, 10, 0.75), 5px 0 12px rgba(10, 10, 10, 0.75), 0 5px 12px rgba(10, 10, 10, 0.75), 0 -18px 8px rgba(10, 10, 10, 0.75) !important;
+
+
 // Typography
 //
 // Font, line-height, and color for body text, headings, and more.
@@ -192,6 +199,7 @@ $enable-responsive-font-sizes: true;
 // stylelint-enable value-keyword-case
 
 $font-size-base: 1.2rem;
+$font-size-mainnav: 1rem;
 
 $h1-font-size: $font-size-base * 1.8;
 $h2-font-size: $font-size-base * 1.5;
@@ -220,19 +228,20 @@ $display5-size: 2.5rem !default;
 
 
 //
-// Top-bar
+// Top-bar as bar with bg On/Off
 //
-$top-bar-height: 26px;
+//$top-bar-height: 26px;
+$top-bar-height: 0;
 
 //
 // Navbar
 //
 $navbar-heights: (
-				xs: 70px,
-				sm:  70px,
-				md: 104px,
-				lg: 104px,
-				xl: 104px
+				xs: 72px,
+				sm: 72px,
+				md: 72px,
+				lg: 72px,
+				xl: 72px
 );
 
 

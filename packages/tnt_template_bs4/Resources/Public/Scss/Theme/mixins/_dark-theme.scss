@@ -1,13 +1,13 @@
 @mixin dark-theme-settings($theme) {
 	@if $theme {
 		color: $body-color;
-		background-color: rgba(0, 0, 0, 0.75) !important;
+		background-color: opacify($black,0.75)!important;
 	}
 }
 
 @mixin dark-drop-downs($theme) {
 	@if $theme {
-		background-color: $gray-950;
+		background-color: $black;
 		color: $navbar-dark-color;
 
 		a, a:visited, a.dropdown-item {

@@ -1,3 +1,10 @@
+@include media-breakpoint-up(xxl) {
+    .container-xxl {
+        min-width: 1200px;
+        max-width: 1600px;
+    }
+}
+
 .ce-container {
     [class*="frame-background-"] .frame-container {
       padding: 20px;

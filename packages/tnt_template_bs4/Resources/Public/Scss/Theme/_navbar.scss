@@ -14,6 +14,15 @@
 	}
 }
 
+#mainnavigation {
+	.nav-item {
+		font-size: $font-size-mainnav;
+	}
+	.dropdown-menu {
+		@include dark-drop-downs(dark);
+	}
+}
+
 .body-bg-top {
 	@each $breakpoint in map-keys($navbar-heights) {
 		@include media-breakpoint-up($breakpoint) {
@@ -30,7 +39,7 @@
 
 @media (min-width: $grid-float-breakpoint) {
 	#page-header:not(.navbar-transition) #mainnavigation {
-		height: 74px;
+		//height: 74px;
 	}
 
 	.navbar-mainnavigation {
