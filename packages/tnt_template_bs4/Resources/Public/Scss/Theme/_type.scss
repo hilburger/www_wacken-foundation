@@ -126,6 +126,22 @@ hr {
 .section header {
 	h2.special-headline-h2-01 {
 		text-transform: uppercase;
+		font-weight: normal;
+
+		overflow: hidden;
+
+		&::before, &::after {
+			content: "";
+			display: inline-block;
+			width: 50%;
+			margin: 0 .5em 0 -55%;
+			vertical-align: middle;
+			border-bottom: 1px solid $gold;
+		}
+		&::after {
+			margin: 0 -55% 0 .5em;
+		}
+
 		/*
 		&::after {
 			background: #ccc;

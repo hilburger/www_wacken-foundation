@@ -17868,6 +17868,8 @@ hr {
 
 .section header h2.special-headline-h2-01 {
   text-transform: uppercase;
+  font-weight: normal;
+  overflow: hidden;
   /*
   &::after {
   	background: #ccc;
@@ -17886,6 +17888,17 @@ hr {
   	z-index: 1;
   }
   */
+}
+.section header h2.special-headline-h2-01::before, .section header h2.special-headline-h2-01::after {
+  content: "";
+  display: inline-block;
+  width: 50%;
+  margin: 0 0.5em 0 -55%;
+  vertical-align: middle;
+  border-bottom: 1px solid #b6aa64;
+}
+.section header h2.special-headline-h2-01::after {
+  margin: 0 -55% 0 0.5em;
 }
 
 .caption {
