@@ -21,6 +21,13 @@
 	.dropdown-menu {
 		@include dark-drop-downs(dark);
 	}
+
+	#nav-left .dropdown-menu {
+		left: -1rem;
+	}
+	#nav-right .dropdown-menu-right {
+		right: -1.5rem;
+	}
 }
 
 .body-bg-top {

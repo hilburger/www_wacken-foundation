@@ -17117,6 +17117,12 @@ a.pswp__share--download:hover {
   color: #8c8142;
   background-color: transparent;
 }
+#mainnavigation #nav-left .dropdown-menu {
+  left: -1rem;
+}
+#mainnavigation #nav-right .dropdown-menu-right {
+  right: -1.5rem;
+}
 
 .body-bg-top {
   padding-top: 72px;
@@ -17507,7 +17513,7 @@ a.pswp__share--download:hover {
     max-width: 1140px;
   }
 }
-.nav-item > a {
+.nav-item a {
   font-family: "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   text-transform: uppercase;
 }
