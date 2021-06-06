@@ -63,7 +63,7 @@
 		height: 679px; // = bg-image heigh
 		top: 0;
 		z-index: -1;
-		background: url("/typo3conf/ext/tnt_template_bs4/Resources/Public/Images/bg-image_1x-min.png") repeat-x;
+		background: url("/typo3conf/ext/tnt_template_bs4/Resources/Public/Images/bg-image_1x-min.png") repeat-x $black;
 		transform: rotate(180deg);
 	}
 }
