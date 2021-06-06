@@ -66,6 +66,20 @@
 .navbar-mainnavigation {
 	box-shadow: none;
 
+	.navbar-brand-image {
+		padding-top: 0;
+		img {
+			top: 0;
+			transform: initial;
+		}
+	}
+
+	.navbar-transition {
+		.navbar-brand-image img {
+			//width: 150px!important;
+		}
+	}
+
 	.navbar-nav > li > .nav-link::before,
 	.navbar-nav > li.show > .nav-link::before {
 		left: 0;

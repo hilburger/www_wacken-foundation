@@ -17173,6 +17173,13 @@ a.pswp__share--download:hover {
 .navbar-mainnavigation {
   box-shadow: none;
 }
+.navbar-mainnavigation .navbar-brand-image {
+  padding-top: 0;
+}
+.navbar-mainnavigation .navbar-brand-image img {
+  top: 0;
+  transform: initial;
+}
 .navbar-mainnavigation .navbar-nav > li > .nav-link::before,
 .navbar-mainnavigation .navbar-nav > li.show > .nav-link::before {
   left: 0;
