@@ -58,6 +58,31 @@
 
 .navbar-mainnavigation {
 	box-shadow: none;
+
+	.navbar-nav > li > .nav-link::before,
+	.navbar-nav > li.show > .nav-link::before {
+		left: 0;
+		right: 0;
+	}
+
+	.navbar-nav > li > .nav-link:hover,
+	.navbar-nav > li.show > .nav-link::before {
+		&::before {
+			opacity: 0.25;
+		}
+	}
+
+	.navbar-nav > li > .nav-link::before {
+		display: none;
+	}
+
+	.navbar-dark {
+		.navbar-nav {
+			.nav-link:hover {
+				color: $link-hover-color;
+			}
+		}
+	}
 }
 
 //

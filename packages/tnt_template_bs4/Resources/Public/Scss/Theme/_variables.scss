@@ -23,8 +23,9 @@ $yellow: #ffc107 !default;
 $green: #28a745 !default;
 $teal: #20c997 !default;
 $cyan: #17a2b8 !default;
+$gold: rgb(182,170,100);
 
-$primary: $red;
+$primary: $gold;
 $secondary: rgb(171,171,159);
 $light: rgb(223,219,208);
 //$dark: $gray-900 !default;
@@ -44,7 +45,8 @@ $colors: map-merge(
 		"cyan": $cyan,
 		"white": $white,
 		"gray": $gray-600,
-		"gray-dark": $gray-800
+		"gray-dark": $gray-800,
+		"gold": $gold
 	),
 	$colors
 );
@@ -74,12 +76,12 @@ $body-bg:  $black!default;
 $body-color: $white !default;
 
 $navbar-dark-color: rgba($white, .8);
-$navbar-dark-active-color: $red;
+$navbar-dark-active-color: $gold;
 
-$link-color:                   $primary !default;
-$link-hover-color:             darken($link-color, 15%) !default;
-$link-alternate-color:         #ffffff !default;
-$link-alternate-hover-color:   darken($link-alternate-color, 15%) !default;
+$link-color:                   $primary;
+$link-hover-color:             darken($link-color, 15%);
+$link-alternate-color:         #ffffff;
+$link-alternate-hover-color:   darken($link-alternate-color, 15%);
 
 $navbar-light-color: rgba(lighten($black, 9.75%), 1);
 $navbar-light-hover-color: rgba($black, .7);

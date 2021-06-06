@@ -105,7 +105,10 @@
                                                 </f:if>
                                             </span>
                                         </f:if>
-                                        <span class="nav-link-text">{item.title} B<f:if condition="{item.current}"> <span class="sr-only">(current)</span></f:if></span>
+                                        <span class="nav-link-text">{item.title} <f:if condition="{item.current}"> <span class="sr-only">(current)</span></f:if></span>
+                                        <f:if condition="{item.children}">
+                                            <f:image src="EXT:tnt_template_bs4/Resources/Public/Icons/angle_down_font_awesome_transp.svg" alt="Drop Down Menu" class="ml-1" width="16"/>
+                                        </f:if>
                                     </a>
                                     <f:if condition="{item.children}">
                                         <ul class="dropdown-menu bg-black {f:if(condition: '{idx} > {logoPart}', then: 'dropdown-menu-right')}" aria-labelledby="nav-item-{item.data.uid}">
@@ -213,7 +216,7 @@
                                                     </f:if>
                                                 </span>
                                     </f:if>
-                                    <span class="nav-link-text">{item.title} &#x2304;<f:if condition="{item.current}"> <span class="sr-only">(current)</span></f:if></span>
+                                    <span class="nav-link-text">{item.title} <f:if condition="{item.current}"> <span class="sr-only">(current)</span></f:if></span>
                                 </a>
                                 <f:if condition="{item.children}">
                                     <ul class="dropdown-menu" aria-labelledby="nav-item-{item.data.uid}">
