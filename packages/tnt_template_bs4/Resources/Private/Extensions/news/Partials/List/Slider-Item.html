@@ -15,29 +15,20 @@
 		Partials/List/Slider-Item.html
 -->
 <n:excludeDisplayedNews newsItem="{newsItem}"/>
+<!-- SLIDER-ITEM -->
 <div class="carousel-item {f:if(condition:iterator.isFirst, then: ' active')}">
-    <div class="card text-right">
-        <n:link newsItem="{newsItem}" settings="{settings}" title="{newsItem.title}"
-                class="position-absolute pin-t pin-l w-100 h-100 z-index-hover">&nbsp;
-        </n:link>
-        <div class="card-body">
-            <!-- category -->
-            <f:if condition="{newsItem.firstCategory}">
-                <div class="extra">
-                    <!--| <span class="glyphicon glyphicon-tags"> </span>&nbsp;-->
-                    <span class="badge badge-primary p-1 mb-2">{newsItem.firstCategory.title}</span>
-                </div>
-            </f:if>
-            <h4 class="card-title" itemprop="headline">{newsItem.title}</h4>
-            <f:if condition="{settings.hideTeaser} != 1">
-                <p class="card-text">{newsItem.teaser}</p>
-            </f:if>
-            <f:comment>
-                <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-                <p class="card-text" style="font-size: 1rem;">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            </f:comment>
+    <div class="card text-white">
+        <div class="card-img ml-auto mr-0">
+        <f:render partial="General/imgWrapSrcset"
+                  arguments="{settings:settings,newsItem:newsItem}"/>
+        </div>
+        <div class="card-img-overlay">
+            <h5 class="card-title">{newsItem.title}</h5>
+            <p class="card-text">{newsItem.teaser}</p>
         </div>
     </div>
+
+
 </div>
 
 <f:comment>

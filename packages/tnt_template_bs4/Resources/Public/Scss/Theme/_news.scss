@@ -144,14 +144,14 @@
 	}
 
 	.text-slider {
-
+		/*
 		&.header-slider {
 			@each $breakpoint in map-keys($navbar-heights) {
 				@include media-breakpoint-up($breakpoint) {
 					padding-top: map-get($navbar-heights, $breakpoint) + $top-bar-height;
 				}
 			}
-		}
+		}*/
 
 		.element-header {
 			color: white;
@@ -159,15 +159,28 @@
 			text-transform: uppercase;
 		}
 		.the-content {
-			height: 422px;
+			//height: 422px;
 		}
 
 		.carousel {
-			height: 320px;
+			//height: 320px;
 
 			.carousel-item {
-				height: 220px;
+				//height: 220px;
 				transition: transform 2s ease, opacity .5s ease-out;
+
+				.card-img {
+					width: 69%;
+					img {
+						border-radius: 6px;
+					}
+				}
+				.card-img-overlay {
+					width: 48%;
+					background: rgb(0, 0, 0);
+					background: linear-gradient(90deg, rgb(0, 0, 0) 0%, rgb(0, 0, 0) 67%, rgba(0, 0, 0, 0.6) 85%, rgba(0, 0, 0, 0.3) 93%, rgba(0, 0, 0, 0) 99%);
+					border-radius: 4px 0 0 6px;
+				}
 			}
 
 			.card-body {

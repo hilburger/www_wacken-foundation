@@ -51,11 +51,9 @@
                     </f:if>
 
                     <div class="text-slider {f:if(condition: '{columnConfig} == 3', then: 'header-slider')}">
-                            <div class="row">
-                                <div class="col-12 col-md-6 col-lg-6"><h2 class="element-header mt-4 mt-sm-5 pt-sm-3 ml-0 ml-sm-3 ml-md-0 display-4">{contentObjectData.header}</h2></div>
-                                <div class="the-content col-12 col-md-6 col-lg-6 d-flex align-items-end">
-                                    <div id="news-container-{contentObjectData.uid}" class="carousel slide carousel-fade w-100 mb-4 mb-md-0"
-                                         data-ride="carousel">
+
+
+                                    <div id="news-container-{contentObjectData.uid}" class="carousel slide carousel-fade w-100 mb-4 mb-md-0" data-ride="carousel">
                                         <div class="carousel-inner">
                                             <f:for each="{news}" as="newsItem" iteration="iterator">
                                                 <f:render partial="List/Slider-Item"
@@ -72,8 +70,8 @@
                                             </f:for>
                                         </ol>
                                     </div>
-                                </div>
-                            </div>
+
+
                     </div>
                 </f:case>
 
