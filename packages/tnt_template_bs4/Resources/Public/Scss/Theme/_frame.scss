@@ -169,6 +169,18 @@
 	}
 }
 
+.frame-border-gold .frame-container {
+	//outline: 1px dashed red;
+	border: 30px solid transparent;
+	border-image-source: url("/typo3conf/ext/tnt_template_bs4/Resources/Public/Images/border_news_1x-min.png");
+	border-image-repeat: stretch;
+	border-image-slice: 60;
+	border-image-width: 2;
+	border-image-outset: 0.3;
+	background-color: $black;
+	border-radius: 6px;
+}
+
 //
 // Space
 //

@@ -17467,6 +17467,17 @@ a.pswp__share--download:hover {
   overflow: hidden;
 }
 
+.frame-border-gold .frame-container {
+  border: 30px solid transparent;
+  border-image-source: url("/typo3conf/ext/tnt_template_bs4/Resources/Public/Images/border_news_1x-min.png");
+  border-image-repeat: stretch;
+  border-image-slice: 60;
+  border-image-width: 2;
+  border-image-outset: 0.3;
+  background-color: #101010;
+  border-radius: 6px;
+}
+
 .frame-space-before-none {
   margin-top: 0rem;
 }

@@ -47,6 +47,7 @@ TCEFORM {
             addItems {
                 px-3 = Box Innen-Abstand Standard
                 p-5 = Box Innen-Abstand Big
+                border-gold = Messing-Rahmen
                 #kino-bars = Kino-Balken + Box Innen-Abstand Big
                 noframe = Kein Hintergung+Abstände
                 #h-100 = Gleiche Höhen
