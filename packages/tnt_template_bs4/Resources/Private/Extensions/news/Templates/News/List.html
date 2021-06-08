@@ -83,15 +83,12 @@
                 <f:case value="13">
                     <!-- TEMPLATE 13: Cards 3-spaltig -->
                     <div class="list-unstyled news-list-view news-template-13 bs4" id="news-container-{contentObjectData.uid}">
-                        <!--<div class="container">-->
-                        <div class="row">
+                        <div class="row row-cols-1 row-cols-md-3">
                             <f:if condition="{settings.hidePagination}">
                                 <f:then>
                                     <f:for each="{news}" as="newsItem" iteration="iterator">
-                                        <div class="col-12 col-md-6 col-lg-4">
                                             <f:render partial="List/Card-Item"
                                                   arguments="{newsItem: newsItem,settings:settings,iterator:iterator}"/>
-                                        </div>
                                     </f:for>
                                 </f:then>
                                 <f:else>
@@ -99,16 +96,13 @@
                                                        configuration="{settings.list.paginate}"
                                                        initial="{offset:settings.offset,limit:settings.limit,recordId:contentObjectData.uid}">
                                         <f:for each="{paginatedNews}" as="newsItem" iteration="iterator">
-                                            <div class="col-12 col-md-6 col-lg-4">
                                                 <f:render partial="List/Card-Item"
                                                       arguments="{newsItem: newsItem,settings:settings,iterator:iterator}"/>
-                                            </div>
                                         </f:for>
                                     </n:widget.paginate>
                                 </f:else>
                             </f:if>
                         </div>
-                        <!--</div>-->
                     </div>
                 </f:case>
 

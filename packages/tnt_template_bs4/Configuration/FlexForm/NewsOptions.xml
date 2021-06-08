@@ -5,6 +5,15 @@
         </TCEforms>
         <type>array</type>
         <el>
+            <settings.text-bg>
+                <TCEforms>
+                    <label>Text-Background</label>
+                    <config>
+                        <type>check</type>
+                        <default>0</default>
+                    </config>
+                </TCEforms>
+            </settings.text-bg>
             <settings.slider>
                 <TCEforms>
                     <label>Slider</label>

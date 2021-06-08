@@ -7,7 +7,7 @@
 -->
 <n:excludeDisplayedNews newsItem="{newsItem}" />
 
-<div class="row news-list-item {f:if(condition: '{iterator.isLast} == 1', then: 'mb-3 ', else: 'mb-5 ')}position-relative">
+<div class="row {f:if(condition: settings.text-bg, then: 'no-gutters')} news-list-item {f:if(condition: '{iterator.isLast} == 1', then: 'mb-3 ', else: 'mb-5 ')}position-relative">
     <n:link newsItem="{newsItem}" settings="{settings}" title="{newsItem.title}" class="position-absolute pin-t pin-l w-100 h-100 z-index-hover ml-3 ml-sm-0">&nbsp;</n:link>
     <div class="col-md-4">
         <div class="position-relative">
@@ -29,7 +29,7 @@
             </f:else>
         </f:if>
     </div>
-    <div class="col d-flex flex-column justify-content-start articletype-{newsItem.type}{f:if(condition: newsItem.istopnews, then: ' topnews')} pl-md-2 pt-2 pt-sm-0"  itemscope="itemscope" itemtype="http://schema.org/Article">
+    <div class="col d-flex flex-column justify-content-start articletype-{newsItem.type}{f:if(condition: newsItem.istopnews, then: ' topnews')} {f:if(condition: settings.text-bg, then: ' bg-dark px-3 pt-3 pb-2', else: ' pl-md-2 pt-2 pt-sm-0')}"  itemscope="itemscope" itemtype="http://schema.org/Article">
         <h3 class="order-1 element-header mt-lg-n1" itemprop="headline">{newsItem.title}</h3>
 
         <f:if condition="{settings.hideTeaser} != 1">

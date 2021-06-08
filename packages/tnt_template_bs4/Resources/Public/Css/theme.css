@@ -17726,7 +17726,7 @@ hr {
     font-size: 1rem;
   }
 }
-.news .news-list-view .col-lg-4 .card h3, .news .news-list-view .col-lg-4 .card .h3 {
+.news .news-list-view .row-cols-1.row-cols-md-3 .card h3, .news .news-list-view .row-cols-1.row-cols-md-3 .card .h3 {
   font-size: 1.3rem;
 }
 .news .news-list-view.news-template-11 h3,

@@ -23,7 +23,7 @@
                   arguments="{settings:settings,newsItem:newsItem}"/>
         </div>
         <div class="card-img-overlay d-flex flex-column justify-content-center">
-            <f:if condition="{newsItem.firstCategory}">
+            <f:if condition="{newsItem.firstCategory} && {settings.hideCategory} != 1">
                 <!-- category -->
                 <div class="extra news-category">
                     <small class="pb-2">
