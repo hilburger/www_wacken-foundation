@@ -4,11 +4,25 @@
 		text-transform: uppercase;
 	}
 
+	.extra.news-category {
+		text-transform: uppercase;
+		font-weight: normal;
+		color: $gold;
+	}
+
 	.news-category-nav {
 		//font-size: font-size: 1.05rem;;
 	}
 
 	.news-list-view {
+
+		/*
+		.element-header, .card-title {
+			//color: white;
+			//font-weight: normal;
+			//text-transform: uppercase;
+		}
+		*/
 
 		.news-list-item {
 			.card-img-top {
@@ -153,11 +167,6 @@
 			}
 		}*/
 
-		.element-header {
-			color: white;
-			font-weight: 600;
-			text-transform: uppercase;
-		}
 		.the-content {
 			//height: 422px;
 		}
@@ -165,6 +174,14 @@
 		.carousel {
 			//height: 320px;
 
+			.card-img-overlay {
+				width: 48%;
+			}
+			.carousel-indicators {
+				width: 37%;
+				margin-left:0;
+				margin-right:0;
+			}
 			.carousel-item {
 				//height: 220px;
 				transition: transform 2s ease, opacity .5s ease-out;
@@ -176,13 +193,15 @@
 					}
 				}
 				.card-img-overlay {
-					width: 48%;
 					background: rgb(0, 0, 0);
 					background: linear-gradient(90deg, rgb(0, 0, 0) 0%, rgb(0, 0, 0) 67%, rgba(0, 0, 0, 0.6) 85%, rgba(0, 0, 0, 0.3) 93%, rgba(0, 0, 0, 0) 99%);
 					border-radius: 4px 0 0 6px;
 				}
 			}
 
+			.element-header, .card-title {
+				font-size: 2rem !important;
+			}
 			.card-body {
 				/*h4 {
 					font-size: $h5-font-size;

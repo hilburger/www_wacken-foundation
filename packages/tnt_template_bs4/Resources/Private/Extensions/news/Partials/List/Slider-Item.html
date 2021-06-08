@@ -22,13 +22,21 @@
         <f:render partial="General/imgWrapSrcset"
                   arguments="{settings:settings,newsItem:newsItem}"/>
         </div>
-        <div class="card-img-overlay">
-            <h5 class="card-title">{newsItem.title}</h5>
-            <p class="card-text">{newsItem.teaser}</p>
+        <div class="card-img-overlay d-flex flex-column justify-content-center">
+            <f:if condition="{newsItem.firstCategory}">
+                <!-- category -->
+                <div class="extra news-category">
+                    <small class="pb-2">
+                        {newsItem.firstCategory.title}
+                    </small>
+                </div>
+            </f:if>
+            <h3 class="card-title" itemprop="headline">{newsItem.title}</h3>
+            <f:if condition="{settings.hideTeaser} != 1">
+                <p class="card-text">{newsItem.teaser}</p>
+            </f:if>
         </div>
     </div>
-
-
 </div>
 
 <f:comment>
