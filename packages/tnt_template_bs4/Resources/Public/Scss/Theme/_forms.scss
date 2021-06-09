@@ -5,6 +5,22 @@ form {
 			height: 9rem;
 		}
 	}
+	input,
+	.form-control,
+	.custom-select,
+	.textarea,
+	input:focus,
+	.form-control:focus,
+	.custom-select:focus,
+	.textarea:focus{
+		color: $gold;
+		border: solid 1px $gold;
+		background-color: transparent;
+	}
+	input, input.form-control {
+		border: solid 0px $gold;
+		border-bottom-width: 1px;
+	}
 }
 
 // ke_search
