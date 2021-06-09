@@ -17044,13 +17044,15 @@ a.pswp__share--download:hover {
 }
 
 .footer-section-content-column-left,
+.footer-section-content-column-middle,
 .footer-section-content-column-right {
   width: 100%;
 }
 @media (min-width: 576px) {
   .footer-section-content-column-left,
+.footer-section-content-column-middle,
 .footer-section-content-column-right {
-    width: calc(100% / 2);
+    width: calc(100% / 3);
   }
 }
 
@@ -17066,11 +17068,11 @@ a.pswp__share--download:hover {
   padding: 0 8px 4px 0;
 }
 #page-footer .icon-links {
-  color: #808080;
-  font-size: 2.2rem;
+  color: #fafafa;
+  font-size: 1.75rem;
 }
-#page-footer .icon-links a, #page-footer .icon-links a:hover {
-  color: #808080;
+#page-footer .icon-links a:hover {
+  color: #b6aa64;
 }
 
 .footer-section {
@@ -17207,6 +17209,15 @@ a.pswp__share--download:hover {
 	@extend .bg-dark;
 }
 */
+.btn, .cc-btn {
+  background-color: transparent;
+  color: #b6aa64;
+}
+
+.btn-outline-default {
+  border-color: #b6aa64;
+}
+
 .frame {
   padding-top: 0;
   padding-bottom: 0;
@@ -17532,6 +17543,11 @@ a.pswp__share--download:hover {
     max-width: 1140px;
   }
 }
+.frame-container .frame-container {
+  padding-left: 0;
+  padding-right: 0;
+}
+
 .nav-item a {
   font-family: "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   text-transform: uppercase;
@@ -18023,6 +18039,22 @@ hr {
 
 form .form-group textarea {
   height: 9rem;
+}
+form input,
+form .form-control,
+form .custom-select,
+form .textarea,
+form input:focus,
+form .form-control:focus,
+form .custom-select:focus,
+form .textarea:focus {
+  color: #b6aa64;
+  border: solid 1px #b6aa64;
+  background-color: transparent;
+}
+form input, form input.form-control {
+  border: solid 0px #b6aa64;
+  border-bottom-width: 1px;
 }
 
 #searchBoxHeader {

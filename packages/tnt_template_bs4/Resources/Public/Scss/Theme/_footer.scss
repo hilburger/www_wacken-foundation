@@ -2,11 +2,11 @@
 // Footer Columns
 //
 .footer-section-content-column-left,
-//.footer-section-content-column-middle,
+.footer-section-content-column-middle,
 .footer-section-content-column-right {
 	width: 100%;
 	@include media-breakpoint-up('sm') {
-		width: calc(100% / 2);
+		width: calc(100% / 3);
 	}
 }
 
@@ -42,10 +42,11 @@
 	}
 
 	.icon-links {
-		color: $gray-550;
-		font-size: 2.2rem;
-		a, a:hover {
-			color: $gray-550;
+		color: $white;
+		font-size: 1.75rem;
+		a:hover {
+
+			color: $gold;
 		}
 	}
 }

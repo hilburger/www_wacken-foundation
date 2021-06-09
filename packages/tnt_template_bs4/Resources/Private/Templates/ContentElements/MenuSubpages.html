@@ -4,12 +4,12 @@
 
     <f:if condition="{menu}">
         <f:render partial="Menu/SkipNavigation" arguments="{_all}"/>
-        <f:if condition="{data.colPos}==10">
+        <f:if condition="{data.colPos}==10 || {data.colPos}==11 || {data.colPos}==12">
             <f:then>
                 <nav>
-                    <ul class="nav flex-row">
+                    <ul class="nav flex-row justify-content-between pl-1">
                         <f:for each="{menu}" as="page">
-                            <li class="nav-item">
+                            <li class="nav-item mx-auto">
                                 <a href="{page.link}" {f:if(condition: page.target, then: ' target="{page.target}"')}
                                 title="{page.title}"
                                 class="nav-link"><small>{page.title}</small></a>

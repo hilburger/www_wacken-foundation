@@ -1,47 +1,30 @@
 <html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
 <section class="section footer-section footer-section-content">
     <div class="frame-container">
-        <div class="section-row">
-
-            <div class="section-column footer-section-content-column footer-section-content-column-left">
-                <div class="mb-2">
-                    <a class="navbar-brand-image" title="Wacken Foundation" href="/">
-                        <img class="navbar-brand-logo-inverted mt-5"
-                             src="/typo3conf/ext/tnt_template_bs4/Resources/Public/Images/logo_dummy.png"
-                             alt="German Council Magazine" width="307" height="200">
-                    </a>
+            <div class="row">
+                <div class="col-3 section-column footer-section-content-column footer-section-content-column-left">
+                    <f:cObject typoscriptObjectPath="lib.dynamicContent" data="{pageUid: '{data.uid}', colPos: '10', slide: '-1'}" />
                 </div>
 
-                <div class="icon-links mb-3">
-                    <a href="https://www.xing.com/pages/germancouncilofshoppingcenterse-v"
-                       class="mr-1" target="_blank">
-                        <i class="fab fa-xing-square"></i>
-                    </a>
-                    <a href="https://www.facebook.com/pg/German-Council-of-Shopping-Centers-eV-153867718034910"
-                       class="mr-3" target="_blank">
-                        <i class="fab fa-facebook-square"></i>
-                    </a>
-                    <!--<i class="fas fa-search"></i>-->
-                </div>
-
-                <f:cObject typoscriptObjectPath="lib.dynamicContent" data="{pageUid: '{data.uid}', colPos: '10', slide: '-1'}" />
-            </div>
-
-                <f:comment>
-                <div class="section-column footer-section-content-column footer-section-content-column-middle">
+                <div class="col-3 mx-auto section-column footer-section-content-column footer-section-content-column-middle">
                     <f:cObject typoscriptObjectPath="lib.dynamicContent" data="{pageUid: '{data.uid}', colPos: '11', slide: '-1'}" />
                 </div>
-                </f:comment>
 
-            <div class="section-column footer-section-content-column footer-section-content-column-right">
-                <div class="clearfix">
-                    <div class="float-lg-right">
-                        <f:cObject typoscriptObjectPath="lib.dynamicContent" data="{pageUid: '{data.uid}', colPos: '12', slide: '-1'}" />
+                <div class="col-4 ml-auto mt-3 pl-0 section-column footer-section-content-column footer-section-content-column-right">
+                    <div class="text-center mb-2">
+                        <a class="navbar-brand-image" title="Wacken Foundation" href="/">
+                            <img class="navbar-brand-logo-inverted"
+                                 src="/typo3conf/ext/tnt_template_bs4/Resources/Public/Images/logo_dummy.png"
+                                 alt="German Council Magazine" width="307" height="200">
+                        </a>
+                    </div>
+                    <div class="clearfix">
+                        <!--<div class="float-lg-right">-->
+                            <f:cObject typoscriptObjectPath="lib.dynamicContent" data="{pageUid: '{data.uid}', colPos: '12', slide: '-1'}" />
+                        <!--</div>-->
                     </div>
                 </div>
             </div>
-
-        </div>
     </div>
 </section>
 </html>
