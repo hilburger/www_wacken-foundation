@@ -96,6 +96,11 @@ tt_content.2col-container-66-33 {
     }
 }
 
+tt_content.2col-container-33-66 < tt_content.2col-container-66-33
+tt_content.2col-container-33-66 {
+    templateName = 2col-container-33-66
+}
+
 tt_content.3col-container < lib.contentElement
 tt_content.3col-container {
     templateName = 3col-container
