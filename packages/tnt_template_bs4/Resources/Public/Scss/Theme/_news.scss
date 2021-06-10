@@ -4,7 +4,8 @@
 		text-transform: uppercase;
 	}
 
-	.extra.news-category {
+	.extra.news-category,
+	&.news-single .extra {
 		text-transform: uppercase;
 		font-weight: normal;
 		color: $gold;

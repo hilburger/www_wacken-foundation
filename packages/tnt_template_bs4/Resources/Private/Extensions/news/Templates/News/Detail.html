@@ -62,7 +62,11 @@
 
         <f:if condition="{newsItem.mediaNonPreviews}">
             <f:then>
-                <!--<div class="row">-->
+                <div class="row">
+                    <div class="col-12">
+                        <f:render section="side-information" arguments="{_all}"/>
+                    </div>
+                </div>
 
                 <!-- HEADLINE -->
                 <div class="row justify-content-center text-left mb-2 mb-md-3">
@@ -81,19 +85,14 @@
                     </div>
                 </div>
 
-                <div class="row justify-content-end">
-                    <div class="col">
-                        <div class="side-information sticky-top">
-                            <f:render section="side-information" arguments="{_all}"/>
-                        </div>
-                    </div>
+                <div class="row justify-content-center">
                     <div class="col-md-9 col-lg-10 col-xl-9 mb-4">
                         <article>
                             <f:render section="inner-content" arguments="{_all}"/>
                         </article>
                     </div>
                 </div>
-                <div class="row justify-content-end">
+                <div class="row justify-content-center">
                     <div class="col-md-9 col-lg-8 col-xl-7">
                         <div class="row">
                             <f:for each="{newsItem.mediaNonPreviews}" as="mediaElement" iteration="cycle">
@@ -206,7 +205,7 @@
 </f:section>
 
 <f:section name="side-information">
-    <f:render partial="General/AdditionalInformation_side" arguments="{settings:settings,newsItem:newsItem}" />
+    <f:render partial="General/AdditionalInformation_top" arguments="{settings:settings,newsItem:newsItem}" />
 </f:section>
 
 <f:section name="inner-content">

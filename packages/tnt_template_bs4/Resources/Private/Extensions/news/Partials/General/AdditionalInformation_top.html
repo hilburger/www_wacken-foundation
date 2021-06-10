@@ -1,11 +1,20 @@
 <html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
-<div class="extra">
+<div class="d-flex extra">
 
     <!-- category -->
 	<f:if condition="{newsItem.firstCategory}">
 		<!--| <span class="glyphicon glyphicon-tags"> </span>&nbsp;-->
-		<span class="label label-info">{newsItem.firstCategory.title}</span>
+		<small class="news-category">{newsItem.firstCategory.title}</small>
 	</f:if>
 
+    <small class="ml-auto">
+        <f:if condition="{settings.hideDate} != 1">
+            <!-- date -->
+                <time itemprop="datePublished" datetime="{f:format.date(date:newsItem.datetime, format:'Y-m-d')}">
+                    <f:format.date format="{f:translate(key:'dateFormat')}">{newsItem.datetime}</f:format.date>
+                </time>
+        </f:if>
+        <f:if condition="{newsItem.author}"> / {newsItem.author}</f:if>
+    </small>
 </div>
 </html>
