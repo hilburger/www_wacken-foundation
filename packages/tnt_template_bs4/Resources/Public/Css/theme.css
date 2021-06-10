@@ -17944,6 +17944,10 @@ hr {
     max-width: 1600px;
   }
 }
+#page-content .container {
+  max-width: 1140px;
+}
+
 .ce-container [class*=frame-background-] .frame-container {
   padding: 20px;
 }
@@ -18037,6 +18041,10 @@ hr {
   font-weight: 600;
 }
 
+.pb-sm-6 {
+  padding-bottom: 7.5rem !important;
+}
+
 form .form-group textarea {
   height: 9rem;
 }
@@ -18066,7 +18074,7 @@ form input, form input.form-control {
 .news .badge {
   text-transform: uppercase;
 }
-.news .extra.news-category {
+.news .extra.news-category, .news.news-single .extra {
   text-transform: uppercase;
   font-weight: normal;
   color: #b6aa64;

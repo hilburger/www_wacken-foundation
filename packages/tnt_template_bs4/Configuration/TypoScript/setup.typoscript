@@ -38,6 +38,9 @@ lib.currentDomain {
     typolink.returnLast = url
 }
 
+lib.contentInBorderCol < styles.content.get
+lib.contentInBorderCol.select.where = colPos = 3
+
 #################
 ### EXTENSIONS ###
 #################
