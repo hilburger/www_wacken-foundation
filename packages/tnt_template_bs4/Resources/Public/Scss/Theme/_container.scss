@@ -5,6 +5,12 @@
     }
 }
 
+#page-content {
+    .container {
+        max-width: map-get($container-max-widths, 'xl');
+    }
+}
+
 .ce-container {
     [class*="frame-background-"] .frame-container {
       padding: 20px;
