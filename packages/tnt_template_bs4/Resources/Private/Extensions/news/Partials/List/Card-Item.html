@@ -3,12 +3,21 @@
       data-namespace-typo3-fluid="true">
 
 <n:excludeDisplayedNews newsItem="{newsItem}"/>
-<!--<div class="d-inline-block">-->
-<div class="col mb-4">
+    <f:if condition="{settings.col-number} == 1">
+        <f:then>
+            <f:variable name="imageFormat">twenty-ten</f:variable>
+        </f:then>
+        <f:else if="{settings.col-number} == 4">
+            <f:variable name="imageFormat">three-two</f:variable>
+        </f:else>
+        <f:else>
+            <f:variable name="imageFormat">sixteen-nine</f:variable>
+        </f:else>
+    </f:if>
     <div class="card h-100 position-relative">
         <n:link newsItem="{newsItem}" settings="{settings}" title="{newsItem.title}" class="position-absolute pin-t pin-l w-100 h-100 z-index-hover">&nbsp;</n:link>
 
-        <div class="sixteen-nine">
+        <div class="{imageFormat}">
             <div class="aspect-ratio-wrapper">
                 <f:if condition="{newsItem.mediaPreviews}">
                     <f:then>
@@ -70,5 +79,4 @@
             </f:if>
         </div>
     </div>
-</div>
 </html>

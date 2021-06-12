@@ -107,9 +107,9 @@ TCAdefaults {
 # News Templates
 #
 tx_news.templateLayouts {
-    10 = Cards 2-spaltig
-    11 = Cards 1-spaltig
-    13 = Cards 3-spaltig
+    10 = Cards 1-4-spaltig
+    #11 = Cards 1-spaltig
+    #13 = Cards 3-spaltig
     20 = Cards mit Teil-Text-Overlay 2-spaltig
     21 = Cards mit Teil-Text-Overlay 1-spaltig
     24 = Cards mit Voll-Text-Overlay
