@@ -29,7 +29,7 @@
                                                   arguments="{newsItem: newsItem,settings:settings,iterator:iterator}"/>
                                         </div>
                                     </f:for>
-                                    <f:if condition="{news->f:count()} % 2 != 0">
+                                    <f:if condition="{news->f:count()} % 2 != 0 && {news->f:count()} > 1">
                                         <div class="d-none d-md-block d-lg-none">
                                             <v:content.render contentUids="{0: 114}"/>
                                         </div>
@@ -45,7 +45,7 @@
                                                       arguments="{newsItem: newsItem,settings:settings,iterator:iterator}"/>
                                             </div>
                                         </f:for>
-                                        <f:if condition="{news->f:count()} % 2 != 0">
+                                        <f:if condition="{news->f:count()} % 2 != 0 && {news->f:count()} > 1">
                                             <div class="d-none d-md-block d-lg-none">
                                                 <v:content.render contentUids="{0: 114}"/>
                                             </div>
