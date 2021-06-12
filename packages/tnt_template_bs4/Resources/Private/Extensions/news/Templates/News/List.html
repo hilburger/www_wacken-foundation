@@ -1,3 +1,4 @@
+{namespace v=FluidTYPO3\Vhs\ViewHelpers}
 <html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
 	  xmlns:n="http://typo3.org/ns/GeorgRinger/News/ViewHelpers"
 	  data-namespace-typo3-fluid="true">
@@ -12,93 +13,43 @@
 	<f:if condition="{news}">
 		<f:then>
             <f:variable name="newsItemsPerRow">{f:if(condition: '{settings.list.paginate.itemsPerPage}  != 10', then: '{settings.list.paginate.itemsPerPage}', else: '{settings.limit}')}</f:variable>
+            <f:variable name="newsCardsPerRow">{settings.cards-per-row}</f:variable>
 
             <f:switch expression="{settings.templateLayout}">
-                <f:comment>
-                    <!-- ID-to-Template-Mapping in Configuration / TsConfig / Page / TCEFORM.tsconfig -->
-                </f:comment>
 
                 <f:case value="10">
-                    <!-- TEMPLATE 10: Cards 2-spaltig -->
-                    <div class="list-unstyled news-list-view news-template-10 bs4" id="news-container-{contentObjectData.uid}">
-                        <!--<div class="container">-->
-                        <div class="row">
-                            <f:if condition="{settings.hidePagination}">
-                                <f:then>
-                                    <f:for each="{news}" as="newsItem" iteration="iterator">
-                                        <div class="col-md-6">
-                                            <f:render partial="List/Card-Item"
-                                                  arguments="{newsItem: newsItem,settings:settings,iterator:iterator}"/>
-                                        </div>
-                                    </f:for>
-                                </f:then>
-                                <f:else>
-                                    <n:widget.paginate objects="{news}" as="paginatedNews"
-                                                       configuration="{settings.list.paginate}"
-                                                       initial="{offset:settings.offset,limit:settings.limit,recordId:contentObjectData.uid}">
-                                        <f:for each="{paginatedNews}" as="newsItem" iteration="iterator">
-                                            <div class="col-md-6">
-                                                <f:render partial="List/Card-Item"
-                                                      arguments="{newsItem: newsItem,settings:settings,iterator:iterator}"/>
-                                            </div>
-                                        </f:for>
-                                    </n:widget.paginate>
-                                </f:else>
-                            </f:if>
-                        </div>
-                        <!--</div>-->
-                    </div>
-                </f:case>
-
-                <f:case value="11">
-                    <!-- TEMPLATE 11: Cards 1-spaltig -->
-                    <div class="list-unstyled news-list-view news-template-11 bs4" id="news-container-{contentObjectData.uid}">
-                        <div class="row">
-                            <f:if condition="{settings.hidePagination}">
-                                <f:then>
-                                    <f:for each="{news}" as="newsItem" iteration="iterator">
-                                        <div class="col-12">
-                                            <f:render partial="List/Card-Item"
-                                                      arguments="{newsItem: newsItem,settings:settings,iterator:iterator}"/>
-                                        </div>
-                                    </f:for>
-                                </f:then>
-                                <f:else>
-                                    <n:widget.paginate objects="{news}" as="paginatedNews"
-                                                       configuration="{settings.list.paginate}"
-                                                       initial="{offset:settings.offset,limit:settings.limit,recordId:contentObjectData.uid}">
-                                        <f:for each="{paginatedNews}" as="newsItem" iteration="iterator">
-                                            <div class="col-12">
-                                                <f:render partial="List/Card-Item"
-                                                          arguments="{newsItem: newsItem,settings:settings,iterator:iterator}"/>
-                                            </div>
-                                        </f:for>
-                                    </n:widget.paginate>
-                                </f:else>
-                            </f:if>
-                        </div>
-                    </div>
-                </f:case>
-
-                <f:case value="13">
-                    <!-- TEMPLATE 13: Cards 3-spaltig -->
+                    <!-- TEMPLATE 13: Cards 1-4-spaltig -->
                     <div class="list-unstyled news-list-view news-template-13 bs4" id="news-container-{contentObjectData.uid}">
-                        <div class="row row-cols-1 row-cols-md-3">
+                        <div class="row justify-content-center row-cols-1 row-cols-sm-{f:if(condition: '{news->f:count()} == 1 || {settings.col-number} == 1', then: '1', else:'2')} row-cols-lg-{settings.col-number}">
                             <f:if condition="{settings.hidePagination}">
                                 <f:then>
                                     <f:for each="{news}" as="newsItem" iteration="iterator">
+                                        <div class="col mb-3 mb-sm-5{f:if(condition: '{news->f:count()} > 3', else:' mb-lg-0')}">
                                             <f:render partial="List/Card-Item"
                                                   arguments="{newsItem: newsItem,settings:settings,iterator:iterator}"/>
+                                        </div>
                                     </f:for>
+                                    <f:if condition="{news->f:count()} % 2 != 0">
+                                        <div class="d-none d-md-block d-lg-none">
+                                            <v:content.render contentUids="{0: 114}"/>
+                                        </div>
+                                    </f:if>
                                 </f:then>
                                 <f:else>
                                     <n:widget.paginate objects="{news}" as="paginatedNews"
                                                        configuration="{settings.list.paginate}"
                                                        initial="{offset:settings.offset,limit:settings.limit,recordId:contentObjectData.uid}">
                                         <f:for each="{paginatedNews}" as="newsItem" iteration="iterator">
+                                            <div class="col mb-3 mb-sm-5{f:if(condition: '{news->f:count()} > 3', else:' mb-lg-0')}">
                                                 <f:render partial="List/Card-Item"
                                                       arguments="{newsItem: newsItem,settings:settings,iterator:iterator}"/>
+                                            </div>
                                         </f:for>
+                                        <f:if condition="{news->f:count()} % 2 != 0">
+                                            <div class="d-none d-md-block d-lg-none">
+                                                <v:content.render contentUids="{0: 114}"/>
+                                            </div>
+                                        </f:if>
                                     </n:widget.paginate>
                                 </f:else>
                             </f:if>
@@ -110,7 +61,7 @@
                     <!-- TEMPLATE 20: Cards Text-Overlay halb-spaltig -->
                     <div class="list-unstyled news-list-view news-template-20 bs4" id="news-container-{contentObjectData.uid}">
                         <!--<div class="container">-->
-                        <div class="row">
+                        <div class="row justify-content-center">
                             <f:if condition="{settings.hidePagination}">
                                 <f:then>
                                     <f:for each="{news}" as="newsItem" iteration="iterator">
@@ -142,7 +93,7 @@
                     <!-- TEMPLATE 21: Cards Text-Overlay ganz-spaltig -->
                     <div class="list-unstyled news-list-view news-template-21 bs4" id="news-container-{contentObjectData.uid}">
                         <!--<div class="container">-->
-                        <div class="row">
+                        <div class="row justify-content-center">
                             <f:if condition="{settings.hidePagination}">
                                 <f:then>
                                     <f:for each="{news}" as="newsItem" iteration="iterator">
@@ -174,7 +125,7 @@
                     <!-- TEMPLATE 24: Cards Text-Overlay halb-spaltig -->
                     <div class="list-unstyled news-list-view news-template-24 bs4" id="news-container-{contentObjectData.uid}">
                         <!--<div class="container">-->
-                        <div class="row">
+                        <div class="row justify-content-center">
                             <f:if condition="{settings.hidePagination}">
                                 <f:then>
                                     <f:for each="{news}" as="newsItem" iteration="iterator">
@@ -256,6 +207,109 @@
                         </script>
                     </f:if>
                     </f:comment>
+                </f:case>
+
+                <f:case value="110">
+                    <!-- 3-Block News 1:2 -->
+                    <div class="pb-3">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="card h-100 position-relative" style="border: none;"><a
+                                    class="position-absolute pin-t pin-l w-100 h-100 z-index-hover"
+                                    title="Mit Video: Headline Duis autem vel eum iriure dolor!"
+                                    href="/artikel/thundermother-beim-starcooking-kurs-auf-dem-wacken-open-air">&nbsp;</a>
+                                    <div class="sixteen-nine">
+                                        <div class="aspect-ratio-wrapper">
+                                            <picture>
+                                                <source media="(min-width: 1200px)"
+                                                        srcset="/fileadmin/_processed_/1/3/csm_TruthM_691a31b362.jpg 1x, /fileadmin/_processed_/1/3/csm_TruthM_e15b474cff.jpg 2x">
+                                                <source media="(min-width: 992px)"
+                                                        srcset="/fileadmin/_processed_/1/3/csm_TruthM_ff53bddb63.jpg 1x, /fileadmin/_processed_/1/3/csm_TruthM_3b21bfba4e.jpg 2x">
+                                                <source media="(min-width: 768px)"
+                                                        srcset="/fileadmin/_processed_/1/3/csm_TruthM_67698dcdf8.jpg 1x, /fileadmin/_processed_/1/3/csm_TruthM_10e0e8b7cb.jpg 2x">
+                                                <source media="(max-width: 575.98px)"
+                                                        srcset="/fileadmin/_processed_/1/3/csm_TruthM_691a31b362.jpg 1x, /fileadmin/_processed_/1/3/csm_TruthM_e15b474cff.jpg 2x">
+                                                <img class="img-fluid card-img-top"
+                                                     src="/fileadmin/_processed_/1/3/csm_TruthM_af10a94af8.jpg" alt=""
+                                                     width="475" height="268"></picture>
+                                        </div>
+                                        <div class="card-header position-absolute w-100 p-0">
+                                            <div class="extra d-flex justify-content-between mt-auto"><!-- author -->
+                                                <!-- date -->
+                                                <!--<span class="glyphicon glyphicon-calendar"></span>--><small
+                                                    class="badge badge-dark p-1 ml-auto">
+                                                    <time itemprop="datePublished" datetime="2021-03-22">
+                                                        22.03.2021
+                                                    </time>
+                                                </small><!-- Tags --></div>
+                                        </div>
+                                    </div><!-- 1 -->
+                                    <div class="card-body articletype-0
+
+                     bg-dark px-3 pt-3 pb-2" itemscope="itemscope" itemtype="http://schema.org/Article">
+                                        <div class="extra news-category"><small class="pb-2">
+                                            Vor Ort
+                                        </small></div>
+                                        <h3 itemprop="headline" class="element-header card-title mb-1"
+                                            style="font-size: 1.3rem;">
+                                            Mit Video: Headline Duis autem vel eum iriure dolor!
+                                        </h3><!-- teaser -->
+                                        <div class="card-text" style="font-size: 1rem;"><p>Teaser At vero eos et accusam
+                                            et justo duo dolores et ea rebum.</p></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-8">
+                                <div class="row">
+                                    <div class="col-12">
+                                        <div class="card articletype-0 bg-dark mb-3">
+                                            <div class="row no-gutters">
+                                                <div class="col-md-6">
+                                                    <img src="/fileadmin/_processed_/0/4/csm_Bier_02a50a9a8a.jpg"
+                                                         class="card-img" alt="..."
+                                                         style="height: 100%; width: auto; max-height: 190.25px;}">
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <div class="card-body px-3 pt-3 pb-2">
+                                                        <div class="extra news-category"><small
+                                                            class="pb-2">Category</small></div>
+                                                        <h3 class="element-header card-title"
+                                                            style="font-size: 1.3rem;">Card title</h3>
+                                                        <p class="card-text" style="font-size: 1rem;">This is a wider
+                                                            card with supporting text below as a natural lead-in to
+                                                            additional content. This content is a little bit longer.</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="card articletype-0 bg-dark">
+                                            <div class="row no-gutters">
+                                                <div class="col-md-6">
+                                                    <img
+                                                        src="/fileadmin/_processed_/7/b/csm_Band_DOCH_CHKAE_9e937b131c.jpg"
+                                                        class="card-img" alt="..."
+                                                        style="height: 100%; width: auto; max-height: 190.25px;}">
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <div class="card-body px-3 pt-3 pb-2">
+                                                        <div class="extra news-category"><small
+                                                            class="pb-2">Category</small></div>
+                                                        <h3 class="element-header card-title"
+                                                            style="font-size: 1.3rem;">Card title</h3>
+                                                        <p class="card-text" style="font-size: 1rem;">This is a wider
+                                                            card with supporting text below as a natural lead-in to
+                                                            additional content. This content is a little bit longer.</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </f:case>
 
                 <f:case value="1010">
