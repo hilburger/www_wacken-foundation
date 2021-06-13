@@ -29,10 +29,10 @@ return [
         'backend' => [
             'backendFavicon' => '',
             'backendLogo' => '',
-            'loginBackgroundImage' => '',
-            'loginFootnote' => '',
-            'loginHighlightColor' => '',
-            'loginLogo' => '',
+            'loginBackgroundImage' => 'fileadmin/internal/bullhead_2560x1440.jpg',
+            'loginFootnote' => 'Powered by TNT Digitalagentur',
+            'loginHighlightColor' => '#1a1a1a',
+            'loginLogo' => 'EXT:tnt_template_bs4/Resources/Public/Images/logo_dummy.png',
         ],
         'bootstrap_package' => [
             'disableCssProcessing' => '0',
@@ -86,6 +86,9 @@ return [
         'scheduler' => [
             'maxLifetime' => '1440',
             'showSampleTasks' => '1',
+        ],
+        'vhs' => [
+            'disableAssetHandling' => '0',
         ],
     ],
     'FE' => [
@@ -172,7 +175,8 @@ return [
         ],
         'sitename' => 'TYPO3 10 LTS',
         'systemMaintainers' => [
-            1,3
+            1,
+            3,
         ],
     ],
 ];

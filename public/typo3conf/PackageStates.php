@@ -125,6 +125,9 @@ return [
         'sf_banners' => [
             'packagePath' => 'typo3conf/ext/sf_banners/',
         ],
+        'vhs' => [
+            'packagePath' => 'typo3conf/ext/vhs/',
+        ],
     ],
     'version' => 5,
 ];
