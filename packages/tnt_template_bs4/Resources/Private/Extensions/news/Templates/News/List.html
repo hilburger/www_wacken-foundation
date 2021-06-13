@@ -10,6 +10,7 @@
 
 <f:section name="content">
 	<!--TYPO3SEARCH_end-->
+    <f:debug>{_all}</f:debug>
 	<f:if condition="{news}">
 		<f:then>
             <f:variable name="newsItemsPerRow">{f:if(condition: '{settings.list.paginate.itemsPerPage}  != 10', then: '{settings.list.paginate.itemsPerPage}', else: '{settings.limit}')}</f:variable>
@@ -31,7 +32,7 @@
                                     </f:for>
                                     <f:if condition="{news->f:count()} % 2 != 0 && {news->f:count()} > 1">
                                         <div class="d-none d-md-block d-lg-none">
-                                            <v:content.render contentUids="{0: 114}"/>
+                                            <v:content.render contentUids="{0: '{settings.tnt-news-fillerUid01}'}"/>
                                         </div>
                                     </f:if>
                                 </f:then>
@@ -47,7 +48,7 @@
                                         </f:for>
                                         <f:if condition="{news->f:count()} % 2 != 0 && {news->f:count()} > 1">
                                             <div class="d-none d-md-block d-lg-none">
-                                                <v:content.render contentUids="{0: 114}"/>
+                                                <v:content.render contentUids="{0: '{settings.tnt-news-fillerUid01}'}"/>
                                             </div>
                                         </f:if>
                                     </n:widget.paginate>

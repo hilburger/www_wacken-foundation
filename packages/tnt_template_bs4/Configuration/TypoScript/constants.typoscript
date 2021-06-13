@@ -16,6 +16,13 @@ tnt_template_bs4 {
     sfBanner1 = 15
     # Dev 23 / Live 16
     sfBanner3 = 16
+
+    news {
+        # customcategory=tnt_template=TNT Site Package
+        # customsubcategory=default-contents=Default Content UIDs
+        # cat=tnt_template/default-contents; type=int+; label=News-Filler 1 Page UID: Which content element shall be used as this filler?
+        fillerUid01 = 114
+    }
 }
 
 ############

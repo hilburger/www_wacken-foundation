@@ -178,6 +178,8 @@ plugin.tx_news {
                 insertAbove = 0
             }
         }
+        ### TNT Site Package:
+        tnt-news-fillerUid01 = {$tnt_template_bs4.news.fillerUid01}
     }
 }
 
