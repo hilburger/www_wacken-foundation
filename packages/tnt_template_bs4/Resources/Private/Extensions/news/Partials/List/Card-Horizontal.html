@@ -1,0 +1,73 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+      xmlns:n="http://typo3.org/ns/GeorgRinger/News/ViewHelpers"
+      data-namespace-typo3-fluid="true">
+
+<!-- Card-Item Horizontal START -->
+<div class="row horizontal-grid">
+    <div class="col-12">
+        <div class="card {f:if(condition: '{idx} < {maxNewsItems}', then: 'mb-3')}">
+            <div class="row no-gutters {f:if(condition: settings.text-bg, then: ' bg-dark')}">
+                <div class="col-md-6 overflow-hidden">
+                            <f:if condition="{newsItem.mediaPreviews}">
+                                <f:then>
+                                    <f:render partial="General/imgWrapSrcset-horizontalCards"
+                                              arguments="{settings:settings,newsItem:newsItem,class:h-100}"/>
+                                </f:then>
+                                <f:else>
+                                    <f:if condition="{settings.displayDummyIfNoMedia}">
+                                        <f:image class="" src="{settings.list.media.dummyImage}"
+                                                 title="Default Image"
+                                                 alt="" maxWidth="{settings.list.media.image.maxWidth}"
+                                                 maxHeight="193px"
+                                                 height="100%"
+                                                 width="auto"/>
+                                    </f:if>
+                                </f:else>
+                            </f:if>
+                        <f:render partial="General/AdditionalInformation"
+                                  arguments="{settings:settings,newsItem:newsItem,idx:idx,3er-block:3er-block}"/>
+                </div>
+                <div class="col-md-6">
+                    <div class="card-body h-100 articletype-{newsItem.type}
+                    {f:if(condition: newsItem.istopnews, then: ' topnews')}
+                    {f:if(condition: settings.text-bg, then: ' p-3', else: ' px-0')}"
+                         itemscope="itemscope" itemtype="http://schema.org/Article">
+
+                        <f:if condition="{newsItem.firstCategory} && {settings.hideCategory} != 1">
+                            <div class="extra news-category">
+                                <small class="pb-2">
+                                    {newsItem.firstCategory.title}
+                                </small>
+                            </div>
+                        </f:if>
+
+                        <h3 itemprop="headline" class="element-header card-title mb-1">
+                            <f:format.raw>{newsItem.title}</f:format.raw>
+                        </h3>
+
+                        <f:if condition="{settings.hideTeaser} != 1">
+                            <!-- teaser -->
+                            <div class="card-text">
+                                <n:removeMediaTags>
+                                    <f:if condition="{newsItem.teaser}">
+                                        <f:then>
+                                            {newsItem.teaser -> f:format.crop(maxCharacters:
+                                            '{settings.cropMaxCharacters}',
+                                            respectWordBoundaries:'1') -> f:format.html()}
+                                        </f:then>
+                                        <f:else>
+                                            {newsItem.bodytext -> f:format.crop(maxCharacters:
+                                            '{settings.cropMaxCharacters}',
+                                            respectWordBoundaries:'1') -> f:format.html()}
+                                        </f:else>
+                                    </f:if>
+                                </n:removeMediaTags>
+                            </div>
+                        </f:if>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Card-Item Horizontal END -->

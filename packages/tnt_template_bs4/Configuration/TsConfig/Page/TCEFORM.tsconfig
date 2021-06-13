@@ -114,6 +114,7 @@ tx_news.templateLayouts {
     21 = Cards mit Teil-Text-Overlay 1-spaltig
     24 = Cards mit Voll-Text-Overlay
     25 = Cards mit Voll-Text-Overlay (Mini / Slider)
+    30 = Cards 3er-Block
     100 = Detail One-Column
     #210 = Mega-Menu Cards 1-spaltig
     #220 = Mega-Menu Cards 2-spaltig

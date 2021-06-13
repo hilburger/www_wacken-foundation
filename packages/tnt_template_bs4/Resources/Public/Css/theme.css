@@ -18126,6 +18126,10 @@ form input, form input.form-control {
 .news .news-list-view.news-template-20 .card-img-overlay.part-height .mb-2 {
   margin-bottom: 0 !important;
 }
+.news .news-list-view.news-template-30 .horizontal-grid .card-img-top {
+  max-height: 192.25px;
+  width: auto;
+}
 .news .card-group .line-breaker {
   margin-bottom: 1.5rem;
 }
@@ -18232,6 +18236,11 @@ form input, form input.form-control {
     padding-right: 0;
   }
 
+  .news .news-list-view.news-template-30 .card-img-top {
+    max-height: unset !important;
+    width: 100% !important;
+    height: auto;
+  }
   .news .card-group .card .element-header {
     font-size: 1.1rem;
   }

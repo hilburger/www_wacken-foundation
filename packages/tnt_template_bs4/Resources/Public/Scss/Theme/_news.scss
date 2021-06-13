@@ -78,6 +78,11 @@
 					}
 				}
 			}
+			&30 .horizontal-grid .card-img-top {
+				max-height: 192.25px;
+				//height: 100%;
+				width: auto;
+			}
 		}
 	}
 	.card-group {
@@ -228,6 +233,17 @@
 	}
 
 	.news {
+		.news-list-view {
+			&.news-template- {
+				&30 {
+					.card-img-top {
+						max-height: unset!important;
+						width: 100% !important;
+						height: auto;
+					}
+				}
+			}
+		}
 		.card-group {
 			.card {
 				.element-header {

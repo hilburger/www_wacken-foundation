@@ -31,9 +31,8 @@
         </f:comment>
 
         <f:if condition="{settings.hideDate} != 1">
-        <!-- date -->
             <!--<span class="glyphicon glyphicon-calendar"> </span>-->
-            <small class="badge badge-dark p-1 ml-auto">
+            <small class="badge badge-dark p-1 {f:if(condition: '{settings.templateLayout} == 30 && {3er-block} == 1', then:'mr-auto', else:'ml-auto')}">
                 <time itemprop="datePublished" datetime="{f:format.date(date:newsItem.datetime, format:'Y-m-d')}">
                     <f:format.date format="{f:translate(key:'dateFormat')}">{newsItem.datetime}</f:format.date>
                 </time>

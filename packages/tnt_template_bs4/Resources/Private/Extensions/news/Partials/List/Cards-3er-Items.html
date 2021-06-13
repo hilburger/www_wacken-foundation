@@ -1,0 +1,23 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+      xmlns:n="http://typo3.org/ns/GeorgRinger/News/ViewHelpers"
+      data-namespace-typo3-fluid="true">
+
+<f:variable name="3er-block">1</f:variable>
+<f:switch expression="{idx}">
+    <f:case value="1">
+        <div class="col-lg-4 mb-3 mb-lg-0">
+            <f:render partial="List/Card-Item" arguments="{newsItem:newsItem,settings:settings,iterator:iterator,maxNewsItems:maxNewsItems}"/>
+        </div>
+    </f:case>
+    <f:case value="2">
+        <div class="col-lg-8">
+            <f:render partial="List/Card-Horizontal" arguments="{newsItem:newsItem,settings:settings,iterator:iterator,ixd:idx,maxNewsItems:maxNewsItems,3er-block:3er-block}"/>
+    </f:case>
+    <f:case value="3">
+            <f:render partial="List/Card-Horizontal" arguments="{newsItem:newsItem,settings:settings,iterator:iterator,idx:idx,maxNewsItems:maxNewsItems,3er-block:3er-block}"/>
+        </div>
+    </f:case>
+    <f:defaultCase>Empty</f:defaultCase>
+</f:switch>
+
+

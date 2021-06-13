@@ -19,7 +19,7 @@
 
                 <f:case value="10">
                     <!-- TEMPLATE 13: Cards 1-4-spaltig -->
-                    <div class="list-unstyled news-list-view news-template-13 bs4" id="news-container-{contentObjectData.uid}">
+                    <div class="list-unstyled news-list-view news-template-10 bs4" id="news-container-{contentObjectData.uid}">
                         <div class="row justify-content-center row-cols-1 row-cols-sm-{f:if(condition: '{news->f:count()} == 1 || {settings.col-number} == 1', then: '1', else:'2')} row-cols-lg-{settings.col-number}">
                             <f:if condition="{settings.hidePagination}">
                                 <f:then>
@@ -207,6 +207,108 @@
                         </script>
                     </f:if>
                     </f:comment>
+                </f:case>
+
+                <f:case value="30">
+                    <f:variable name="maxNewsItems">{settings.limit}</f:variable>
+                    <f:if condition="{maxNewsItems} != 3">{maxNewsItems == 3}</f:if>
+                    <div class="list-unstyled news-list-view news-template-30 bs4" id="news-container-{contentObjectData.uid}">
+                        <div class="row justify-content-center row-cols-1 row-cols-md-1 row-cols-lg-2">
+                            <f:variable name="idx" value="0"/>
+                            <f:for each="{news}" as="newsItem" iteration="iterator">
+                                <f:variable name="idx" value="{idx + 1}"/>
+                                <f:if condition="{idx} <= {maxNewsItems}">
+                                    <!--<div class="col mb-3 mb-sm-5{f:if(condition: '{news->f:count()} > 3', else:' mb-lg-0')}">-->
+                                        <f:render partial="List/Cards-3er-Items" arguments="{newsItem: newsItem,settings:settings,iterator:iterator,idx:idx,maxNewsItems:maxNewsItems}"/>
+                                    <!--</div>-->
+                                </f:if>
+                            </f:for>
+
+                            <f:comment>
+
+                            <f:for each="{news}" as="newsItem" iteration="iterator">
+                                <div class="col mb-3 mb-sm-5{f:if(condition: '{news->f:count()} > 3', else:' mb-lg-0')}">
+                                    <f:render partial="List/Card-Item"
+                                              arguments="{newsItem: newsItem,settings:settings,iterator:iterator}"/>
+                                </div>
+                            </f:for>
+
+
+                            <div class="col-lg-4 mb-3 mb-lg-0">
+                                <div class="card h-100" style="">
+                                    <svg class="bd-placeholder-img card-img-top" width="100%" height="180"
+                                         xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice"
+                                         focusable="false" role="img" aria-label="Card1"><title>Card 1</title>
+                                        <rect width="100%" height="100%" fill="#868e96"></rect>
+                                        <text x="50%" y="50%" fill="#dee2e6" dy=".3em">Card 1</text>
+                                    </svg>
+                                    <div class="card-body">
+                                        <p class="card-text">Some quick example text to build on the card title and make
+                                            up the bulk of the card's content.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-8">
+                                <div class="row">
+                                    <div class="col-12">
+                                        <div class="card mb-3">
+                                            <div class="row no-gutters">
+                                                <div class="col-md-4">
+                                                    <svg class="bd-placeholder-img" width="100%" height="250"
+                                                         xmlns="http://www.w3.org/2000/svg"
+                                                         preserveAspectRatio="xMidYMid slice" focusable="false"
+                                                         role="img" aria-label="Placeholder: Image"><title>
+                                                        Placeholder</title>
+                                                        <rect width="100%" height="100%" fill="#868e96"></rect>
+                                                        <text x="50%" y="50%" fill="#dee2e6" dy=".3em">Card B1</text>
+                                                    </svg>
+                                                </div>
+                                                <div class="col-md-8">
+                                                    <div class="card-body">
+                                                        <h5 class="card-title">Card title</h5>
+                                                        <p class="card-text">This is a wider card with supporting text
+                                                            below as a natural lead-in to additional content. This
+                                                            content is a little bit longer.</p>
+                                                        <p class="card-text"><small class="text-muted">Last updated 3
+                                                            mins ago</small></p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-12">
+                                        <div class="card">
+                                            <div class="row no-gutters">
+                                                <div class="col-md-4">
+                                                    <svg class="bd-placeholder-img" width="100%" height="250"
+                                                         xmlns="http://www.w3.org/2000/svg"
+                                                         preserveAspectRatio="xMidYMid slice" focusable="false"
+                                                         role="img" aria-label="Placeholder: Image"><title>
+                                                        Placeholder</title>
+                                                        <rect width="100%" height="100%" fill="#868e96"></rect>
+                                                        <text x="50%" y="50%" fill="#dee2e6" dy=".3em">Card B2</text>
+                                                    </svg>
+                                                </div>
+                                                <div class="col-md-8">
+                                                    <div class="card-body">
+                                                        <h5 class="card-title">Card title</h5>
+                                                        <p class="card-text">This is a wider card with supporting text
+                                                            below as a natural lead-in to additional content. This
+                                                            content is a little bit longer.</p>
+                                                        <p class="card-text"><small class="text-muted">Last updated 3
+                                                            mins ago</small></p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            </f:comment>
+                        </div>
+                    </div>
                 </f:case>
 
                 <f:case value="110">

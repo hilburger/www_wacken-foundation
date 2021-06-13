@@ -1,0 +1,49 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+      xmlns:bk2k="http://typo3.org/ns/BK2K/BootstrapPackage/ViewHelpers"
+      xmlns:n="http://typo3.org/ns/GeorgRinger/News/ViewHelpers"
+      data-namespace-typo3-fluid="true">
+
+<f:variable name="sizeLg" value="{settings.list.media.image.width}"/>
+<f:variable name="sizeLgRetina" value="{settings.list.media.image.width * 2}"/>
+<f:variable name="sizeL" value="{settings.list.media.image.width * 0.82}"/>
+<f:variable name="sizeLRetina" value="{settings.list.media.image.width * 1.64}"/>
+<f:variable name="sizeMd" value="{settings.list.media.image.width * 0.6}"/>
+<f:variable name="sizeMdRetina" value="{settings.list.media.image.width * 1.2}"/>
+
+<picture>
+    <source media="(min-width: 1200px)"
+            srcset="{f:uri.image(image: newsItem.mediaPreviews.0, width: sizeLg)} 1x, {f:uri.image(image: newsItem.mediaPreviews.0, width: sizeLgRetina)} 2x">
+    <source media="(min-width: 992px)"
+            srcset="{f:uri.image(image: newsItem.mediaPreviews.0, width: sizeL)} 1x, {f:uri.image(image: newsItem.mediaPreviews.0, width: sizeLRetina)} 2x">
+    <source media="(min-width: 768px)"
+            srcset="{f:uri.image(image: newsItem.mediaPreviews.0, width: sizeMd)} 1x, {f:uri.image(image: newsItem.mediaPreviews.0, width: sizeMdRetina)} 2x">
+    <source media="(max-width: 575.98px)"
+            srcset="{f:uri.image(image: newsItem.mediaPreviews.0, width: settings.list.media.image.width)} 1x, {f:uri.image(image: newsItem.mediaPreviews.0, width: sizeLgRetina)} 2x">
+    <f:image class="card-img-top" image="{newsItem.mediaPreviews.0}"
+             title="{mediaElement.originalResource.title}"
+             alt="{mediaElement.originalResource.alternative}"
+             width="{f:if(condition: settings.media.maxWidth, then: settings.media.maxWidth, else: settings.list.media.image.width)}"
+             height="{f:if(condition: settings.media.maxHeight, then: settings.media.maxHeight, else:'')}"/>
+</picture>
+
+
+<f:comment>
+    <!--
+    Werte:
+
+    Standard bis 576          { 516 // 516 97% von XL }
+
+    // Small devices (Phones/Tablets)
+    @media (min-width: 576px) { 498 // 498 94% von XL }
+
+    // Medium devices (tablets, 768px and up)
+    @media (min-width: 768px) { 318 // 198 60% von XL }
+
+    // Large devices (desktops, 992px and up)
+    @media (min-width: 992px) { 438 // 277 = 82% von XL }
+
+    // Extra large devices (large desktops, 1200px and up)
+    @media (min-width: 1200px) { 528 // 338 }
+
+    -->
+</f:comment>
