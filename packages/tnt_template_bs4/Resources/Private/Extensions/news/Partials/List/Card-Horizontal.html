@@ -6,6 +6,9 @@
 <div class="row horizontal-grid">
     <div class="col-12">
         <div class="card {f:if(condition: '{idx} < {maxNewsItems}', then: 'mb-3')}">
+            <n:link newsItem="{newsItem}" settings="{settings}" title="{newsItem.title}"
+                    class="position-absolute pin-t pin-l w-100 h-100 z-index-hover">&nbsp;
+            </n:link>
             <div class="row no-gutters {f:if(condition: settings.text-bg, then: ' bg-dark')}">
                 <div class="col-md-6 overflow-hidden">
                             <f:if condition="{newsItem.mediaPreviews}">

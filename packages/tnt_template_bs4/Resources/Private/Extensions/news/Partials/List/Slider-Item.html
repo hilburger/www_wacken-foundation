@@ -23,6 +23,9 @@
                   arguments="{settings:settings,newsItem:newsItem}"/>
         </div>
         <div class="card-img-overlay d-flex flex-column justify-content-center">
+            <n:link newsItem="{newsItem}" settings="{settings}" title="{newsItem.title}"
+                    class="position-absolute pin-t pin-l w-100 h-100 z-index-hover">&nbsp;
+            </n:link>
             <f:if condition="{newsItem.firstCategory} && {settings.hideCategory} != 1">
                 <!-- category -->
                 <div class="extra news-category">
