@@ -151,7 +151,7 @@
             <f:if condition="{logoPart} == {idx}">
                             </ul>
                         </div><!-- END NAV -->
-                        <div id="logo" class="navbar-brand mx-auto d-none d-md-block" style="width: 310px;">
+                        <div id="logo" class="navbar-brand mx-auto d-none d-md-block text-center" style="width: 310px;">
                             <f:link.page pageUid="{rootPage}"
                                          class="navbar-brand navbar-brand-{f:if(condition: logo.normal, then: 'image', else: 'text')}"
                                          title="{settings.logo.linktitle}">
@@ -161,7 +161,7 @@
                                              src="{f:uri.image(image: logo.normal)}"
                                              alt="{logoAlt}" height="{settings.logo.height}"
                                              width="{settings.logo.width}"
-                                             style="max-height: 200px; width: 307px;">
+                                             style="">
                                         <f:if condition="{logo.inverted}">
                                             <img class="navbar-brand-logo-inverted"
                                                  src="{f:uri.image(image: logo.inverted)}" alt="{logoAlt}"

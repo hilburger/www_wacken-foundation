@@ -17017,7 +17017,7 @@ a.pswp__share--download:hover {
 }
 
 .body-bg-top {
-  background: url("/typo3conf/ext/tnt_template_bs4/Resources/Public/Images/bg-image_1x-min.png") repeat-x;
+  background: url("/typo3conf/ext/tnt_template_bs4/Resources/Public/Images/bg-image_1x-min.png") repeat-x center top;
 }
 
 .bg-white, .navbar-default, .navbar-default-transition,
@@ -17091,6 +17091,17 @@ a.pswp__share--download:hover {
   transform: rotate(180deg);
 }
 
+#mainnavigation #logo img, #page-header.navbar-transition .bg-black, #page-header.navbar-transition .card-panel-black .card-header, .card-panel-black #page-header.navbar-transition .card-header, #page-header {
+  transition: all 0.55s cubic-bezier(0.21, 0.01, 0.49, 1);
+}
+
+#page-header.navbar-transition .bg-black, #page-header.navbar-transition .card-panel-black .card-header, .card-panel-black #page-header.navbar-transition .card-header {
+  background-color: rgba(16, 16, 16, 0.89) !important;
+}
+
+#page-header:hover, #page-header:hover .bg-black, #page-header:hover .card-panel-black .card-header, .card-panel-black #page-header:hover .card-header {
+  background-color: #101010 !important;
+}
 #top-bar {
   background-color: #101010;
   color: #fafafa;
@@ -17125,6 +17136,12 @@ a.pswp__share--download:hover {
 #mainnavigation #nav-right .dropdown-menu-right {
   right: -1.5rem;
 }
+#mainnavigation #logo img {
+  max-height: 200px;
+  width: 307px;
+  height: auto;
+  margin-top: -8px;
+}
 
 .body-bg-top {
   padding-top: 72px;
@@ -17156,6 +17173,10 @@ a.pswp__share--download:hover {
   }
 }
 @media (min-width: 992px) {
+  #page-header.navbar-transition #mainnavigation #logo img {
+    width: 207px;
+  }
+
   .navbar-mainnavigation {
     flex-flow: wrap;
     justify-content: flex-start;
@@ -17174,6 +17195,9 @@ a.pswp__share--download:hover {
 }
 .navbar-mainnavigation {
   box-shadow: none;
+}
+.navbar-mainnavigation .navbar-brand {
+  margin-right: 0;
 }
 .navbar-mainnavigation .navbar-brand-image {
   padding-top: 0;
