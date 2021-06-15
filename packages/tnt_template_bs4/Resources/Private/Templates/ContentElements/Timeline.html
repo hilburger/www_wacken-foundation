@@ -34,13 +34,14 @@
                                     </f:else>
                                 </f:if>
                         </div>
-                            <div class="timeline-item-date">
-                                <time datetime="{item.data.date -> f:format.date(format: '%Y-%m-%d %H:%M')}">
-                                    <f:format.date format="{settings.timeline.date.format}">{item.data.date}</f:format.date>
-                                </time>
-                            </div>
+                            <f:comment>
+                                <div class="timeline-item-date">
+                                    <time datetime="{item.data.date -> f:format.date(format: '%Y-%m-%d %H:%M')}">
+                                        <f:format.date format="{settings.timeline.date.format}">{item.data.date}</f:format.date>
+                                    </time>
+                                </div>
+                            </f:comment>
                         <div class="timeline-item-header">
-                            {settings.timeline.date.format}
                             <h3 class="timeline-item-header-headline">{item.data.header}</h3>
                         </div>
                         <f:if condition="{item.data.bodytext}">
