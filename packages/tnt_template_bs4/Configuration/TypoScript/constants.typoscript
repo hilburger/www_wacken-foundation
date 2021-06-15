@@ -66,6 +66,10 @@ plugin.bootstrap_package {
     }
 }
 
+plugin.bootstrap_package_contentelements {
+    #timeline.date.format = %b %Y
+}
+
 plugin.tx_news {
     view.twb {
         # cat=plugin.tx_news/file; type=string; label=Path to template root (FE)

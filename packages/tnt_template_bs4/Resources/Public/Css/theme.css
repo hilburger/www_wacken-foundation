@@ -15789,7 +15789,7 @@ figure .caption {
 .timeline-item-inner {
   overflow: hidden;
   margin-left: 1.5rem;
-  background-color: #ffffff;
+  background-color: #101010;
   border: 1px solid currentColor;
   border-radius: 0;
   box-shadow: 0 1px 0 0 rgba(0, 0, 0, 0.15);
@@ -15890,7 +15890,7 @@ figure .caption {
 
 .timeline-item-header-headline {
   font-size: 1.5rem;
-  color: #b6aa64;
+  color: inherit;
 }
 
 .timeline-item-header:last-child > *:last-child,
@@ -18052,6 +18052,35 @@ hr {
 .carousel-indicators li.active {
   background-color: #b6aa64;
   border: solid 1px #b6aa64;
+}
+
+.timeline-item-inner {
+  border: 1px solid #343a40;
+  padding: 0.75rem;
+}
+.timeline-item-inner .image {
+  margin-bottom: 0.5rem;
+}
+.timeline-item-inner .image picture {
+  padding: 1.5rem 1.5rem 0 1.5rem;
+}
+.timeline-item-inner .timeline-item-text {
+  color: #adb5bd;
+}
+.timeline-item-inner .timeline-item-marker {
+  width: 70px;
+  height: 70px;
+}
+.timeline-item-inner .center-circle {
+  color: black;
+  background-color: white;
+  border-radius: 50%;
+  text-transform: uppercase;
+  line-height: 1.25rem;
+  font-weight: 700;
+}
+.timeline-item-inner .center-circle:after {
+  display: none;
 }
 
 .z-index-hover {
