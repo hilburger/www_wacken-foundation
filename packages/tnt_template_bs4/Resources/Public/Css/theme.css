@@ -17143,6 +17143,28 @@ a.pswp__share--download:hover {
   margin-top: -8px;
 }
 
+#language_menu_wrapper {
+  top: 72px;
+  right: 0px;
+}
+
+#language_menu .link-item {
+  border: solid 1px #746f51;
+  border-top-width: 0;
+}
+#language_menu .link-item:not(.active) img {
+  filter: saturate(50%) brightness(50%);
+}
+#language_menu .link-item:not(.active):hover {
+  border-color: #918857;
+}
+#language_menu .link-item:not(.active):hover img {
+  filter: saturate(70%) brightness(70%);
+}
+#language_menu .active {
+  border-color: #b6aa64;
+}
+
 .body-bg-top {
   padding-top: 72px;
 }

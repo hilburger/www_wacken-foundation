@@ -239,12 +239,13 @@ $top-bar-height: 0;
 //
 // Navbar
 //
+$navbar-height-default: 72px;
 $navbar-heights: (
-				xs: 72px,
-				sm: 72px,
-				md: 72px,
-				lg: 72px,
-				xl: 72px
+				xs: $navbar-height-default,
+				sm: $navbar-height-default,
+				md: $navbar-height-default,
+				lg: $navbar-height-default,
+				xl: $navbar-height-default
 );
 
 

@@ -1,0 +1,21 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<f:if condition="{languagenavigation}">
+    <div id="language_menu" class="language-menu d-flex">
+        <f:for each="{languagenavigation}" as="item">
+            <div class="ml-1 link-item
+            {f:if(condition: item.active, then: ' active')}
+            {f:if(condition: item.available, else: ' text-muted')}">
+                <f:if condition="{item.available}">
+                    <f:then>
+                        <f:if condition="{item.active} != 1"><a href="{item.link}" hreflang="{item.hreflang}" title="{item.title}"></f:if>
+                            <f:image src="EXT:tnt_template_bs4/Resources/Public/Icons/flag_{item.navigationTitle}-min_1x.png" alt="{item.navigationTitle}"/>
+                        <f:if condition="{item.active} != 1"></a></f:if>
+                    </f:then>
+                    <f:else>
+                    </f:else>
+                </f:if>
+            </div>
+        </f:for>
+    </div>
+</f:if>
+</html>
