@@ -9,7 +9,7 @@
     </a>
     <f:render partial="Navigation/Main" arguments="{_all}" />
     <f:render section="Border" optional="true" />
-    <f:render partial="Navigation/Breadcrumb" arguments="{_all}" />
+    <f:comment><f:render partial="Navigation/Breadcrumb" arguments="{_all}"/></f:comment>
 
     <!--TYPO3SEARCH_begin-->
     <div id="page-content" class="bp-page-content main-section{f:if(condition: '{data.module} != \'newsplugins\'', then: ' mt-5')} mb-5">

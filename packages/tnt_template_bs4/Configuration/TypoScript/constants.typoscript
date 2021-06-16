@@ -46,7 +46,10 @@ page {
             height = 200
             width = 307
         }
+        backgroundColor = #101010
     }
+    theme.navigation.style = Inverse
+
     fluidtemplate {
         layoutRootPath = EXT:tnt_template_bs4/Resources/Private/Layouts/Page/
         partialRootPath = EXT:tnt_template_bs4/Resources/Private/Partials/Page/

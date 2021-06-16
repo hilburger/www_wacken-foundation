@@ -1,0 +1,11 @@
+.breadcrumb-section {
+	background-color: rgba(0, 0, 0, 0.5);
+
+	.breadcrumb {
+		background-color: transparent;
+
+		.breadcrumb-item.active {
+			color: $white;
+		}
+	}
+}

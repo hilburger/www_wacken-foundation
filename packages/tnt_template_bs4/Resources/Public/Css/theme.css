@@ -17099,8 +17099,14 @@ a.pswp__share--download:hover {
   background-color: rgba(16, 16, 16, 0.89) !important;
 }
 
-#page-header:hover, #page-header:hover .bg-black, #page-header:hover .card-panel-black .card-header, .card-panel-black #page-header:hover .card-header {
-  background-color: #101010 !important;
+#page-header {
+  /*
+  &:hover,
+  &:hover .bg-black {
+  	//opcacity: 1;
+  	background-color: color.scale($black, $alpha: +11%) !important;
+  }
+   */
 }
 #top-bar {
   background-color: #101010;
@@ -17160,6 +17166,9 @@ a.pswp__share--download:hover {
 }
 #language_menu .link-item:not(.active):hover img {
   filter: saturate(70%) brightness(70%);
+}
+#language_menu .link-item.text-muted {
+  display: none;
 }
 #language_menu .active {
   border-color: #b6aa64;
@@ -17244,17 +17253,22 @@ a.pswp__share--download:hover {
   color: #8c8142;
 }
 
-.navbar-default, .navbar-default-transition,
-.navbar-default-transition.navbar-transition {
-  background-color: transparent !important;
-}
-
 /*
 .navbar-inverse {
 	@extend .navbar-dark;
 	@extend .bg-dark;
 }
 */
+.breadcrumb-section {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.breadcrumb-section .breadcrumb {
+  background-color: transparent;
+}
+.breadcrumb-section .breadcrumb .breadcrumb-item.active {
+  color: #fafafa;
+}
+
 .btn, .cc-btn {
   background-color: transparent;
   color: #b6aa64;

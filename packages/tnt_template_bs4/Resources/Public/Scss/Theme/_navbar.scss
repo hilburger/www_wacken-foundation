@@ -7,12 +7,13 @@
 
 #page-header {
 	@extend %nav-animation-settings;
-
+	/*
 	&:hover,
 	&:hover .bg-black {
 		//opcacity: 1;
 		background-color: color.scale($black, $alpha: +11%) !important;
 	}
+	 */
 	&.navbar-transition .bg-black {
 		@extend %nav-animation-settings;
 		@extend %transparentize-black;
@@ -80,6 +81,9 @@
 			img {
 				filter: saturate(70%) brightness(70%);;
 			}
+		}
+		&.text-muted {
+			display: none;
 		}
 	}
 	.active {
@@ -182,7 +186,7 @@
 .navbar-default {
 	//@extend .navbar-light;
 	//@extend .bg-white;
-	background-color: transparent!important;
+	//background-color: transparent!important;
 }
 
 /*
