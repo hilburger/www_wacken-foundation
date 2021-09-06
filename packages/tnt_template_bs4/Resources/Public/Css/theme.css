@@ -18424,6 +18424,20 @@ CHECK noch mal die anderen Screenbreiten!
     display: block;
   }
 }
+.ce_img-tooltip img:focus, .ce_img-tooltip img:active, .ce_img-tooltip img:hover {
+  outline-color: rgba(201, 181, 143, 0.5);
+}
+
+.popover {
+  background: rgba(14, 17, 17, 0.9);
+  border: solid 1px #434b4b;
+}
+.popover .popover-header {
+  background: none;
+  border: none;
+  font-size: 1.25rem;
+}
+
 /* Slider */
 .slick-loading .slick-list {
   background: #fff url("../Images/ajax-loader.gif") center center no-repeat;

@@ -1,0 +1,13 @@
+{
+    "name": "tnt-digitalagentur/tnt-ces",
+    "type": "typo3-cms-extension",
+    "description": "Special Content Elements by TNT Digitalagentur, Hamburg",
+    "homepage": "https://www.tnt-digitalagentur.de",
+    "license": ["GPL-2.0-or-later"],
+    "keywords": ["TYPO3 CMS"],
+    "autoload": {
+        "psr-4": {
+            "TntDigitalagentur\\TntCes\\": "Classes/"
+        }
+    }
+}

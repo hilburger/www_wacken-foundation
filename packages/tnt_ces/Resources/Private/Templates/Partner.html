@@ -1,0 +1,86 @@
+{namespace core=TYPO3\CMS\Core\ViewHelpers}
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+      xmlns:bk2k="http://typo3.org/ns/BK2K/BootstrapPackage/ViewHelpers" data-namespace-typo3-fluid="true">
+
+<f:layout name="Default"/>
+<f:section name="Main">
+    <!-- Partner START -->
+    <f:variable name="festivalYear" value="2020"/>
+    <f:variable name="badgePath1" value="{settings.badgesRootPath}/{settings.badge1}"/>
+    <f:variable name="badgePath2" value="{settings.badgesRootPath}/{settings.badge2}"/>
+    <f:variable name="badgePath3" value="{settings.badgesRootPath}/{settings.badge3}"/>
+    <f:variable name="badgePath4" value="{settings.badgesRootPath}/{settings.badge4}"/>
+
+    <f:variable name="badgePath" value="EXT:tnt_template_bs4/Resources/Public/{festivalYear}/Icons/badges_travel_partner/"/>
+
+    <div class="texticon texticon-left">
+        <div class="texticon-icon texticon-size-default texticon-type-circle">
+            <f:if condition="{images}">
+                <f:then>
+                <span class="texticon-inner-icon" style="background-color: #333333;">
+                    <f:for each="{images}" as="image">
+                        <f:image src="{image.publicUrl}" alt="{file.alternative}" title="{file.title}" width="200"/>
+                    </f:for>
+                </span>
+                </f:then>
+                <f:else>
+                <span class="texticon-inner-icon"
+                      style="background-color: transparent; border: none; box-shadow: none;">
+                <f:for each="{data_image}" as="file">
+                    <f:image image="EXT:tnt_template_bs4/Resources/Public/{festivalYear}/Images/spacer.png"
+                             width="100" height="76" style="font-size: 2em;"/>
+                </f:for>
+                </span>
+                </f:else>
+            </f:if>
+        </div>
+
+        <div class="texticon-content">
+
+            <f:if condition="{data.header}">
+                <h3>{data.header}</h3>
+            </f:if>
+
+            <f:if condition="{data.subheader}">
+                <h4>{data.subheader}</h4>
+            </f:if>
+
+            <f:if condition="{data.tnt_ces_categories}">
+                    <p>
+                        <f:for each="{categories}" as="category">
+                            <img src="{f:render(partial:'Categories', section:'imagePath', arguments:'{categoryBadge: category, rootPath: badgesRootPath}')}"
+                                 class="travel-partner-badge"
+                                 style="background: white; padding: 1px; border-radius: 50%; margin-right: 4px;"
+                                 width="32" height="32"
+                                 title="{f:render(partial:'Categories', section:'imageATag', arguments:'{categoryName: category}')}"
+                                 alt="{f:render(partial:'Categories', section:'imageATag', arguments:'{categoryName: category}')}">
+                        </f:for>
+                    </p>
+            </f:if>
+
+            <f:if condition="{data.bodytext}">
+                <p>
+                    <f:format.html parseFuncTSPath="lib.parseFunc_RTE">{data.bodytext}</f:format.html>
+                </p>
+            </f:if>
+
+            <p>
+                <f:if condition="{data.tnt_ces_www}">
+                    <f:link.external uri="{data.tnt_ces_www}" class="btn btn-primary mr-2" title="E-Mail" target="_blank">WWW</f:link.external>
+                </f:if>
+
+                <f:if condition="{data.tnt_ces_email}">
+                    <f:link.email email="{data.tnt_ces_email}" class="btn btn-primary" title="E-Mail">E-Mail</f:link.email>
+                </f:if>
+            </p>
+
+            <f:if condition="{data.tnt_ces_phone}">
+                <p>{data.tnt_ces_phone}</p>
+            </f:if>
+
+        </div>
+
+    </div>
+
+    <f:comment><f:debug>{_all}</f:debug></f:comment>
+</f:section>

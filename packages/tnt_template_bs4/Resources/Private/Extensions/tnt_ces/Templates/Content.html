@@ -1,0 +1,76 @@
+{namespace core=TYPO3\CMS\Core\ViewHelpers}
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+      xmlns:bk2k="http://typo3.org/ns/BK2K/BootstrapPackage/ViewHelpers" data-namespace-typo3-fluid="true">
+
+<f:layout name="Default"/>
+<f:section name="Main">
+    <!-- .html START -->
+    <f:variable name="festivalYear" value="2021"/>
+    <f:variable name="badgePath"
+                value="EXT:tnt_template_bs4/Resources/Public/{festivalYear}/Icons/badges_travel_partner/"/>
+
+    <div class="texticon texticon-left">
+        <div class="texticon-icon texticon-size-default texticon-type-circle">
+            <f:if condition="{images}">
+                <f:then>
+                <span class="texticon-inner-icon" style="background-color: #333333;">
+                    <f:for each="{images}" as="image">
+                        <f:image src="{image.publicUrl}" alt="{file.alternative}" title="{file.title}" width="200"/>
+                        <br/>
+                        {file.description} / {file.identifier}<br/>
+                    </f:for>
+                </span>
+                </f:then>
+                <f:else>
+                <span class="texticon-inner-icon"
+                      style="background-color: transparent; border: none; box-shadow: none;">
+                <f:for each="{data_image}" as="file">
+                    <f:image image="EXT:tnt_template_bs4/Resources/Public/{festivalYear}/Images/spacer.png"
+                             width="100" height="76" style="font-size: 2em;"/>
+                </f:for>
+                </span>
+                </f:else>
+            </f:if>
+        </div>
+
+        <div class="texticon-content">
+            <!--<div class="photo">
+                <f:for each="{images}" as="image">
+                    <f:image src="{image.publicUrl}" alt="{data.header}" treatIdAsReference="1"/>
+                </f:for>
+            </div>-->
+            <f:if condition="{data.header}">
+                <h3>{data.header}</h3>
+            </f:if>
+
+            <f:comment>
+                <div class="position">{data.subheader}</div>
+            </f:comment>
+
+            <f:if condition="{data.bodytext}">
+                <p>
+                    <f:format.html parseFuncTSPath="lib.parseFunc_RTE">{data.bodytext}</f:format.html>
+                </p>
+            </f:if>
+
+            <p>
+                <f:if condition="{data.tnt_ces_www}">
+                    <f:link.external uri="{data.tnt_ces_www}" class="btn btn-primary mr-2" title="E-Mail" target="_blank">WWW
+                    </f:link.external>
+                </f:if>
+
+                <f:if condition="{data.tnt_ces_email}">
+                    <f:link.email email="{data.tnt_ces_email}" class="btn btn-primary" title="E-Mail">E-Mail</f:link.email>
+                </f:if>
+            </p>
+
+            <f:if condition="{data.tnt_ces_phone}">
+                <p>{data.tnt_ces_phone}</p>
+            </f:if>
+
+        </div>
+
+    </div>
+
+    <f:comment><f:debug>{_all}</f:debug></f:comment>
+</f:section>

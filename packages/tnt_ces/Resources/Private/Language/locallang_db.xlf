@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+    <file source-language="en" datatype="plaintext" original="messages" date="2018-02-20T19:15:56Z" product-name="tnt_ces">
+        <header/>
+        <body>
+            <trans-unit id="header">
+                <source>Land / Reisepartner</source>
+            </trans-unit>
+            <trans-unit id="header.imgtooltip">
+                <source>Name</source>
+            </trans-unit>
+            <trans-unit id="position">
+                <source>Reisepartner</source>
+            </trans-unit>
+            <trans-unit id="photo">
+                <source>Flagge</source>
+            </trans-unit>
+            <trans-unit id="photo.imgtooltip">
+                <source>Standard-Bild</source>
+            </trans-unit>
+            <trans-unit id="description">
+                <source>Beschreibung</source>
+            </trans-unit>
+            <trans-unit id="email">
+                <source>E-Mail</source>
+            </trans-unit>
+            <trans-unit id="www">
+                <source>Website</source>
+            </trans-unit>
+            <trans-unit id="phone">
+                <source>Telefon</source>
+            </trans-unit>
+            <trans-unit id="title">
+                <source>Reisepartner</source>
+            </trans-unit>
+            <trans-unit id="categories">
+                <source>Kategorien</source>
+            </trans-unit>
+            <trans-unit id="category_plane">
+                <source>Flugzeug</source>
+            </trans-unit>
+            <trans-unit id="category_train">
+                <source>Zug</source>
+            </trans-unit>
+            <trans-unit id="category_bus">
+                <source>Bus</source>
+            </trans-unit>
+            <trans-unit id="category_camp">
+                <source>World Metal Camp</source>
+            </trans-unit>
+            <trans-unit id="tx_tnt_ces_domain_model_default">
+                <source>CE</source>
+            </trans-unit>
+            <trans-unit id="tx_tnt_ces_domain_model_default.description">
+                <source>Eigenes Inhaltselement</source>
+            </trans-unit>
+            <trans-unit id="tx_tnt_ces_domain_model_partner">
+                <source>Reisepartner</source>
+            </trans-unit>
+            <trans-unit id="tx_tnt_ces_domain_model_partner.description">
+                <source>Eigenes Inhaltselement für Reisepartner</source>
+            </trans-unit>
+            <trans-unit id="tx_tnt_ces_domain_model_imgtooltip">
+                <source>Image Tooltip</source>
+            </trans-unit>
+            <trans-unit id="tx_tnt_ces_domain_model_imgtooltip.description">
+                <source>Element für eine Sponsoren-Wall</source>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

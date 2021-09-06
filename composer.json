@@ -9,7 +9,7 @@
             "url": "https://composer.typo3.org/"
         }
     ],
-    "name": "tnt/www_gcm_local",
+    "name": "tnt/www_wacken-foundation_local",
     "description": "Default TYPO3 only with sitepackage and news extension",
     "type": "project",
     "minimum-stability": "dev",
@@ -48,6 +48,7 @@
         "typo3/cms-tstemplate": "^10.4",
         "typo3/cms-viewpage": "^10.4",
         "tnt-digitalagentur/tnt-template-bs4": "@dev",
+        "tnt-digitalagentur/tnt-ces": "@dev",
         "helhum/typo3-console": "^6.4",
         "helhum/dotenv-connector": "^3.0",
         "georgringer/news": "^8.5",
