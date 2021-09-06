@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "f54ae8bc857ff782d6910dd35f6faf7b",
+    "content-hash": "1d9db6be5d25de11b103c0c64afb57fe",
     "packages": [
         {
             "name": "b13/container",
@@ -4745,7 +4745,34 @@
                 "kesearch",
                 "search"
             ],
+            "abandoned": "tpwd/ke_search",
             "time": "2021-05-21T11:07:31+00:00"
+        },
+        {
+            "name": "tnt-digitalagentur/tnt-ces",
+            "version": "dev-feature/tnt_ces",
+            "dist": {
+                "type": "path",
+                "url": "./packages/tnt_ces",
+                "reference": "835e4b7699ff539fcf144df60ed446b25dedf517"
+            },
+            "type": "typo3-cms-extension",
+            "autoload": {
+                "psr-4": {
+                    "TntDigitalagentur\\TntCes\\": "Classes/"
+                }
+            },
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "description": "Special Content Elements by TNT Digitalagentur, Hamburg",
+            "homepage": "https://www.tnt-digitalagentur.de",
+            "keywords": [
+                "TYPO3 CMS"
+            ],
+            "transport-options": {
+                "relative": true
+            }
         },
         {
             "name": "tnt-digitalagentur/tnt-template-bs4",
@@ -7186,7 +7213,8 @@
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
-        "tnt-digitalagentur/tnt-template-bs4": 20
+        "tnt-digitalagentur/tnt-template-bs4": 20,
+        "tnt-digitalagentur/tnt-ces": 20
     },
     "prefer-stable": true,
     "prefer-lowest": false,

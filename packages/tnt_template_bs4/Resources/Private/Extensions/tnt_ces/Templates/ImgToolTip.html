@@ -1,0 +1,31 @@
+{namespace core=TYPO3\CMS\Core\ViewHelpers}
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+      xmlns:bk2k="http://typo3.org/ns/BK2K/BootstrapPackage/ViewHelpers" data-namespace-typo3-fluid="true">
+
+<f:layout name="Default"/>
+<f:section name="Main">
+    <!-- Partner START -->
+    <f:variable name="festivalYear" value="2021"/>
+
+    <div class="row">
+        <div class="ce_img-tooltip col-12 mb-5">
+            <f:if condition="{images}">
+                <f:then>
+                    <f:for each="{images}" as="image">
+                        <img src="{image.publicUrl}" alt="{file.alternative}" title="{data.header}"
+                             data-html="true" width="380" class="img-fluid"
+                             data-toggle="popover"
+                             tabindex="0"
+                             data-trigger="focus"
+                             data-content="{data.bodytext} <a class='btn btn-primary' href='{data.tnt_ces_www}' target='_blank'>WWW</a>">
+                    </f:for>
+                </f:then>
+                <f:else>
+                    <b>No Image</b>
+                </f:else>
+            </f:if>
+        </div>
+    </div>
+
+    <f:comment><f:debug title="tnt_ces_ImgToolTip">{_all}</f:debug></f:comment>
+</f:section>

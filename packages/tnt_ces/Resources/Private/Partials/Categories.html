@@ -1,0 +1,17 @@
+<f:section name="imagePath"><f:switch expression="{categoryBadge}">
+<f:case value="1"><f:uri.image src="{settings.badgesRootPath}/{settings.badge1}" /></f:case>
+<f:case value="2"><f:uri.image src="{settings.badgesRootPath}/{settings.badge2}" /></f:case>
+<f:case value="3"><f:uri.image src="{settings.badgesRootPath}/{settings.badge3}" /></f:case>
+<f:case value="4"><f:uri.image src="{settings.badgesRootPath}/{settings.badge4}" /></f:case>
+<f:defaultCase>0</f:defaultCase></f:switch>
+</f:section>
+
+<f:section name="imageATag">
+    <f:switch expression="{categoryName}">
+        <f:case value="1"><f:translate key="LLL:EXT:tnt_ces/Resources/Private/Language/locallang.xlf:category_plane" /> </f:case>
+        <f:case value="2"><f:translate key="LLL:EXT:tnt_ces/Resources/Private/Language/locallang.xlf:category_train"/>  </f:case>
+        <f:case value="3"><f:translate key="LLL:EXT:tnt_ces/Resources/Private/Language/locallang.xlf:category_bus"/>    </f:case>
+        <f:case value="4"><f:translate key="LLL:EXT:tnt_ces/Resources/Private/Language/locallang.xlf:category_camp"/>   </f:case>
+        <f:defaultCase>0</f:defaultCase>
+    </f:switch>
+</f:section>

@@ -90,6 +90,19 @@ plugin.tx_kesearch {
     layoutRootPath = EXT:tnt_template_bs4/Resources/Private/Extensions/ke_search/Layouts/
 }
 
+###############
+### TNT CEs ###
+###############
+plugin.tx_tnt_ces {
+	view {
+		# cat=plugin.tx_news/file; type=string; label=Path to template root (FE)
+		templateRootPath = EXT:tnt_template_bs4/Resources/Private/Extensions/tnt_ces/Templates/
+		# cat=plugin.tx_news/file; type=string; label=Path to template partials (FE)
+		#partialRootPath = EXT:tnt_template_bs4/Resources/Private/Extensions/tnt_ces/Partials/
+		# cat=plugin.tx_news/file; type=string; label=Path to template layouts (FE)
+		#layoutRootPath = EXT:tnt_template_bs4/Resources/Private/Extensions/tnt_ces/Layouts/
+	}
+}
 
 ########################
 ### CONTENT ELEMENTS ###

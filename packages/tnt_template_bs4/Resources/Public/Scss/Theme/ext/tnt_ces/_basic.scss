@@ -1,0 +1,16 @@
+.ce_img-tooltip {
+	img:focus, img:active, img:hover {
+		outline-color: rgba(201, 181, 143, 0.5);
+	}
+}
+
+.popover {
+	background: rgba(14, 17, 17, 0.9);
+	border: solid 1px rgb(67, 75, 75);
+
+	.popover-header {
+		background: none;
+		border: none;
+		font-size: 1.25rem;
+	}
+}

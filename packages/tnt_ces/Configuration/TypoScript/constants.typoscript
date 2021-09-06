@@ -1,0 +1,18 @@
+plugin.tx_tnt_ces {
+	view {
+		# cat=plugin.tx_news/file; type=string; label=Path to template root (FE)
+		templateRootPath = EXT:tnt_ces/Resources/Private/Templates/
+		# cat=plugin.tx_news/file; type=string; label=Path to template partials (FE)
+		partialRootPath = EXT:tnt_ces/Resources/Private/Partials/
+		# cat=plugin.tx_news/file; type=string; label=Path to template layouts (FE)
+		layoutRootPath = EXT:tnt_ces/Resources/Private/Layouts/
+	}
+
+	partner {
+		badgesRootPath = EXT:tnt_ces/Resources/Public/Icons/badges_partner
+		badge1 = badge_flugzeug.svg
+		badge2 = badge_zug.svg
+		badge3 = badge_bus.svg
+		badge4 = badge_world-metal-camp_v2.svg
+	}
+}
