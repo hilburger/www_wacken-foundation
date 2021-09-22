@@ -36,3 +36,15 @@
 			}
 	}
 }
+
+.card-menu {
+	.card-menu-item {
+		.card {
+			@include frame-border-gold;
+			border-image-outset: 4px;
+			&.bg-dark {
+				background-color: rgba(16,16,16,0.75)!important;
+			}
+		}
+	}
+}

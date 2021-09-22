@@ -18057,6 +18057,22 @@ hr {
   max-height: 37%;
 }
 
+.card-menu .card-menu-item .card {
+  border-color: #101010;
+  border-style: solid;
+  border-width: 12px;
+  -moz-border-image: url(/typo3conf/ext/tnt_template_bs4/Resources/Public/Images/border_news_1x-min.png) 13 15 10 repeat;
+  -webkit-border-image: url(/typo3conf/ext/tnt_template_bs4/Resources/Public/Images/border_news_1x-min.png) 13 15 14 repeat;
+  -o-border-image: url(/typo3conf/ext/tnt_template_bs4/Resources/Public/Images/border_news_1x-min.png) 13 15 14 repeat;
+  border-image: url(/typo3conf/ext/tnt_template_bs4/Resources/Public/Images/border_news_1x-min.png) 13 15 10 14 stretch;
+  border-image-outset: 0;
+  padding: 0;
+  border-image-outset: 4px;
+}
+.card-menu .card-menu-item .card.bg-dark, .card-menu .card-menu-item .card-panel-dark .card.card-header, .card-panel-dark .card-menu .card-menu-item .card.card-header, .card-menu .card-menu-item .card.navbar-inverse, .card-menu .card-menu-item .card.navbar-inverse-transition {
+  background-color: rgba(16, 16, 16, 0.75) !important;
+}
+
 .carousel-indicators li {
   width: 12px;
   height: 12px;
