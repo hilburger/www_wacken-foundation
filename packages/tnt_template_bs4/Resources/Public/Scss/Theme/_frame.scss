@@ -178,10 +178,10 @@
 //
 @each $name, $scaling in $frame-outer-spacing-scaling {
 	.frame-space-before-#{$name} {
-		margin-top: ($frame-outer-spacing * $scaling);
+		margin-top: ($frame-outer-spacing * $scaling)!important;
 	}
 	.frame-space-after-#{$name} {
-		margin-bottom: ($frame-outer-spacing * $scaling);
+		margin-bottom: ($frame-outer-spacing * $scaling)!important;
 	}
 }
 
