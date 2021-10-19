@@ -39,6 +39,23 @@ $GLOBALS['TCA']['tt_content']['types']['1col-container']['previewRenderer'] = 'B
 \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance(\B13\Container\Tca\Registry::class)-> configureContainer(
     (
         new \B13\Container\Tca\ContainerConfiguration(
+            '1col-container-narrow',
+            '1 schmale Spalte',
+            '1 schmale zentrierte Spalte',
+            [
+                [
+                    ['name' => 'Linke Spalte', 'colPos' => 201]
+                ]
+            ]
+        )
+    )
+    ->setIcon('EXT:container/Resources/Public/Icons/container-1col.svg')
+    //->setBackendTemplate('EXT:tnt_template_bs4/Resources/Private/Extensions/container/Templates/1col-container_be.html')
+);
+
+\TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance(\B13\Container\Tca\Registry::class)-> configureContainer(
+    (
+        new \B13\Container\Tca\ContainerConfiguration(
             '2col-container',
             '2 Spalten',
             '2 Spalten je 50%',

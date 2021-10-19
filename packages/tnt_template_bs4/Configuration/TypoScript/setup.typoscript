@@ -60,6 +60,19 @@ tt_content.1col-container {
     }
 }
 
+tt_content.1col-container-narrow < tt_content.1col-container
+tt_content.1col-container-narrow {
+    templateName = 1col-container-narrow
+    templateRootPaths.10 = EXT:tnt_template_bs4/Resources/Private/Extensions/container/Templates
+    dataProcessing {
+        201 = B13\Container\DataProcessing\ContainerProcessor
+        201 {
+            colPos = 201
+            as = childrenLeft
+        }
+    }
+}
+
 tt_content.2col-container < lib.contentElement
 tt_content.2col-container {
     templateName = 2col-container
