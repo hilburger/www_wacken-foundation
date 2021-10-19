@@ -74,9 +74,9 @@ hr {
 			}
 		}
 		.card{
-			@each $breakpoint in map-keys($headline-scaling) {
+			@each $breakpoint in map-keys($headline-scaling-newscards) {
 				@include media-breakpoint-up($breakpoint) {
-					$scaling: map-get($headline-scaling, $breakpoint);
+					$scaling: map-get($headline-scaling-newscards, $breakpoint);
 					h1,
 					.h1 { font-size: $h1-font-size * $scaling - 0.6; }
 					h2,
