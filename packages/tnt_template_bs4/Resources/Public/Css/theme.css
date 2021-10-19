@@ -12917,19 +12917,19 @@ h3 {
 }
 
 .frame-space-before-large {
-  margin-top: 2.5rem;
-}
-
-.frame-space-after-large {
-  margin-bottom: 2.5rem;
-}
-
-.frame-space-before-extra-large {
   margin-top: 3rem;
 }
 
-.frame-space-after-extra-large {
+.frame-space-after-large {
   margin-bottom: 3rem;
+}
+
+.frame-space-before-extra-large {
+  margin-top: 5rem;
+}
+
+.frame-space-after-extra-large {
+  margin-bottom: 5rem;
 }
 
 .frame-header *:last-child {
@@ -17583,19 +17583,19 @@ a.pswp__share--download:hover {
 }
 
 .frame-space-before-large {
-  margin-top: 2.5rem !important;
-}
-
-.frame-space-after-large {
-  margin-bottom: 2.5rem !important;
-}
-
-.frame-space-before-extra-large {
   margin-top: 3rem !important;
 }
 
-.frame-space-after-extra-large {
+.frame-space-after-large {
   margin-bottom: 3rem !important;
+}
+
+.frame-space-before-extra-large {
+  margin-top: 5rem !important;
+}
+
+.frame-space-after-extra-large {
+  margin-bottom: 5rem !important;
 }
 
 @media (min-width: 1600px) {
