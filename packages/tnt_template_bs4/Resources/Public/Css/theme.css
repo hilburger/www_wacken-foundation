@@ -17660,19 +17660,19 @@ hr {
 }
 .news .news-list-view .card h1,
 .news .news-list-view .card .h1 {
-  font-size: 2.16rem;
+  font-size: 1.56rem;
 }
 .news .news-list-view .card h2,
 .news .news-list-view .card .h2 {
-  font-size: 1.8rem;
+  font-size: 1.2rem;
 }
 .news .news-list-view .card h3,
 .news .news-list-view .card .h3 {
-  font-size: 1.17rem;
+  font-size: 0.72rem;
 }
 .news .news-list-view .card h4,
 .news .news-list-view .card .h4 {
-  font-size: 1.2rem;
+  font-size: 0.6rem;
 }
 .news .news-list-view .card h5,
 .news .news-list-view .card .h5 {
@@ -17680,7 +17680,7 @@ hr {
 }
 .news .news-list-view .card h6,
 .news .news-list-view .card .h6 {
-  font-size: 0.6rem;
+  font-size: 0rem;
 }
 .news .news-list-view .card .card-text {
   font-size: 1rem;
@@ -17688,19 +17688,19 @@ hr {
 @media (min-width: 576px) {
   .news .news-list-view .card h1,
 .news .news-list-view .card .h1 {
-    font-size: 2.376rem;
+    font-size: 1.776rem;
   }
   .news .news-list-view .card h2,
 .news .news-list-view .card .h2 {
-    font-size: 1.98rem;
+    font-size: 1.38rem;
   }
   .news .news-list-view .card h3,
 .news .news-list-view .card .h3 {
-    font-size: 1.302rem;
+    font-size: 0.852rem;
   }
   .news .news-list-view .card h4,
 .news .news-list-view .card .h4 {
-    font-size: 1.32rem;
+    font-size: 0.72rem;
   }
   .news .news-list-view .card h5,
 .news .news-list-view .card .h5 {
@@ -17708,7 +17708,7 @@ hr {
   }
   .news .news-list-view .card h6,
 .news .news-list-view .card .h6 {
-    font-size: 0.66rem;
+    font-size: 0.06rem;
   }
   .news .news-list-view .card .card-text {
     font-size: 1rem;
@@ -17717,19 +17717,19 @@ hr {
 @media (min-width: 768px) {
   .news .news-list-view .card h1,
 .news .news-list-view .card .h1 {
-    font-size: 2.16rem;
+    font-size: 1.56rem;
   }
   .news .news-list-view .card h2,
 .news .news-list-view .card .h2 {
-    font-size: 1.8rem;
+    font-size: 1.2rem;
   }
   .news .news-list-view .card h3,
 .news .news-list-view .card .h3 {
-    font-size: 1.17rem;
+    font-size: 0.72rem;
   }
   .news .news-list-view .card h4,
 .news .news-list-view .card .h4 {
-    font-size: 1.2rem;
+    font-size: 0.6rem;
   }
   .news .news-list-view .card h5,
 .news .news-list-view .card .h5 {
@@ -17737,7 +17737,7 @@ hr {
   }
   .news .news-list-view .card h6,
 .news .news-list-view .card .h6 {
-    font-size: 0.6rem;
+    font-size: 0rem;
   }
   .news .news-list-view .card .card-text {
     font-size: 1rem;
@@ -17746,19 +17746,19 @@ hr {
 @media (min-width: 992px) {
   .news .news-list-view .card h1,
 .news .news-list-view .card .h1 {
-    font-size: 2.592rem;
+    font-size: 1.992rem;
   }
   .news .news-list-view .card h2,
 .news .news-list-view .card .h2 {
-    font-size: 2.16rem;
+    font-size: 1.56rem;
   }
   .news .news-list-view .card h3,
 .news .news-list-view .card .h3 {
-    font-size: 1.434rem;
+    font-size: 0.984rem;
   }
   .news .news-list-view .card h4,
 .news .news-list-view .card .h4 {
-    font-size: 1.44rem;
+    font-size: 0.84rem;
   }
   .news .news-list-view .card h5,
 .news .news-list-view .card .h5 {
@@ -17766,7 +17766,7 @@ hr {
   }
   .news .news-list-view .card h6,
 .news .news-list-view .card .h6 {
-    font-size: 0.72rem;
+    font-size: 0.12rem;
   }
   .news .news-list-view .card .card-text {
     font-size: 1rem;
@@ -17775,19 +17775,19 @@ hr {
 @media (min-width: 1200px) {
   .news .news-list-view .card h1,
 .news .news-list-view .card .h1 {
-    font-size: 2.808rem;
+    font-size: 2.208rem;
   }
   .news .news-list-view .card h2,
 .news .news-list-view .card .h2 {
-    font-size: 2.34rem;
+    font-size: 1.74rem;
   }
   .news .news-list-view .card h3,
 .news .news-list-view .card .h3 {
-    font-size: 1.566rem;
+    font-size: 1.116rem;
   }
   .news .news-list-view .card h4,
 .news .news-list-view .card .h4 {
-    font-size: 1.56rem;
+    font-size: 0.96rem;
   }
   .news .news-list-view .card h5,
 .news .news-list-view .card .h5 {
@@ -17795,7 +17795,7 @@ hr {
   }
   .news .news-list-view .card h6,
 .news .news-list-view .card .h6 {
-    font-size: 0.78rem;
+    font-size: 0.18rem;
   }
   .news .news-list-view .card .card-text {
     font-size: 1rem;
