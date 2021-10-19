@@ -16,7 +16,7 @@
                     <f:variable name="variantStyle" value=""/>
                     <f:for each="{variant.sizes}" key="sizeKey" as="sizeConfig" iteration="iteration">
                         <f:variable name="sizeWidth">{sizeConfig.multiplier as float}</f:variable>
-                        <f:variable name="sizeWidth">{sizeWidth * width}</f:variable>
+                        <f:variable name="sizeWidth">{f:if(condition: '{breakpoint} > 1100', then: '{sizeWidth * width * 2}', else: '{breakpoint}')}</f:variable>
                         <f:variable name="sizeDppx">{sizeKey as float}</f:variable>
                         <f:variable name="mediaBreakpoint"><f:if condition="{breakpoint}">(min-width: {breakpoint}px)</f:if></f:variable>
                         <f:variable name="mediaQuery" value=""/>
@@ -27,6 +27,9 @@
                             <f:variable name="mediaQuery">(-webkit-min-device-pixel-ratio: {sizeDppx})<f:if condition="{mediaBreakpoint}"> and {mediaBreakpoint}</f:if></f:variable>
                             <f:variable name="mediaQuery">{mediaQuery}, (min-resolution: {sizeDppx}dppx)<f:if condition="{mediaBreakpoint}"> and {mediaBreakpoint}</f:if></f:variable>
                         </f:if>
+                        <f:if condition="{breakpoint} == 0">
+                            <f:variable name="sizeWidth" value="380"/>
+                       </f:if>
                         <f:variable name="variantStyle">{variantStyle} <f:if condition="{mediaQuery}">@media {mediaQuery} { </f:if>#{backgroundImageIdentifier} { background-image: url('{f:uri.image(image: backgroundImageObject, cropVariant: name, maxWidth: sizeWidth)}'); }<f:if condition="{mediaQuery}"> }</f:if></f:variable>
                     </f:for>
                     <f:variable name="styles" value="{variantStyle -> bk2k:format.trim()} {styles}"/>
