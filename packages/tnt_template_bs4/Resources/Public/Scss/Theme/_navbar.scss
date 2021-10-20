@@ -196,3 +196,8 @@
 }
 */
 
+@include media-breakpoint-down(sm) {
+	.navbar-mainnavigation .navbar-brand-image img {
+		max-height: 74px;
+	}
+}

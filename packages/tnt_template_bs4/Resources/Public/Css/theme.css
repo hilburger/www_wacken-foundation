@@ -17259,6 +17259,11 @@ a.pswp__share--download:hover {
 	@extend .bg-dark;
 }
 */
+@media (max-width: 767.98px) {
+  .navbar-mainnavigation .navbar-brand-image img {
+    max-height: 74px;
+  }
+}
 .breadcrumb-section {
   background-color: rgba(0, 0, 0, 0.5);
 }
