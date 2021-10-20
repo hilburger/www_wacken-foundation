@@ -227,6 +227,11 @@
 }
 
 @include media-breakpoint-down(sm) {
+
+	// Start page top slider margin correction for mobile
+	#c17.frame-space-before-extra-large {
+		margin-top: 2.75rem!important;
+	}
 	.card-body {
 		padding-left: 0;
 		padding-right: 0;
@@ -257,10 +262,31 @@
 
 		.text-slider {
 			.carousel {
-				height: 270px;
+				//height: 270px;
+
+				.card-title {
+					font-size: 1.2rem!important;
+					margin-bottom: 1.5rem;
+				}
+
+				.card-text {
+					display: none;
+				}
 
 				.carousel-item {
 					//height: 220px;
+					.card-img {
+						width: 100%;
+					}
+					.card-img-overlay {
+						width: 100%;
+						background: rgba(0,0,0,0.6);
+						background: linear-gradient(0deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.45) 40%, rgba(0, 0, 0, 0.3) 55%, rgba(0, 0, 0, 0.1) 65%, rgba(0, 0, 0, 0) 99%);
+					}
+				}
+
+				.carousel-indicators {
+					width: 100%;
 				}
 			}
 
@@ -315,7 +341,7 @@
 			}
 
 			.carousel {
-				background-color: rgba(255, 255, 255, 0.75);
+				background-color: rgba(0, 0, 0, 0.25);
 
 				.card-body {
 					//padding-left: 0;

@@ -45,7 +45,7 @@
                     <f:variable name="columnConfig">{contentObjectData.colPos}</f:variable>
                     <f:variable name="backgroundImages">{contentObjectData.background_image}</f:variable>
 
-                    <!-- TEMPLATE 1010: Text-Slider -->
+                    <!-- TEMPLATE 1010: Text-Slider selected -->
                     <f:if condition="{backgroundImages} > 0">
                         <f:format.raw><style>#c</f:format.raw>{ceUid}<f:format.raw>{margin-top: -104px;padding-top:0;}</style></f:format.raw>
                     </f:if>
@@ -53,7 +53,7 @@
                     <div class="text-slider {f:if(condition: '{columnConfig} == 3', then: 'header-slider')}">
 
 
-                                    <div id="news-container-{contentObjectData.uid}" class="carousel slide carousel-fade w-100 mb-4 mb-md-0" data-ride="carousel">
+                                    <div id="news-container-{contentObjectData.uid}" class="carousel slide carousel-fade w-100 mb-0 mb-sm-4 mb-md-0" data-ride="carousel">
                                         <div class="carousel-inner">
                                             <f:for each="{news}" as="newsItem" iteration="iterator">
                                                 <f:render partial="List/Slider-Item"

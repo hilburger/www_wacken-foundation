@@ -18089,6 +18089,11 @@ hr {
   border: solid 1px #b6aa64;
 }
 
+.carousel .carousel-item {
+  padding-left: 0;
+  padding-right: 0;
+}
+
 .timeline-item-inner {
   border: 1px solid #343a40;
   padding: 0.75rem;
@@ -18341,6 +18346,10 @@ form input, form input.form-control {
 }
 
 @media (max-width: 767.98px) {
+  #c17.frame-space-before-extra-large {
+    margin-top: 2.75rem !important;
+  }
+
   .card-body {
     padding-left: 0;
     padding-right: 0;
@@ -18357,8 +18366,23 @@ form input, form input.form-control {
   .news .card-group .card .card-text {
     font-size: 1rem;
   }
-  .news .text-slider .carousel {
-    height: 270px;
+  .news .text-slider .carousel .card-title {
+    font-size: 1.2rem !important;
+    margin-bottom: 1.5rem;
+  }
+  .news .text-slider .carousel .card-text {
+    display: none;
+  }
+  .news .text-slider .carousel .carousel-item .card-img {
+    width: 100%;
+  }
+  .news .text-slider .carousel .carousel-item .card-img-overlay {
+    width: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.45) 40%, rgba(0, 0, 0, 0.3) 55%, rgba(0, 0, 0, 0.1) 65%, rgba(0, 0, 0, 0) 99%);
+  }
+  .news .text-slider .carousel .carousel-indicators {
+    width: 100%;
   }
   .news .text-slider .the-content {
     height: 300px;
@@ -18393,7 +18417,7 @@ form input, form input.form-control {
 }
 @media (max-width: 991.98px) {
   .news .text-slider .carousel {
-    background-color: rgba(255, 255, 255, 0.75);
+    background-color: rgba(0, 0, 0, 0.25);
   }
   .news .text-slider .carousel .card-body h4 {
     font-size: 1.2rem;

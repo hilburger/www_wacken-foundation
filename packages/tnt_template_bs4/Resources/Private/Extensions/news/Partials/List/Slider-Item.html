@@ -18,11 +18,11 @@
 <!-- SLIDER-ITEM -->
 <div class="carousel-item {f:if(condition:iterator.isFirst, then: ' active')}">
     <div class="card text-white">
-        <div class="card-img ml-auto mr-0">
+        <div class="card-img ml-0 ml-sm-auto mr-0">
         <f:render partial="General/imgWrapSrcset"
                   arguments="{settings:settings,newsItem:newsItem}"/>
         </div>
-        <div class="card-img-overlay d-flex flex-column justify-content-center">
+        <div class="card-img-overlay d-flex flex-column justify-content-end justify-content-sm-center">
             <n:link newsItem="{newsItem}" settings="{settings}" title="{newsItem.title}"
                     class="position-absolute pin-t pin-l w-100 h-100 z-index-hover">&nbsp;
             </n:link>
