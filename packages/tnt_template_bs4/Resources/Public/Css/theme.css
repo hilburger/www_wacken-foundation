@@ -18167,7 +18167,7 @@ hr {
   background: none !important;
 }
 .page-navigation .page-link.active a, .page-navigation .page-item.active a, .pagination .page-link.active a, .pagination .page-item.active a {
-  color: #101010 !important;
+  color: #b6aa64 !important;
   border-bottom: solid 1px #b6aa64;
 }
 

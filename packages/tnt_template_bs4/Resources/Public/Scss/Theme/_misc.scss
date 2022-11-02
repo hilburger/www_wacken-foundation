@@ -19,7 +19,7 @@
         background: none!important;
 
         &.active a{
-            color: $black!important;
+            color: $navbar-dark-active-color!important;
             border-bottom: solid 1px $primary;
         }
     }
