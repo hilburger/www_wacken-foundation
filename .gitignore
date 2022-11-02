@@ -3,6 +3,7 @@
 /vendor
 /var
 /public/fileadmin/
+public/fileadmin
 /public/uploads/
 /public/typo3/
 /public/typo3conf/ext/
@@ -13,5 +14,3 @@
 /shared
 config.codekit3
 /2021-02-20_ke-search-2.gz
-
-public/fileadmin
