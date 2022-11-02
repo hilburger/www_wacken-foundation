@@ -32,8 +32,8 @@ page {
     logo {
         file = EXT:tnt_template_bs4/Resources/Public/Images/logo_dummy.png
         fileInverted = EXT:tnt_template_bs4/Resources/Public/Images/logo_dummy.png
-        height = 200
-        width = 307
+        height = 161
+        width = 247
         alt = TNT Template BS4
         linktitle = TNT Template BS4
     }

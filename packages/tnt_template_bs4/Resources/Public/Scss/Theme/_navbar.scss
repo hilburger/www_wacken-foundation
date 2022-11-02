@@ -54,7 +54,7 @@
 	#logo {
 		img {
 			max-height: 200px;
-			width: 307px;
+			width: 247px;
 			height: auto;
 			margin-top: -8px;
 			@extend %nav-animation-settings;
@@ -65,7 +65,7 @@
 }
 
 #language_menu_wrapper {
-	top: $navbar-height-default;
+	top: $navbar-height-default - 5;
 	right: 0px;
 }
 
@@ -199,5 +199,30 @@
 @include media-breakpoint-down(sm) {
 	.navbar-mainnavigation .navbar-brand-image img {
 		max-height: 74px;
+	}
+}
+
+@include media-breakpoint-down(xl) {
+	#mainnavigation {
+		.nav-item {
+			font-size: 0.9rem;
+			img {
+				max-width: 8px;
+			}
+		}
+	}
+}
+
+@include media-breakpoint-down(lg) {
+	#mainnavigation {
+		#logo {
+			max-width: 180px;
+			img.navbar-brand-logo-normal {
+				max-width: 178px;
+			}
+		}
+	}
+	#c17.frame-space-before-medium {
+		margin-top: 0.75rem!important;
 	}
 }
