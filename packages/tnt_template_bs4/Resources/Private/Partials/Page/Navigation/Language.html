@@ -1,6 +1,6 @@
 <html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
 <f:if condition="{languagenavigation}">
-    <div id="language_menu" class="language-menu d-flex">
+    <div id="language_menu" class="language-menu d-flex justify-content-end justify-content-lg-start">
         <f:for each="{languagenavigation}" as="item">
             <div class="ml-1 link-item
             {f:if(condition: item.active, then: ' active')}

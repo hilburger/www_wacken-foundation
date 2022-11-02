@@ -54,7 +54,7 @@
 
                 <f:render section="MainNavigation" arguments="{menu: mainnavigation, theme: theme, rootPage: rootPage, logo: logo}" />
 
-                <f:render section="MainNavigationMobile" arguments="{menu: mainnavigation, theme: theme, rootPage: rootPage}"/>
+                <f:render section="MainNavigationMobile" arguments="{menu: mainnavigation, theme: theme, rootPage: rootPage, languagenavigation: languagenavigation}"/>
 
                 <f:render partial="DropIn/Navigation/MainAfter" arguments="{_all}" />
             </nav>
@@ -265,6 +265,11 @@
                         </f:else>
                     </f:if>
                 </f:for>
+                <li class="py-3">
+                    <div id="language_menu_wrapper" class="d-lg-none">
+                        <f:render partial="Navigation/Language" arguments="{_all}"/>
+                    </div>
+                </li>
             </ul>
         </f:if>
     </div>

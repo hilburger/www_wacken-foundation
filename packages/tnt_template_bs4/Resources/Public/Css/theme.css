@@ -17279,6 +17279,9 @@ a.pswp__share--download:hover {
   #mainnavigation #logo img.navbar-brand-logo-normal {
     max-width: 178px;
   }
+  #mainnavigation #language_menu .link-item {
+    border-top-width: 1px;
+  }
 
   #c17.frame-space-before-medium {
     margin-top: 0.75rem !important;
