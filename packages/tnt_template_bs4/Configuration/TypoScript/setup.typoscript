@@ -196,6 +196,20 @@ plugin.tx_news {
     }
 }
 
+lib.newsFiller = CONTENT
+lib.newsFiller {
+    table = tt_content
+    select {
+        pidInList = 0
+        uidInList = {$tnt_template_bs4.news.fillerUid01}
+        max = 1
+    }
+    renderObj = COA
+    renderObj {
+        10 =< tt_content
+    }
+}
+
 ### KE_SEARCH
 
 plugin.tx_kesearch_pi1.cssFile >
