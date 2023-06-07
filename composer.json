@@ -49,7 +49,7 @@
         "typo3/cms-viewpage": "^10.4",
         "tnt-digitalagentur/tnt-template-bs4": "@dev",
         "tnt-digitalagentur/tnt-ces": "@dev",
-        "helhum/typo3-console": "^6.4",
+        "helhum/typo3-console": "^6.7",
         "helhum/dotenv-connector": "^3.0",
         "georgringer/news": "^8.5",
         "derhansen/sf_banners": "^5.0",
