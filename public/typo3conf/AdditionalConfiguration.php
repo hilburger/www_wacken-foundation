@@ -40,6 +40,9 @@
                 'devIPmask' => getenv('TYPO3_INSTALL_SYS_DEVIPMASK'),
                 'displayErrors' => getenv('TYPO3_INSTALL_SYS_DISPLAYERRORS'),
             ],
+            'BE' => [
+                'debug' => getenv('TYPO3_INSTALL_BE_DEBUG'),
+            ]
         ]
     );
 //}
