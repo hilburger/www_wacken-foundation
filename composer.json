@@ -51,12 +51,12 @@
         "tnt-digitalagentur/tnt-ces": "@dev",
         "helhum/typo3-console": "^6.7",
         "helhum/dotenv-connector": "^3.0",
-        "georgringer/news": "^8.5",
+        "georgringer/news": "^9.4",
         "derhansen/sf_banners": "^5.0",
-        "teaminmedias-pluswerk/ke_search": "^3.4",
         "deployer/recipes": "^6.2",
         "typo3/cms-filemetadata": "^10.4",
-        "b13/container": "^1.3"
+        "b13/container": "^2.2",
+        "tpwd/ke_search": "^4.6"
     },
     "extra": {
         "typo3/cms": {
