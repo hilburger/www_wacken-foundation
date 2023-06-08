@@ -87,9 +87,6 @@ return [
             'maxLifetime' => '1440',
             'showSampleTasks' => '1',
         ],
-        'vhs' => [
-            'disableAssetHandling' => '0',
-        ],
     ],
     'FE' => [
         'debug' => true,
