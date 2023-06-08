@@ -1,9 +1,8 @@
 /.env
-/.idea
+/.idea/
 /vendor
 /var
 /public/fileadmin/
-public/fileadmin
 /public/uploads/
 /public/typo3/
 /public/typo3conf/ext/
@@ -12,7 +11,7 @@ public/fileadmin
 /public/index.php
 /public/typo3temp
 /shared
-config.codekit3
-/2021-02-20_ke-search-2.gz
-
-.idea/
+public/fileadmin
+public/uploads
+.DS_Store
+/packages/tnt_template_bs4/Resources/Public/Scss/Theme/.sass-cache/
