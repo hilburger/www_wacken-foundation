@@ -107,6 +107,12 @@ return [
         'viewpage' => [
             'packagePath' => 'typo3/sysext/viewpage/',
         ],
+        'numbered_pagination' => [
+            'packagePath' => 'typo3conf/ext/numbered_pagination/',
+        ],
+        'news' => [
+            'packagePath' => 'typo3conf/ext/news/',
+        ],
         'bootstrap_package' => [
             'packagePath' => 'typo3conf/ext/bootstrap_package/',
         ],
@@ -118,9 +124,6 @@ return [
         ],
         'ke_search' => [
             'packagePath' => 'typo3conf/ext/ke_search/',
-        ],
-        'news' => [
-            'packagePath' => 'typo3conf/ext/news/',
         ],
         'sf_banners' => [
             'packagePath' => 'typo3conf/ext/sf_banners/',
