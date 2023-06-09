@@ -1,67 +1,60 @@
 <f:if condition="{pagination.allPageNumbers -> f:count()} > 1">
-    <ul class="f3-widget-paginator">
-        <f:if condition="{pagination.previousPageNumber} && {pagination.previousPageNumber} >= {pagination.firstPageNumber}">
-            <f:then>
-                <f:comment>
-                    <li class="first">
-                        <a href="{f:uri.action(action:actionName, arguments:{currentPage: 1},addQueryString:1)}" title="{f:translate(key:'pagination.first')}">
-                            <i class="material-icons">first_page</i>
+    <nav aria-label="Page navigation">
+        <ul class="pagination justify-content-center">
+            <f:if condition="{pagination.previousPageNumber} && {pagination.previousPageNumber} >= {pagination.firstPageNumber}">
+                <f:then>
+                    <li class="page-item">
+                        <a class="page-link" href="{f:uri.action(action:actionName, arguments:{currentPage: 1},addQueryString:1)}" title="{f:translate(key:'pagination.first')}">
+                            <i class="fas fa-angle-double-left"></i>
                         </a>
                     </li>
-                </f:comment>
-                <li class="previous">
-                    <a href="{f:uri.action(action:actionName, arguments:{currentPage: pagination.previousPageNumber},addQueryString:1)}" title="{f:translate(key:'pagination.previous')}">
-                        {f:translate(key:'widget.pagination.previous', extensionName: 'fluid')}
-                    </a>
-                </li>
-            </f:then>
-            <f:else>
-                <f:comment>
-                    <li class="disabled"><span><i class="material-icons">first_page</i></span></li>
-                    <li class="disabled"><span>{f:translate(key:'widget.pagination.previous', extensionName: 'fluid')}</span></li>
-                </f:comment>
-            </f:else>
-        </f:if>
-        <f:if condition="{pagination.hasLessPages}">
-            <li>…</li>
-        </f:if>
-        <f:for each="{pagination.allPageNumbers}" as="page">
-            <f:if condition="{page} == {paginator.currentPageNumber}">
-                <f:then>
-                    <li class="current">{page}</li>
                 </f:then>
                 <f:else>
-                    <li>
-                        <a href="{f:uri.action(action:actionName, arguments:{currentPage: page},addQueryString:1)}">{page}</a>
+                    <li class="page-item disabled">
+                        <span class="page-link">
+                            <i class="fas fa-angle-double-left"></i>
+                        </span>
                     </li>
                 </f:else>
             </f:if>
-
-        </f:for>
-        <f:if condition="{pagination.hasMorePages}">
-            <li>…</li>
-        </f:if>
-        <f:if condition="{pagination.nextPageNumber} && {pagination.nextPageNumber} <= {pagination.lastPageNumber}">
-            <f:then>
-                <li class="next">
-                    <a href="{f:uri.action(action:actionName, arguments:{currentPage: pagination.nextPageNumber},addQueryString:1)}" title="{f:translate(key:'pagination.next')}">
-                        {f:translate(key:'widget.pagination.next', extensionName: 'fluid')}
-                    </a>
+            <f:if condition="{pagination.hasLessPages}">
+                <li class="page-item disabled">
+                    <span class="page-link">...</span>
                 </li>
-                <f:comment>
-                    <li class="last">
-                        <a href="{f:uri.action(action:actionName, arguments:{currentPage: pagination.lastPageNumber},addQueryString:1)}" title="{f:translate(key:'pagination.last')}">
-                            last
+            </f:if>
+            <f:for each="{pagination.allPageNumbers}" as="page">
+                <f:if condition="{page} == {paginator.currentPageNumber}">
+                    <f:then>
+                        <li class="page-item active">
+                            <span class="page-link">{page}</span>
+                        </li>
+                    </f:then>
+                    <f:else>
+                        <li class="page-item">
+                            <a class="page-link" href="{f:uri.action(action:actionName, arguments:{currentPage: page},addQueryString:1)}">{page}</a>
+                        </li>
+                    </f:else>
+                </f:if>
+            </f:for>
+            <f:if condition="{pagination.hasMorePages}">
+                <li class="page-item disabled">
+                    <span class="page-link">...</span>
+                </li>
+            </f:if>
+            <f:if condition="{pagination.nextPageNumber} && {pagination.nextPageNumber} <= {pagination.lastPageNumber}">
+                <f:then>
+                    <li class="page-item">
+                        <a class="page-link" href="{f:uri.action(action:actionName, arguments:{currentPage: pagination.lastPageNumber},addQueryString:1)}" title="{f:translate(key:'pagination.last')}">
+                            <i class="fas fa-angle-double-right"></i>
                         </a>
                     </li>
-                </f:comment>
-            </f:then>
-            <f:else>
-                <f:comment>
-                    <li class="disabled"><span>{f:translate(key:'widget.pagination.next', extensionName: 'fluid')}</span></li>
-                    <li class="disabled"><span>last page</span></li>
-                </f:comment>
-            </f:else>
-        </f:if>
-    </ul>
+                </f:then>
+                <f:else>
+                    <li class="page-item disabled">
+                        <span class="page-link"><i class="fas fa-angle-double-right"></i></span>
+                    </li>
+                </f:else>
+            </f:if>
+        </ul>
+    </nav>
 </f:if>
