@@ -98,7 +98,6 @@
                 <f:case value="21">
                     <!-- TEMPLATE 21: Cards Text-Overlay ganz-spaltig -->
                     <div class="list-unstyled news-list-view news-template-21 bs4" id="news-container-{contentObjectData.uid}">
-                        <!--<div class="container">-->
                         <div class="row justify-content-center">
                             <f:if condition="{settings.hidePagination}">
                                 <f:then>
@@ -110,11 +109,23 @@
                                     </f:for>
                                 </f:then>
                                 <f:else>
+                                    <f:if condition="{settings.list.paginate.insertAbove}">
+                                        <f:render partial="List/Pagination" arguments="{pagination: pagination.pagination, paginator: pagination.paginator}" />
+                                    </f:if>
 
+                                    <f:for each="{pagination.paginator.paginatedItems}" as="newsItem" iteration="iterator">
+                                        <div class="col-md-12">
+                                            <f:render partial="List/Cards-Item-TextOverlay"
+                                                      arguments="{newsItem: newsItem,settings:settings,iterator:iterator}"/>
+                                        </div>
+                                    </f:for>
+
+                                    <f:if condition="{settings.list.paginate.insertBelow}">
+                                        <f:render partial="List/Pagination" arguments="{pagination: pagination.pagination, paginator: pagination.paginator}" />
+                                    </f:if>
                                 </f:else>
                             </f:if>
                         </div>
-                        <!--</div>-->
                     </div>
                 </f:case>
 
