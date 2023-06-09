@@ -1,5 +1,5 @@
 <f:if condition="{pagination.allPageNumbers -> f:count()} > 1">
-    <nav aria-label="Page navigation">
+    <nav aria-label="Page navigation" class="col-12">
         <ul class="pagination justify-content-center">
             <f:if condition="{pagination.previousPageNumber} && {pagination.previousPageNumber} >= {pagination.firstPageNumber}">
                 <f:then>
