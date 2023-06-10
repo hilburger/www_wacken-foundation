@@ -17297,6 +17297,13 @@ a.pswp__share--download:hover {
   color: #fafafa;
 }
 
+.page-item.active .page-link {
+  border-bottom: solid 1px;
+}
+.page-item.disabled .page-link {
+  color: rgba(255, 255, 255, 0.35);
+}
+
 .btn, .cc-btn {
   background-color: transparent;
   color: #b6aa64;
