@@ -172,7 +172,6 @@
                         <div class="card-group">
                             <f:if condition="{settings.hidePagination}">
                                 <f:then>
-                                    <!-- hide Pagination -->
                                     <f:for each="{news -> n:iterator.chunk(count: '{newsItemsPerRow}')}" as="col" iteration="cycle">
                                         <f:for each="{col}" as="newsItem" iteration="iterator">
                                             <f:render partial="List/Cards-Item-TextOverlay"
@@ -219,7 +218,6 @@
                 </f:case>
 
                 <f:case value="30">
-                    <f:debug>{_all}</f:debug>
                     <f:variable name="maxNewsItems">{settings.limit}</f:variable>
                     <div class="list-unstyled news-list-view news-template-30 bs4" id="news-container-{contentObjectData.uid}">
                         <div class="row justify-content-center row-cols-1 row-cols-md-1 row-cols-lg-2">
