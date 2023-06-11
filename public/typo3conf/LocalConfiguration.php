@@ -41,6 +41,7 @@ return [
             'disablePageTsBackendLayouts' => '0',
             'disablePageTsContentElements' => '0',
             'disablePageTsRTE' => '0',
+            'disablePageTsTCADefaults' => '0',
             'disablePageTsTCEFORM' => '0',
             'disablePageTsTCEMAIN' => '0',
         ],

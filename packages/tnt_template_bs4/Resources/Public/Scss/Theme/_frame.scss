@@ -54,7 +54,8 @@
 				background-color: $background;
 			}
 		}
-		@include make-frame-spacing($name);
+		// Frame spacing needs migration in v12 of BS_package
+		// @include make-frame-spacing($name);
 	}
 	.news-template-20 {
 		// Correct bottom within color frames

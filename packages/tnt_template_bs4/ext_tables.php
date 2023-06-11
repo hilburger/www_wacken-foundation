@@ -16,20 +16,3 @@ $tempColumns = array(
         ],
     ],
 );
-
-\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTCAcolumns(
-    'tt_content',
-    $tempColumns,
-    1
-);
-
-
-
-#add field in specific place
-$myPallet = '--linebreak--,tnt_hideon_device';
-\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addFieldsToPalette(
-    'tt_content',
-    'frames',
-    $myPallet,
-    'after:section_frame'
-);

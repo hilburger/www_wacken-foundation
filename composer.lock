@@ -71,16 +71,16 @@
         },
         {
             "name": "bk2k/bootstrap-package",
-            "version": "11.0.4",
+            "version": "12.0.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/benjaminkott/bootstrap_package.git",
-                "reference": "934e8e4fe54866e1b44ec067ea9cc1f58796e52d"
+                "reference": "ecdd9211cd7e0617094d5202a1c29554b68dab06"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/benjaminkott/bootstrap_package/zipball/934e8e4fe54866e1b44ec067ea9cc1f58796e52d",
-                "reference": "934e8e4fe54866e1b44ec067ea9cc1f58796e52d",
+                "url": "https://api.github.com/repos/benjaminkott/bootstrap_package/zipball/ecdd9211cd7e0617094d5202a1c29554b68dab06",
+                "reference": "ecdd9211cd7e0617094d5202a1c29554b68dab06",
                 "shasum": ""
             },
             "require": {
@@ -92,43 +92,49 @@
                 "ext-pdo": "*",
                 "ext-simplexml": "*",
                 "php": ">=7.2.0",
-                "scssphp/scssphp": "^1.4.1",
-                "typo3/cms-backend": "^9.5 || ^10.0 || 10.*@dev",
-                "typo3/cms-core": "^9.5 || ^10.0 || 10.*@dev",
-                "typo3/cms-extbase": "^9.5 || ^10.0 || 10.*@dev",
-                "typo3/cms-extensionmanager": "^9.5 || ^10.0 || 10.*@dev",
-                "typo3/cms-fluid": "^9.5 || ^10.0 || 10.*@dev",
-                "typo3/cms-frontend": "^9.5 || ^10.0 || 10.*@dev",
-                "typo3/cms-install": "^9.5 || ^10.0 || 10.*@dev",
-                "typo3/cms-rte-ckeditor": "^9.5 || ^10.0 || 10.*@dev",
-                "typo3/cms-seo": "^9.5 || ^10.0 || 10.*@dev",
+                "scssphp/scssphp": "^1.8.1",
+                "typo3/cms-backend": "^10.4 || ^11.5 || 11.*.*@dev",
+                "typo3/cms-core": "^10.4 || ^11.5 || 11.*.*@dev",
+                "typo3/cms-extbase": "^10.4 || ^11.5 || 11.*.*@dev",
+                "typo3/cms-extensionmanager": "^10.4 || ^11.5 || 11.*.*@dev",
+                "typo3/cms-fluid": "^10.4 || ^11.5 || 11.*.*@dev",
+                "typo3/cms-frontend": "^10.4 || ^11.5 || 11.*.*@dev",
+                "typo3/cms-install": "^10.4 || ^11.5 || 11.*.*@dev",
+                "typo3/cms-rte-ckeditor": "^10.4 || ^11.5 || 11.*.*@dev",
+                "typo3/cms-seo": "^10.4 || ^11.5 || 11.*.*@dev",
                 "typo3fluid/fluid": "^2.5.2"
             },
-            "conflict": {
-                "scssphp/scssphp": "1.0.4 || 1.0.5"
-            },
             "require-dev": {
+                "b13/container": "^1.3",
                 "bk2k/demo-package": "@dev",
                 "bk2k/extension-helper": "^1.0",
-                "friendsofphp/php-cs-fixer": "^2.3.1",
-                "overtrue/phplint": "^1.1",
-                "typo3/cms-felogin": "^9.5 || ^10.0 || 10.*@dev",
-                "typo3/cms-form": "^9.5 || ^10.0 || 10.*@dev",
-                "typo3/cms-indexed-search": "^9.5 || ^10.0 || 10.*@dev",
-                "typo3/cms-info": "^9.5 || ^10.0 || 10.*@dev",
-                "typo3/cms-lowlevel": "^9.5 || ^10.0 || 10.*@dev",
-                "typo3/cms-tstemplate": "^9.5 || ^10.0 || 10.*@dev",
-                "typo3/testing-framework": "^4.9 || ^5.0"
+                "friendsofphp/php-cs-fixer": "^3.0.0",
+                "friendsoftypo3/phpstan-typo3": "^0.8.1",
+                "overtrue/phplint": "^2.3.5",
+                "phpstan/phpstan": "^0.12.87",
+                "phpstan/phpstan-deprecation-rules": "^0.12.6",
+                "phpstan/phpstan-phpunit": "^0.12.19",
+                "phpstan/phpstan-strict-rules": "^0.12.9",
+                "typo3/cms-belog": "^10.4 || ^11.5 || 11.*.*@dev",
+                "typo3/cms-felogin": "^10.4 || ^11.5 || 11.*.*@dev",
+                "typo3/cms-filelist": "^10.4 || ^11.5 || 11.*.*@dev",
+                "typo3/cms-form": "^10.4 || ^11.5 || 11.*.*@dev",
+                "typo3/cms-indexed-search": "^10.4 || ^11.5 || 11.*.*@dev",
+                "typo3/cms-info": "^10.4 || ^11.5 || 11.*.*@dev",
+                "typo3/cms-lowlevel": "^10.4 || ^11.5 || 11.*.*@dev",
+                "typo3/cms-tstemplate": "^10.4 || ^11.5 || 11.*.*@dev",
+                "typo3/cms-workspaces": "^10.4 || ^11.5 || 11.*.*@dev",
+                "typo3/testing-framework": "^5.0 || ^6.4"
             },
             "type": "typo3-cms-extension",
             "extra": {
                 "typo3/cms": {
                     "extension-key": "bootstrap_package",
-                    "web-dir": ".build/web",
+                    "web-dir": ".build/public",
                     "app-dir": ".build"
                 },
                 "branch-alias": {
-                    "dev-BP_11-0": "11.0.x-dev"
+                    "dev-BP_12-0": "12.0.x-dev"
                 }
             },
             "autoload": {
@@ -162,7 +168,7 @@
             ],
             "support": {
                 "issues": "https://github.com/benjaminkott/bootstrap_package/issues",
-                "source": "https://github.com/benjaminkott/bootstrap_package/tree/11.0.4"
+                "source": "https://github.com/benjaminkott/bootstrap_package/tree/12.0.7"
             },
             "funding": [
                 {
@@ -170,7 +176,7 @@
                     "type": "custom"
                 }
             ],
-            "time": "2022-12-06T13:31:41+00:00"
+            "time": "2022-12-13T15:23:15+00:00"
         },
         {
             "name": "deployer/recipes",
@@ -5307,7 +5313,7 @@
         },
         {
             "name": "tnt-digitalagentur/tnt-ces",
-            "version": "dev-develop",
+            "version": "dev-feature/ext-bootstrap-package-Upgrade",
             "dist": {
                 "type": "path",
                 "url": "./packages/tnt_ces",
@@ -5333,14 +5339,14 @@
         },
         {
             "name": "tnt-digitalagentur/tnt-template-bs4",
-            "version": "dev-develop",
+            "version": "dev-feature/ext-bootstrap-package-Upgrade",
             "dist": {
                 "type": "path",
                 "url": "./packages/tnt_template_bs4",
-                "reference": "ba142e286da5b56c7ee89c55aa352c3677dd4442"
+                "reference": "4c9714d69877871ffb1facbdaa46754e791212e5"
             },
             "require": {
-                "bk2k/bootstrap-package": "^11.0"
+                "bk2k/bootstrap-package": "^12.0"
             },
             "type": "typo3-cms-extension",
             "autoload": {
