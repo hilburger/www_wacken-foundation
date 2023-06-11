@@ -125,3 +125,10 @@ $GLOBALS['TCA']['tt_content']['types']['1col-container']['previewRenderer'] = 'B
     ->setIcon('EXT:container/Resources/Public/Icons/container-3col.svg')
     //->setBackendTemplate('EXT:tnt_template_bs4/Resources/Private/Extensions/container/Templates/3col-container_be.html')
 );
+
+\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTCAcolumns(
+    'tt_content',
+    $tempColumns,
+    1
+);
+
