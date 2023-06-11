@@ -9,7 +9,7 @@
 ##############
 page {
     includeCSS {
-        theme = EXT:tnt_template_bs4/Resources/Public/Scss/Theme/theme.scss
+        theme = EXT:tnt_template_bs4/Resources/Public/Css/theme.css
     }
 
     includeJSLibs {
