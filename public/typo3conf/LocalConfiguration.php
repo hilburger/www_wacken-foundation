@@ -4,7 +4,6 @@ return [
         'debug' => true,
         'explicitADmode' => 'explicitAllow',
         'installToolPassword' => '$argon2i$v=19$m=65536,t=16,p=1$LnhpWUhkMXpEYjJPYVFSTg$HuKdW7XoXKB1oicWGtUXcDeffJ8L9kpnIK1n+RZpIww',
-        'loginSecurityLevel' => 'normal',
         'passwordHashing' => [
             'className' => 'TYPO3\\CMS\\Core\\Crypto\\PasswordHashing\\Argon2iPasswordHash',
             'options' => [],
@@ -33,6 +32,7 @@ return [
             'loginFootnote' => 'Powered by TNT Digitalagentur',
             'loginHighlightColor' => '#1a1a1a',
             'loginLogo' => 'EXT:tnt_template_bs4/Resources/Public/Images/logo_dummy.png',
+            'loginLogoAlt' => '',
         ],
         'bootstrap_package' => [
             'disableCssProcessing' => '0',
