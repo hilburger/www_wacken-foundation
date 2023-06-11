@@ -22,6 +22,7 @@ page {
     }
 
     includeJSFooterlibs {
+        bootstrap = EXT:bootstrap_package/Resources/Public/Contrib/bootstrap4/js/bootstrap.min.js
     }
 
     includeJSFooter {
