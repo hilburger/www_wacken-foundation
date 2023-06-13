@@ -166,6 +166,8 @@
                     <!-- Items per Row: {newsItemsPerRow} -->
                     <!-- Settings limit: {settings.limit} -->
                     <f:if condition="{settings.slider} > 0">
+                        <f:asset.script identifier="slick_slider" src="EXT:tnt_template_bs4/Resources/Public/JavaScript/Features/slick/slick.js" />
+                        <f:asset.script identifier="slick_slider_init" src="EXT:tnt_template_bs4/Resources/Public/JavaScript/Features/slick/slick-tnt.js" />
                         <script type="text/javascript"><f:format.raw>var sliderContentUid = "news-container-</f:format.raw>{contentObjectData.uid}<f:format.raw>";</f:format.raw></script>
                     </f:if>
                     <div class="list-unstyled news-list-view news-template-25 {f:if(condition: '{settings.slider} > 0', then: 'slider-active')} bs4" id="news-container-{contentObjectData.uid}">

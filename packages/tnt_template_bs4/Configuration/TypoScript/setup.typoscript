@@ -26,9 +26,9 @@ page {
     }
 
     includeJSFooter {
-        tnt_template_bs4_scripts = EXT:tnt_template_bs4/Resources/Public/JavaScript/Dist/scripts.js
-        slick_slider = EXT:tnt_template_bs4/Resources/Public/JavaScript/Features/slick/slick.js
-        slick_slider_init = EXT:tnt_template_bs4/Resources/Public/JavaScript/Features/slick/slick-tnt.js
+        #tnt_template_bs4_scripts = EXT:tnt_template_bs4/Resources/Public/JavaScript/Dist/scripts.js
+        #slick_slider = EXT:tnt_template_bs4/Resources/Public/JavaScript/Features/slick/slick.js
+        #slick_slider_init = EXT:tnt_template_bs4/Resources/Public/JavaScript/Features/slick/slick-tnt.js
     }
 }
 
