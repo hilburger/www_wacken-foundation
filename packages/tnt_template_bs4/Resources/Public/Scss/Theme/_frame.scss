@@ -1,3 +1,23 @@
+$frame-width-large:             992px;
+$frame-width-medium:            768px;
+$frame-width-small:             576px;
+
+//
+// CSS Variables
+// --------------------------------------------------
+/*:root {
+	--frame-width-large: #{$frame-width-large};
+	--frame-width-medium: #{$frame-width-medium};
+	--frame-width-small: #{$frame-width-small};
+}*/
+
+.frame-container {
+	max-width: 1100px;
+	padding-left: $gutter * 0.5;
+	padding-right: $gutter * 0.5;
+}
+
+
 .frame {
 	padding-top: 0;
 	padding-bottom: 0;
@@ -55,7 +75,7 @@
 			}
 		}
 		// Frame spacing needs migration in v12 of BS_package
-		// @include make-frame-spacing($name);
+		//@include make-frame-spacing($name);
 	}
 	.news-template-20 {
 		// Correct bottom within color frames

@@ -47,7 +47,6 @@ $container-max-widths: (
 //
 @import "../../../../../../public/typo3conf/ext/bootstrap_package/Resources/Public/Scss/bootstrap4/theme";
 
-
 //
 // TNT Cusomizations
 //
@@ -61,6 +60,7 @@ $container-max-widths: (
 @import "pagination";
 @import "buttons";
 @import "frame";
+@import "text";
 @import "type";
 @import "container";
 @import "card";
