@@ -1,5 +1,6 @@
 /.env
 /.idea/
+.DS_Store
 /vendor
 /var
 /public/fileadmin/
@@ -13,5 +14,4 @@
 /shared
 public/fileadmin
 public/uploads
-.DS_Store
 /packages/tnt_template_bs4/Resources/Public/Scss/Theme/.sass-cache/
