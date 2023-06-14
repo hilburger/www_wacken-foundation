@@ -25,13 +25,6 @@ build application with dev dependencies:
   tags:
     - docker
 
-Dummy:
-  image: chialab/php:7.4
-  stage: test
-  script:
-    - echo "Dummy Stage"
-    - echo "Do something"
-
 Deploy to stage:
   image: chialab/php:7.4
   cache:
@@ -56,7 +49,7 @@ Deploy to stage:
     - vendor/bin/dep deploy -vv
   environment:
     name: staging
-    url: https://staging.wacken-foundation.tnt-digitalagentur.de/
+    url: https://wacken-foundation-11.tnt-digitalagentur.de
   only:
     - develop
 
