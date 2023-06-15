@@ -6,6 +6,6 @@
 
 ## Info
 
-Use sass 1.63.3
+Use sass 1.63.3 or higher
 
 TNT-Website for Wacken Foundation
