@@ -9,5 +9,10 @@
         "psr-4": {
             "TntDigitalagentur\\TntCes\\": "Classes/"
         }
+    },
+    "extra": {
+        "typo3/cms": {
+            "extension-key": "tnt_ces"
+        }
     }
 }

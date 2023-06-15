@@ -12,5 +12,10 @@
         "psr-4": {
             "TntDigitalagentur\\TntTemplateBs4\\": "Classes/"
         }
+    },
+    "extra": {
+        "typo3/cms": {
+            "extension-key": "tnt_template_bs4"
+        }
     }
 }
