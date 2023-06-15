@@ -26,13 +26,13 @@ set('allow_anonymous_stats', false);
 
 // Hosts
 
-host('staging.wacken-foundation.tnt-digitalagentur.de')
-    ->user('p573155')
+host('staging.wacken-foundation-11.tnt-digitalagentur.de')
+    ->user('p510242')
     ->forwardAgent(true)
     ->multiplexing(true)
     ->addSshOption('UserKnownHostsFile', '/dev/null')
     ->addSshOption('StrictHostKeyChecking', 'no')
-    ->set('deploy_path', '/home/www/p573155/html/staging-wacken-foundation');
+    ->set('deploy_path', '/home/www/p510242/html/staging-wacken-foundation-v11');
 
 task('deploy', [
     'deploy:unlock',
