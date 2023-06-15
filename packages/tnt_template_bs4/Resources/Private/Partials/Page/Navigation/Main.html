@@ -44,17 +44,19 @@
                     </f:if>
                 </f:link.page>
 
+                <f:render partial="DropIn/Navigation/MainBefore" arguments="{_all}" />
+
+                <f:render section="MainNavigation" arguments="{menu: mainnavigation, theme: theme, rootPage: rootPage, logo: logo}" />
+
                 <button class="navbar-toggler collapsed my-auto collapsed" type="button" data-toggle="collapse"
                         data-target="#navbarMobile" aria-expanded="false"
                         aria-label="{f:translate(key: 'togglenavigation', extensionName: 'bootstrap_package')}">
                     <span class="navbar-toggler-icon"></span>
                 </button>
 
-                <f:render partial="DropIn/Navigation/MainBefore" arguments="{_all}" />
-
-                <f:render section="MainNavigation" arguments="{menu: mainnavigation, theme: theme, rootPage: rootPage, logo: logo}" />
-
                 <f:render section="MainNavigationMobile" arguments="{menu: mainnavigation, theme: theme, rootPage: rootPage, languagenavigation: languagenavigation}"/>
+
+
 
                 <f:render partial="DropIn/Navigation/MainAfter" arguments="{_all}" />
             </nav>
