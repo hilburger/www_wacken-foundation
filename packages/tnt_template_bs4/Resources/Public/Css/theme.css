@@ -17743,9 +17743,69 @@ form input, form input.form-control, form input[type=file] {
   color: rgb(250, 250, 250);
 }
 
+@media (min-width: 576px) {
+  .flex-shrink-0 {
+    max-width: 14vw;
+  }
+  .news .card-group .card .element-header {
+    font-size: 1.25rem;
+  }
+  .news .card-group .card .card-text {
+    font-size: 1rem;
+  }
+}
+@media (min-width: 768px) {
+  .news .card-group .card .element-header {
+    font-size: 1.15rem;
+  }
+}
+@media (min-width: 992px) {
+  .news .text-slider .carousel .card-body {
+    padding-right: 0;
+  }
+  .news .card-group .card .element-header {
+    font-size: 1.5rem;
+  }
+}
+@media (max-width: 1599.98px) {
+  .news .card-group .card.card-small .card-text p {
+    display: none;
+  }
+}
+@media (max-width: 1199.98px) {
+  #c17.frame-space-before-extra-large {
+    margin-top: 1.75rem !important;
+  }
+}
+@media (max-width: 991.98px) {
+  #c17.frame-space-before-extra-large {
+    margin-top: 1rem !important;
+  }
+  .news .text-slider .display-4, .news .text-slider h4.awesome,
+  .news .text-slider .h4.awesome {
+    font-size: 2.5rem;
+  }
+}
+@media (max-width: 991.98px) and (max-width: 1200px) {
+  .news .text-slider .display-4, .news .text-slider h4.awesome,
+  .news .text-slider .h4.awesome {
+    font-size: calc(1.375rem + 1.5vw);
+  }
+}
+@media (max-width: 991.98px) {
+  .news .text-slider .carousel {
+    background-color: rgba(0, 0, 0, 0.25);
+  }
+  .news .text-slider .carousel .card-body h4 {
+    font-size: 1.2rem;
+  }
+  .news .text-slider .carousel .card-body .card-text {
+    font-size: 0.95rem;
+  }
+}
 @media (max-width: 767.98px) {
   #c17.frame-space-before-extra-large {
-    margin-top: 2.75rem !important;
+    margin-top: 0.5rem !important;
   }
   .card-body {
     padding-left: 0;
@@ -17784,45 +17844,6 @@ form input, form input.form-control, form input[type=file] {
     height: 300px;
   }
 }
-@media (min-width: 576px) and (max-width: 767.98px) {
-  .news .card-group .card .element-header {
-    font-size: 1rem;
-  }
-}
-@media (min-width: 576px) {
-  .flex-shrink-0 {
-    max-width: 14vw;
-  }
-  .news .card-group .card .element-header {
-    font-size: 1.25rem;
-  }
-  .news .card-group .card .card-text {
-    font-size: 1rem;
-  }
-}
-@media (max-width: 991.98px) {
-  .news .text-slider .display-4, .news .text-slider h4.awesome,
-  .news .text-slider .h4.awesome {
-    font-size: 2.5rem;
-  }
-}
-@media (max-width: 991.98px) and (max-width: 1200px) {
-  .news .text-slider .display-4, .news .text-slider h4.awesome,
-  .news .text-slider .h4.awesome {
-    font-size: calc(1.375rem + 1.5vw);
-  }
-}
-@media (max-width: 991.98px) {
-  .news .text-slider .carousel {
-    background-color: rgba(0, 0, 0, 0.25);
-  }
-  .news .text-slider .carousel .card-body h4 {
-    font-size: 1.2rem;
-  }
-  .news .text-slider .carousel .card-body .card-text {
-    font-size: 0.95rem;
-  }
-}
 @media (min-width: 768px) and (max-width: 991.98px) {
   .news .card .card-img-overlay {
     padding: 0.65rem;
@@ -17836,19 +17857,6 @@ form input, form input.form-control, form input[type=file] {
     height: 350px;
   }
 }
-@media (min-width: 768px) {
-  .news .card-group .card .element-header {
-    font-size: 1.15rem;
-  }
-}
-@media (min-width: 992px) {
-  .news .text-slider .carousel .card-body {
-    padding-right: 0;
-  }
-  .news .card-group .card .element-header {
-    font-size: 1.5rem;
-  }
-}
 /* Im Slider muss die h3 so sein:
 @media (min-width: 992px)
 .news .card-group .card .element-header {
@@ -17856,12 +17864,15 @@ form input, form input.form-control, form input[type=file] {
 }
 CHECK noch mal die anderen Screenbreiten!
  */
-@media (max-width: 1599.98px) {
-  .news .card-group .card.card-small .card-text p {
-    display: none;
+@media (min-width: 576px) and (max-width: 767.98px) {
+  .news .card-group .card .element-header {
+    font-size: 1rem;
   }
 }
 @media (max-width: 575.98px) {
+  #c17.frame-space-before-extra-large {
+    margin-top: 0.5rem !important;
+  }
   .news .card-group .card.card-small .card-text p {
     display: block;
   }
