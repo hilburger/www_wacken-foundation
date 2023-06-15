@@ -13,7 +13,7 @@ build application with dev dependencies:
   stage: build
   script:
     - echo "Builing..."
-    - export COMPOSER_CACHE_DIR=composer-cache; composer install --no-progress --no-ansi --no-interaction
+    - export COMPOSER_CACHE_DIR=composer-cache; composer install --no-progress --no-ansi --no-interaction --no-scripts --ignore-platform-reqs
   artifacts:
     name: typo3
     paths:
