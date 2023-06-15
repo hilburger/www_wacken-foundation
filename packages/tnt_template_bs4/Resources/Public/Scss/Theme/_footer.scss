@@ -18,6 +18,9 @@
 	$footer-link-color-hover: map-get($settings, 'link-hover-color');
 
 	.footer-section-#{$name} {
+		a:not(.btn):not(.cc-btn) {
+			color: #fafafa;
+		}
 		a:not(.btn) {
 			&:hover,
 			&:focus {

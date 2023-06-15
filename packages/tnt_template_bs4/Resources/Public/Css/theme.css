@@ -16052,10 +16052,16 @@ a.pswp__share--download:hover {
   }
 }
 
+.footer-section-content a:not(.btn):not(.cc-btn):not(.cc-btn) {
+  color: #fafafa;
+}
 .footer-section-content a:not(.btn):not(.cc-btn):hover, .footer-section-content a:not(.btn):not(.cc-btn):focus {
   color: rgb(182, 170, 100);
 }
 
+.footer-section-meta a:not(.btn):not(.cc-btn):not(.cc-btn) {
+  color: #fafafa;
+}
 .footer-section-meta a:not(.btn):not(.cc-btn):hover, .footer-section-meta a:not(.btn):not(.cc-btn):focus {
   color: rgb(182, 170, 100);
 }
