@@ -47,7 +47,7 @@
         "typo3/cms-t3editor": "^11.5",
         "typo3/cms-tstemplate": "^11.5",
         "typo3/cms-viewpage": "^11.5",
-        "tnt-digitalagentur/tnt-template-bs4": "@dev",
+        "tnt-digitalagentur/tnt-template-bs4": "dev-develop",
         "tnt-digitalagentur/tnt-ces": "@dev",
         "helhum/typo3-console": "^7",
         "helhum/dotenv-connector": "^3.0",

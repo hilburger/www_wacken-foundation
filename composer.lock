@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "62140a5dcf8e5e7219f642d6e7fe6905",
+    "content-hash": "04a28ea843ac63236d5f6aaae30cb4f9",
     "packages": [
         {
             "name": "b13/container",
@@ -5776,13 +5776,18 @@
         },
         {
             "name": "tnt-digitalagentur/tnt-ces",
-            "version": "dev-feature/update-ext-sf-banners",
+            "version": "dev-develop",
             "dist": {
                 "type": "path",
                 "url": "./packages/tnt_ces",
-                "reference": "835e4b7699ff539fcf144df60ed446b25dedf517"
+                "reference": "ca5bbcc61ebc0313ff4522b2e570a9cedb449693"
             },
             "type": "typo3-cms-extension",
+            "extra": {
+                "typo3/cms": {
+                    "extension-key": "tnt_ces"
+                }
+            },
             "autoload": {
                 "psr-4": {
                     "TntDigitalagentur\\TntCes\\": "Classes/"
@@ -5802,16 +5807,21 @@
         },
         {
             "name": "tnt-digitalagentur/tnt-template-bs4",
-            "version": "dev-feature/update-ext-sf-banners",
+            "version": "dev-develop",
             "dist": {
                 "type": "path",
                 "url": "./packages/tnt_template_bs4",
-                "reference": "4c9714d69877871ffb1facbdaa46754e791212e5"
+                "reference": "f7a1ec67f6069b5dd9de8d5ef8858c172593352f"
             },
             "require": {
                 "bk2k/bootstrap-package": "^12.0"
             },
             "type": "typo3-cms-extension",
+            "extra": {
+                "typo3/cms": {
+                    "extension-key": "tnt_template_bs4"
+                }
+            },
             "autoload": {
                 "psr-4": {
                     "TntDigitalagentur\\TntTemplateBs4\\": "Classes/"
