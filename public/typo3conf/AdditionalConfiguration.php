@@ -39,6 +39,7 @@
                 'trustedHostsPattern' => getenv('TYPO3_INSTALL_SYS_TRUSTEDHOSTSPATTERN'),
                 'devIPmask' => getenv('TYPO3_INSTALL_SYS_DEVIPMASK'),
                 'displayErrors' => getenv('TYPO3_INSTALL_SYS_DISPLAYERRORS'),
+                'sitename' => getenv('TYPO3_INSTALL_SYS_SITENAME'),
             ],
             'BE' => [
                 'debug' => getenv('TYPO3_INSTALL_BE_DEBUG'),

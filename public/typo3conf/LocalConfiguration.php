@@ -171,7 +171,7 @@ return [
             'rearrangedRedirectMiddlewares' => true,
             'unifiedPageTranslationHandling' => true,
         ],
-        'sitename' => 'TYPO3 10 LTS',
+        'sitename' => 'TYPO3',
         'systemMaintainers' => [
             1,
             3,
