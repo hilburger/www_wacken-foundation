@@ -9,7 +9,7 @@ $EM_CONF[$_EXTKEY] = [
     'category' => 'templates',
     'constraints' => [
         'depends' => [
-            'bootstrap_package' => '11.0.0-11.0.99',
+            'bootstrap_package' => '12.0.0-12.0.99',
         ],
         'conflicts' => [
         ],
@@ -26,5 +26,5 @@ $EM_CONF[$_EXTKEY] = [
     'author' => 'TNT Digitalagentur',
     'author_email' => 'info@tnt-digitalagentur.de',
     'author_company' => 'TNT Digitalagentur',
-    'version' => '2.0.0',
+    'version' => '2.1.0',
 ];

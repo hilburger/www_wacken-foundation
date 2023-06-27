@@ -4,8 +4,21 @@ namespace Deployer;
 require 'recipe/common.php';
 require 'recipe/rsync.php';
 
+// Hosts
+
+host('staging.wacken-foundation.tnt-digitalagentur.de')
+    ->stage('staging')
+    //->branch('develop')
+    ->user('p510242')
+    ->forwardAgent(true)
+    ->multiplexing(true)
+    ->addSshOption('UserKnownHostsFile', '/dev/null')
+    ->addSshOption('StrictHostKeyChecking', 'no')
+    ->addSshOption('ServerAliveInterval', '30')
+    ->set('deploy_path', '/home/www/p510242/html/staging-wacken-foundation_com');
+
 // Project name
-set('application', 'my_project');
+set('application', 'wacken-foundation');
 set('release_name', function () {
     return (string) run('date +"%Y-%m-%d_%H-%M-%S"');
 });
@@ -24,16 +37,6 @@ add('shared_dirs', []);
 add('writable_dirs', []);
 set('allow_anonymous_stats', false);
 
-// Hosts
-
-host('staging.wacken-foundation.tnt-digitalagentur.de')
-    ->user('p573155')
-    ->forwardAgent(true)
-    ->multiplexing(true)
-    ->addSshOption('UserKnownHostsFile', '/dev/null')
-    ->addSshOption('StrictHostKeyChecking', 'no')
-    ->set('deploy_path', '/home/www/p573155/html/staging-wacken-foundation');
-
 task('deploy', [
     'deploy:unlock',
     'deploy:info',
@@ -42,11 +45,11 @@ task('deploy', [
     'deploy:release',
     'rsync',
     'deploy:shared',
-    'deploy:symlink',
     'deploy:typo3_fixfolderstructure',
     'deploy:typo3_database_updateschema',
     'deploy:typo3_language_update',
     'deploy:typo3_clear_cache',
+    'deploy:symlink',
     'deploy:unlock',
     'cleanup',
 ])->desc('Deploy your project');
@@ -92,7 +95,7 @@ set('rsync',[
     'filter-perdir'=> false,
     'flags'        => 'rzlv', // Recursive, with compress
     'options'      => ['delete'],
-    'timeout'      => 60,
+    'timeout'      => 120,
 ]);
 
 /**

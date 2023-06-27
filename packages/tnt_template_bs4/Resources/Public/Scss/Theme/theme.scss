@@ -45,7 +45,7 @@ $container-max-widths: (
 //
 // Import needed Bootstrap Package Files
 //
-@import "../../../../../../public/typo3conf/ext/bootstrap_package/Resources/Public/Scss/Theme/theme";
+@import "../../../../../../public/typo3conf/ext/bootstrap_package/Resources/Public/Scss/bootstrap4/theme";
 
 //
 // TNT Cusomizations
@@ -57,8 +57,10 @@ $container-max-widths: (
 @import "footer";
 @import "navbar";
 @import "breadcrumb";
+@import "pagination";
 @import "buttons";
 @import "frame";
+@import "text";
 @import "type";
 @import "container";
 @import "card";

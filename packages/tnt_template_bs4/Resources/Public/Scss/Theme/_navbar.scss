@@ -2,7 +2,7 @@
 	transition: all 0.55s cubic-bezier(.21, .01, .49, 1);
 }
 %transparentize-black {
-	background-color: color.scale($black, $alpha: -11%) !important;
+	background-color: scale-color($black, $alpha: -11%)!important;
 }
 
 #page-header {
@@ -11,7 +11,7 @@
 	&:hover,
 	&:hover .bg-black {
 		//opcacity: 1;
-		background-color: color.scale($black, $alpha: +11%) !important;
+		background-color: scale-color($black, $alpha: +11%) !important;
 	}
 	 */
 	&.navbar-transition .bg-black {
@@ -71,13 +71,13 @@
 
 #language_menu {
 	.link-item {
-		border: solid 1px color.scale($gold, $saturation: -50%, $lightness: -30%);
+		border: solid 1px scale-color($gold, $saturation: -50%, $lightness: -30%);
 		border-top-width: 0;
 		&:not(.active) img {
 			filter: saturate(50%) brightness(50%);;
 		}
 		&:not(.active):hover {
-			border-color: color.scale($gold, $saturation: -30%, $lightness: -18%);
+			border-color: scale-color($gold, $saturation: -30%, $lightness: -18%);
 			img {
 				filter: saturate(70%) brightness(70%);;
 			}
@@ -176,6 +176,12 @@
 				color: $link-hover-color;
 			}
 		}
+	}
+
+	.navbar-toggler {
+		position: absolute;
+		right: 0;
+		top: 24px;
 	}
 }
 

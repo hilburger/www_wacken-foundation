@@ -1,5 +1,15 @@
 <?php
 
+call_user_func(
+    function()
+    {
+        \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addStaticFile(
+            'tnt_ces',
+            'Configuration/TypoScript',
+            'TNT Content-Elemente');
+    }
+);
+
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPlugin(
    array(
       'Reisepartner',

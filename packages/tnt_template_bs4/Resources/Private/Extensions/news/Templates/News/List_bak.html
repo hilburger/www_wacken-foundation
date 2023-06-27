@@ -35,26 +35,21 @@
                                     </f:if>
                                 </f:then>
                                 <f:else>
-                                    <f:if condition="{settings.list.paginate.insertAbove}">
-                                        <f:render partial="List/Pagination" arguments="{pagination: pagination.pagination, paginator: pagination.paginator}" />
-                                    </f:if>
-
-                                    <f:for each="{pagination.paginator.paginatedItems}" as="newsItem" iteration="iterator">
-                                        <div class="col mb-3 mb-sm-5{f:if(condition: '{news->f:count()} > 3', else:' mb-lg-0')}">
-                                            <f:render partial="List/Card-Item"
+                                    <n:widget.paginate objects="{news}" as="paginatedNews"
+                                                       configuration="{settings.list.paginate}"
+                                                       initial="{offset:settings.offset,limit:settings.limit,recordId:contentObjectData.uid}">
+                                        <f:for each="{paginatedNews}" as="newsItem" iteration="iterator">
+                                            <div class="col mb-3 mb-sm-5{f:if(condition: '{news->f:count()} > 3', else:' mb-lg-0')}">
+                                                <f:render partial="List/Card-Item"
                                                       arguments="{newsItem: newsItem,settings:settings,iterator:iterator}"/>
-                                        </div>
-                                    </f:for>
-
-                                    <f:if condition="{news->f:count()} % 2 != 0 && {news->f:count()} > 1">
-                                        <div class="d-none d-md-block d-lg-none">
-                                            <f:cObject typoscriptObjectPath="lib.newsFiller" />
-                                        </div>
-                                    </f:if>
-
-                                    <f:if condition="{settings.list.paginate.insertBelow}">
-                                        <f:render partial="List/Pagination" arguments="{pagination: pagination.pagination, paginator: pagination.paginator}" />
-                                    </f:if>
+                                            </div>
+                                        </f:for>
+                                        <f:if condition="{news->f:count()} % 2 != 0 && {news->f:count()} > 1">
+                                            <div class="d-none d-md-block d-lg-none">
+                                                <f:cObject typoscriptObjectPath="lib.newsFiller" />
+                                            </div>
+                                        </f:if>
+                                    </n:widget.paginate>
                                 </f:else>
                             </f:if>
                         </div>
@@ -64,6 +59,7 @@
                 <f:case value="20">
                     <!-- TEMPLATE 20: Cards Text-Overlay halb-spaltig -->
                     <div class="list-unstyled news-list-view news-template-20 bs4" id="news-container-{contentObjectData.uid}">
+                        <!--<div class="container">-->
                         <div class="row justify-content-center">
                             <f:if condition="{settings.hidePagination}">
                                 <f:then>
@@ -75,29 +71,27 @@
                                     </f:for>
                                 </f:then>
                                 <f:else>
-                                    <f:if condition="{settings.list.paginate.insertAbove}">
-                                        <f:render partial="List/Pagination" arguments="{pagination: pagination.pagination, paginator: pagination.paginator}" />
-                                    </f:if>
-
-                                    <f:for each="{pagination.paginator.paginatedItems}" as="newsItem" iteration="iterator">
-                                        <div class="col-md-6">
-                                            <f:render partial="List/Cards-Item-TextOverlay"
+                                    <n:widget.paginate objects="{news}" as="paginatedNews"
+                                                       configuration="{settings.list.paginate}"
+                                                       initial="{offset:settings.offset,limit:settings.limit,recordId:contentObjectData.uid}">
+                                        <f:for each="{paginatedNews}" as="newsItem" iteration="iterator">
+                                            <div class="col-md-6">
+                                                <f:render partial="List/Cards-Item-TextOverlay"
                                                       arguments="{newsItem: newsItem,settings:settings,iterator:iterator}"/>
-                                        </div>
-                                    </f:for>
-
-                                    <f:if condition="{settings.list.paginate.insertBelow}">
-                                        <f:render partial="List/Pagination" arguments="{pagination: pagination.pagination, paginator: pagination.paginator}" />
-                                    </f:if>
+                                            </div>
+                                        </f:for>
+                                    </n:widget.paginate>
                                 </f:else>
                             </f:if>
                         </div>
+                        <!--</div>-->
                     </div>
                 </f:case>
 
                 <f:case value="21">
                     <!-- TEMPLATE 21: Cards Text-Overlay ganz-spaltig -->
                     <div class="list-unstyled news-list-view news-template-21 bs4" id="news-container-{contentObjectData.uid}">
+                        <!--<div class="container">-->
                         <div class="row justify-content-center">
                             <f:if condition="{settings.hidePagination}">
                                 <f:then>
@@ -109,21 +103,20 @@
                                     </f:for>
                                 </f:then>
                                 <f:else>
-                                    <f:if condition="{settings.list.paginate.insertAbove}">
-                                        <f:render partial="List/Pagination" arguments="{pagination: pagination.pagination, paginator: pagination.paginator}" />
-                                    </f:if>
-                                    <f:for each="{pagination.paginator.paginatedItems}" as="newsItem" iteration="iterator">
-                                        <div class="col-md-12">
-                                            <f:render partial="List/Cards-Item-TextOverlay"
+                                    <n:widget.paginate objects="{news}" as="paginatedNews"
+                                                       configuration="{settings.list.paginate}"
+                                                       initial="{offset:settings.offset,limit:settings.limit,recordId:contentObjectData.uid}">
+                                        <f:for each="{paginatedNews}" as="newsItem" iteration="iterator">
+                                            <div class="col-md-12">
+                                                <f:render partial="List/Cards-Item-TextOverlay"
                                                       arguments="{newsItem: newsItem,settings:settings,iterator:iterator}"/>
-                                        </div>
-                                    </f:for>
-                                    <f:if condition="{settings.list.paginate.insertBelow}">
-                                        <f:render partial="List/Pagination" arguments="{pagination: pagination.pagination, paginator: pagination.paginator}" />
-                                    </f:if>
+                                            </div>
+                                        </f:for>
+                                    </n:widget.paginate>
                                 </f:else>
                             </f:if>
                         </div>
+                        <!--</div>-->
                     </div>
                 </f:case>
 
@@ -142,18 +135,16 @@
                                     </f:for>
                                 </f:then>
                                 <f:else>
-                                    <f:if condition="{settings.list.paginate.insertAbove}">
-                                        <f:render partial="List/Pagination" arguments="{pagination: pagination.pagination, paginator: pagination.paginator}" />
-                                    </f:if>
-                                    <f:for each="{pagination.paginator.paginatedItems}" as="newsItem" iteration="iterator">
-                                        <div class="col-md-6">
-                                            <f:render partial="List/Cards-Item-TextOverlay"
-                                                      arguments="{newsItem: newsItem,settings:settings,iterator:iterator}"/>
-                                        </div>
-                                    </f:for>
-                                    <f:if condition="{settings.list.paginate.insertBelow}">
-                                        <f:render partial="List/Pagination" arguments="{pagination: pagination.pagination, paginator: pagination.paginator}" />
-                                    </f:if>
+                                    <n:widget.paginate objects="{news}" as="paginatedNews"
+                                                       configuration="{settings.list.paginate}"
+                                                       initial="{offset:settings.offset,limit:settings.limit,recordId:contentObjectData.uid}">
+                                        <f:for each="{paginatedNews}" as="newsItem" iteration="iterator">
+                                            <div class="col-md-6">
+                                                <f:render partial="List/Cards-Item-TextOverlay"
+                                                          arguments="{newsItem: newsItem,settings:settings,iterator:iterator}"/>
+                                            </div>
+                                        </f:for>
+                                    </n:widget.paginate>
                                 </f:else>
                             </f:if>
                         </div>
@@ -166,14 +157,13 @@
                     <!-- Items per Row: {newsItemsPerRow} -->
                     <!-- Settings limit: {settings.limit} -->
                     <f:if condition="{settings.slider} > 0">
-                        <f:asset.script identifier="slick_slider" src="EXT:tnt_template_bs4/Resources/Public/JavaScript/Features/slick/slick.js" />
-                        <f:asset.script identifier="slick_slider_init" src="EXT:tnt_template_bs4/Resources/Public/JavaScript/Features/slick/slick-tnt.js" />
                         <script type="text/javascript"><f:format.raw>var sliderContentUid = "news-container-</f:format.raw>{contentObjectData.uid}<f:format.raw>";</f:format.raw></script>
                     </f:if>
                     <div class="list-unstyled news-list-view news-template-25 {f:if(condition: '{settings.slider} > 0', then: 'slider-active')} bs4" id="news-container-{contentObjectData.uid}">
                         <div class="card-group">
                             <f:if condition="{settings.hidePagination}">
                                 <f:then>
+                                    <!-- hide Pagination -->
                                     <f:for each="{news -> n:iterator.chunk(count: '{newsItemsPerRow}')}" as="col" iteration="cycle">
                                         <f:for each="{col}" as="newsItem" iteration="iterator">
                                             <f:render partial="List/Cards-Item-TextOverlay"
@@ -187,16 +177,15 @@
                                     </f:for>
                                 </f:then>
                                 <f:else>
-                                    <f:if condition="{settings.list.paginate.insertAbove}">
-                                        <f:render partial="List/Pagination" arguments="{pagination: pagination.pagination, paginator: pagination.paginator}" />
-                                    </f:if>
-                                    <f:for each="{pagination.paginator.paginatedItems}" as="newsItem" iteration="iterator">
-                                            <f:render partial="List/Cards-Item-TextOverlay"
-                                                      arguments="{newsItem: newsItem,settings:settings,iterator:iterator}"/>
-                                    </f:for>
-                                    <f:if condition="{settings.list.paginate.insertBelow}">
-                                        <f:render partial="List/Pagination" arguments="{pagination: pagination.pagination, paginator: pagination.paginator}" />
-                                    </f:if>
+                                    <!-- show Pagination -->
+                                    <n:widget.paginate objects="{news}" as="paginatedNews"
+                                                       configuration="{settings.list.paginate}"
+                                                       initial="{offset:settings.offset,limit:settings.limit,recordId:contentObjectData.uid}">
+                                        <f:for each="{paginatedNews}" as="newsItem" iteration="iterator">
+                                                <f:render partial="List/Cards-Item-TextOverlay"
+                                                          arguments="{newsItem: newsItem,settings:settings,iterator:iterator}"/>
+                                        </f:for>
+                                    </n:widget.paginate>
                                 </f:else>
                             </f:if>
                         </div>
@@ -221,17 +210,103 @@
 
                 <f:case value="30">
                     <f:variable name="maxNewsItems">{settings.limit}</f:variable>
+                    <f:if condition="{maxNewsItems} != 3">{maxNewsItems == 3}</f:if>
                     <div class="list-unstyled news-list-view news-template-30 bs4" id="news-container-{contentObjectData.uid}">
                         <div class="row justify-content-center row-cols-1 row-cols-md-1 row-cols-lg-2">
                             <f:variable name="idx" value="0"/>
                             <f:for each="{news}" as="newsItem" iteration="iterator">
                                 <f:variable name="idx" value="{idx + 1}"/>
                                 <f:if condition="{idx} <= {maxNewsItems}">
+                                    <!--<div class="col mb-3 mb-sm-5{f:if(condition: '{news->f:count()} > 3', else:' mb-lg-0')}">-->
                                         <f:render partial="List/Cards-3er-Items" arguments="{newsItem: newsItem,settings:settings,iterator:iterator,idx:idx,maxNewsItems:maxNewsItems}"/>
+                                    <!--</div>-->
                                 </f:if>
                             </f:for>
+
+                            <f:comment>
+
+                            <f:for each="{news}" as="newsItem" iteration="iterator">
+                                <div class="col mb-3 mb-sm-5{f:if(condition: '{news->f:count()} > 3', else:' mb-lg-0')}">
+                                    <f:render partial="List/Card-Item"
+                                              arguments="{newsItem: newsItem,settings:settings,iterator:iterator}"/>
+                                </div>
+                            </f:for>
+
+
+                            <div class="col-lg-4 mb-3 mb-lg-0">
+                                <div class="card h-100" style="">
+                                    <svg class="bd-placeholder-img card-img-top" width="100%" height="180"
+                                         xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice"
+                                         focusable="false" role="img" aria-label="Card1"><title>Card 1</title>
+                                        <rect width="100%" height="100%" fill="#868e96"></rect>
+                                        <text x="50%" y="50%" fill="#dee2e6" dy=".3em">Card 1</text>
+                                    </svg>
+                                    <div class="card-body">
+                                        <p class="card-text">Some quick example text to build on the card title and make
+                                            up the bulk of the card's content.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-8">
+                                <div class="row">
+                                    <div class="col-12">
+                                        <div class="card mb-3">
+                                            <div class="row no-gutters">
+                                                <div class="col-md-4">
+                                                    <svg class="bd-placeholder-img" width="100%" height="250"
+                                                         xmlns="http://www.w3.org/2000/svg"
+                                                         preserveAspectRatio="xMidYMid slice" focusable="false"
+                                                         role="img" aria-label="Placeholder: Image"><title>
+                                                        Placeholder</title>
+                                                        <rect width="100%" height="100%" fill="#868e96"></rect>
+                                                        <text x="50%" y="50%" fill="#dee2e6" dy=".3em">Card B1</text>
+                                                    </svg>
+                                                </div>
+                                                <div class="col-md-8">
+                                                    <div class="card-body">
+                                                        <h5 class="card-title">Card title</h5>
+                                                        <p class="card-text">This is a wider card with supporting text
+                                                            below as a natural lead-in to additional content. This
+                                                            content is a little bit longer.</p>
+                                                        <p class="card-text"><small class="text-muted">Last updated 3
+                                                            mins ago</small></p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-12">
+                                        <div class="card">
+                                            <div class="row no-gutters">
+                                                <div class="col-md-4">
+                                                    <svg class="bd-placeholder-img" width="100%" height="250"
+                                                         xmlns="http://www.w3.org/2000/svg"
+                                                         preserveAspectRatio="xMidYMid slice" focusable="false"
+                                                         role="img" aria-label="Placeholder: Image"><title>
+                                                        Placeholder</title>
+                                                        <rect width="100%" height="100%" fill="#868e96"></rect>
+                                                        <text x="50%" y="50%" fill="#dee2e6" dy=".3em">Card B2</text>
+                                                    </svg>
+                                                </div>
+                                                <div class="col-md-8">
+                                                    <div class="card-body">
+                                                        <h5 class="card-title">Card title</h5>
+                                                        <p class="card-text">This is a wider card with supporting text
+                                                            below as a natural lead-in to additional content. This
+                                                            content is a little bit longer.</p>
+                                                        <p class="card-text"><small class="text-muted">Last updated 3
+                                                            mins ago</small></p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            </f:comment>
                         </div>
-                        <!--Hier-->
                     </div>
                 </f:case>
 
@@ -343,11 +418,50 @@
                     <!-- TEMPLATE 1010: Text-Slider -->
                     <div id="news-container-{contentObjectData.uid}" class="carousel slide" data-ride="carousel">
                         <div class="carousel-inner">
-                            <f:for each="{pagination.paginator.paginatedItems}" as="newsItem" iteration="iterator">
+                            <f:for each="{news}" as="newsItem" iteration="iterator">
                                 <f:render partial="List/Slider-Item" arguments="{newsItem: newsItem,settings:settings,iterator:iterator}"/>
                             </f:for>
                         </div>
                     </div>
+<f:comment>
+                    <div class="list-unstyled news-list-view bs4" id="news-container-{contentObjectData.uid}">
+                        <!--<div class="container">-->
+                        <div class="row">
+                            <f:if condition="{settings.hidePagination}">
+                                <f:then>
+                                    <f:for each="{news}" as="newsItem" iteration="iterator">
+                                        <f:render partial="List/Card-Item"
+                                                  arguments="{newsItem: newsItem,settings:settings,iterator:iterator}"/>
+                                    </f:for>
+                                </f:then>
+                                <f:else>
+                                    <n:widget.paginate objects="{news}" as="paginatedNews"
+                                                       configuration="{settings.list.paginate}"
+                                                       initial="{offset:settings.offset,limit:settings.limit,recordId:contentObjectData.uid}">
+                                        <f:for each="{paginatedNews}" as="newsItem" iteration="iterator">
+                                            <f:render partial="List/Card-Item"
+                                                      arguments="{newsItem: newsItem,settings:settings,iterator:iterator}"/>
+                                        </f:for>
+                                    </n:widget.paginate>
+                                </f:else>
+                            </f:if>
+                        </div>
+                        <!--</div>-->
+                        <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                    <img src="..." class="d-block w-100" alt="...">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="..." class="d-block w-100" alt="...">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="..." class="d-block w-100" alt="...">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+</f:comment>
                 </f:case>
 
                 <f:defaultCase>
@@ -360,15 +474,7 @@
                                 </f:for>
                             </f:then>
                             <f:else>
-                                <f:if condition="{settings.list.paginate.insertAbove}">
-                                    <f:render partial="List/Pagination" arguments="{pagination: pagination.pagination, paginator: pagination.paginator}" />
-                                </f:if>
-                                <f:for each="{pagination.paginator.paginatedItems}" as="newsItem" iteration="iterator">
-                                    <f:render partial="List/Item" arguments="{newsItem: newsItem,settings:settings,iterator:iterator}" />
-                                </f:for>
-                                <f:if condition="{settings.list.paginate.insertBelow}">
-                                    <f:render partial="List/Pagination" arguments="{pagination: pagination.pagination, paginator: pagination.paginator}" />
-                                </f:if>
+
                             </f:else>
                         </f:if>
                     </div>

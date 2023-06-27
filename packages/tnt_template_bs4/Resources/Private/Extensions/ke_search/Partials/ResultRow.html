@@ -43,7 +43,7 @@
         <f:then>
         </f:then>
         <f:else>
-            <div class="{f:if(condition: '{hasMedia} || {type} == \'news\'', then:'col-md-5 pr-md-2 position-relative')}">
+            <div class="{f:if(condition: '{hasMedia} || {type} == \'news\'', then:'col-12 col-md-5 col-lg-3 pr-md-2 position-relative')}">
                 <f:if condition="{dateConf} && {type} == 'news'">
                     <div class="extra position-absolute"><small class="badge badge-primary"><b><f:format.date>{dateOn}</f:format.date></b></small></div>
                 </f:if>

@@ -226,12 +226,123 @@
 	}
 }
 
+
+
+@include media-breakpoint-up(sm) {
+	.flex-shrink-0 {
+		max-width: 14vw;
+	}
+	.news {
+		.card-group {
+			.card {
+				.element-header {
+					font-size: 1.25rem;
+				}
+
+				.card-text {
+					font-size: 1.0rem;
+				}
+			}
+		}
+	}
+}
+
+@include media-breakpoint-up(md) {
+	.news {
+		.card-group {
+			.card {
+				.element-header {
+					font-size: 1.15rem;
+				}
+			}
+		}
+	}
+}
+
+@include media-breakpoint-up(lg) {
+	.news {
+		.text-slider .carousel .card-body {
+			padding-right: 0;
+		}
+		.card-group {
+			.card {
+				.element-header {
+					font-size: 1.5rem;
+				}
+
+				&.card-small {
+
+				}
+			}
+		}
+	}
+}
+
+@include media-breakpoint-down(xl) {
+	.news {
+		.card-group {
+			.card.card-small {
+				.card-text {
+					p {
+						display: none;
+					}
+				}
+			}
+		}
+	}
+}
+
+@include media-breakpoint-down(lg) {
+	// Start page top slider margin correction for tablet and smaller screens
+	#c17.frame-space-before-extra-large {
+		margin-top: 1.75rem!important;
+	}
+}
+
+@include media-breakpoint-down(md) {
+
+	// Start page top slider margin correction for mobile and tablet
+	#c17.frame-space-before-extra-large {
+		margin-top: 1rem!important;
+	}
+
+	.news {
+		.text-slider {
+			.display-4 {
+				@include font-size($display5-size);
+			}
+
+			.the-content {
+				//height: 350px;
+			}
+
+			.carousel {
+				background-color: rgba(0, 0, 0, 0.25);
+
+				.card-body {
+					//padding-left: 0;
+					//padding-right: 0;
+
+					h4 {
+						font-size: $h4-font-size;
+					}
+
+					.card-text {
+						font-size: 0.95rem;
+					}
+				}
+			}
+		}
+	}
+}
+
 @include media-breakpoint-down(sm) {
 
-	// Start page top slider margin correction for mobile
+	// Start page top slider margin correction for mobile and tablet
 	#c17.frame-space-before-extra-large {
-		margin-top: 2.75rem!important;
+		margin-top: 0.5rem!important;
 	}
+
 	.card-body {
 		padding-left: 0;
 		padding-right: 0;
@@ -297,68 +408,6 @@
 	}
 }
 
-@include media-breakpoint-only(sm) {
-	.news {
-		.card-group {
-			.card {
-				.element-header {
-					font-size: 1.0rem;
-				}
-			}
-		}
-	}
-}
-
-@include media-breakpoint-up(sm) {
-	.flex-shrink-0 {
-		max-width: 14vw;
-	}
-	.news {
-		.card-group {
-			.card {
-				.element-header {
-					font-size: 1.25rem;
-				}
-
-				.card-text {
-					font-size: 1.0rem;
-				}
-			}
-		}
-	}
-}
-
-
-@include media-breakpoint-down(md) {
-	.news {
-		.text-slider {
-			.display-4 {
-				@include font-size($display5-size);
-			}
-
-			.the-content {
-				//height: 350px;
-			}
-
-			.carousel {
-				background-color: rgba(0, 0, 0, 0.25);
-
-				.card-body {
-					//padding-left: 0;
-					//padding-right: 0;
-
-					h4 {
-						font-size: $h4-font-size;
-					}
-
-					.card-text {
-						font-size: 0.95rem;
-					}
-				}
-			}
-		}
-	}
-}
 
 @include media-breakpoint-only(md) {
 	.news {
@@ -386,36 +435,6 @@
 	}
 }
 
-@include media-breakpoint-up(md) {
-	.news {
-		.card-group {
-			.card {
-				.element-header {
-					font-size: 1.15rem;
-				}
-			}
-		}
-	}
-}
-
-@include media-breakpoint-up(lg) {
-	.news {
-		.text-slider .carousel .card-body {
-			padding-right: 0;
-		}
-		.card-group {
-			.card {
-				.element-header {
-					font-size: 1.5rem;
-				}
-
-				&.card-small {
-
-				}
-			}
-		}
-	}
-}
 /* Im Slider muss die h3 so sein:
 @media (min-width: 992px)
 .news .card-group .card .element-header {
@@ -423,22 +442,24 @@
 }
 CHECK noch mal die anderen Screenbreiten!
  */
-
-
-@include media-breakpoint-down(xl) {
+@include media-breakpoint-only(sm) {
 	.news {
 		.card-group {
-			.card.card-small {
-				.card-text {
-					p {
-						display: none;
-					}
+			.card {
+				.element-header {
+					font-size: 1.0rem;
 				}
 			}
 		}
 	}
 }
+
 @include media-breakpoint-only(xs) {
+	// Start page top slider margin correction for mobile and tablet
+	#c17.frame-space-before-extra-large {
+		margin-top: 0.5rem!important;
+	}
+
 	.news {
 		.card-group {
 			.card.card-small {
