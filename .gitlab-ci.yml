@@ -45,7 +45,7 @@ Deploy to stage:
     #- lftp -e "set sftp:auto-confirm yes; open -u $FTP_USERNAME,$FTP_PASSWORD -p 22 sftp://$TARGET_SERVER_TNT; mirror -X .* -X .*/ --reverse --verbose --delete . /; bye"
     #- lftp -e "set sftp:auto-confirm yes; set ftp:use-mdtm off; open -u $FTP_USERNAME,$FTP_PASSWORD -p 22 sftp://$TARGET_SERVER_TNT; mirror --ignore-time --parallel=100  -X .* -X .*/ --reverse --verbose . /; bye"
     # ssh pxxxxxx@staging.client.tnt-digitalagentur.de -o StrictHostKeyChecking=no -vvv
-    - vendor/bin/dep deploy -vv
+    - vendor/bin/dep deploy staging -vv
   environment:
     name: staging
     url: https://wacken-foundation.tnt-digitalagentur.de
@@ -54,11 +54,27 @@ Deploy to stage:
 
 Deploy to Master:
   image: chialab/php:7.4
+  cache:
+    paths:
+      - .apt/
+  before_script:
+    - export APT_DIR=$CI_PROJECT_DIR/.apt && export APT_STATE_LISTS=$APT_DIR/lists && export APT_CACHE_ARCHIVES=$APT_DIR/archives
+    - printf "dir::state::lists    ${APT_STATE_LISTS};\ndir::cache::archives    ${APT_CACHE_ARCHIVES};\n" > /etc/apt/apt.conf
+    - mkdir -p "${APT_STATE_LISTS}/partial" && mkdir -p "${APT_CACHE_ARCHIVES}/partial"
+    - apt-get update -qy
+    - apt-get install rsync -y
+    - 'command -v ssh-agent >/dev/null || ( apt-get install openssh-client -y )'
+    - eval $(ssh-agent -s)
+    - echo "$SSH_PRIVATE_KEY" | tr -d '\r' | ssh-add -
+    - mkdir -p ~/.ssh
+    - chmod 700 ~/.ssh
   stage: deployment
   script:
     - echo "hello deploy production cached - START"
+    - vendor/bin/dep deploy production -vv
   environment:
     name: production
     url: https://staging.wacken-foundation.tnt-digitalagentur.de/
+  when: manual
   only:
     - master
