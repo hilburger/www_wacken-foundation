@@ -44,11 +44,11 @@ Deploy to stage:
   script:
     #- lftp -e "set sftp:auto-confirm yes; open -u $FTP_USERNAME,$FTP_PASSWORD -p 22 sftp://$TARGET_SERVER_TNT; mirror -X .* -X .*/ --reverse --verbose --delete . /; bye"
     #- lftp -e "set sftp:auto-confirm yes; set ftp:use-mdtm off; open -u $FTP_USERNAME,$FTP_PASSWORD -p 22 sftp://$TARGET_SERVER_TNT; mirror --ignore-time --parallel=100  -X .* -X .*/ --reverse --verbose . /; bye"
-    # ssh p573155@staging.gcm.tnt-digitalagentur.de -o StrictHostKeyChecking=no -vvv
+    # ssh pxxxxxx@staging.client.tnt-digitalagentur.de -o StrictHostKeyChecking=no -vvv
     - vendor/bin/dep deploy -vv
   environment:
     name: staging
-    url: https://wacken-foundation-11.tnt-digitalagentur.de
+    url: https://wacken-foundation.tnt-digitalagentur.de
   only:
     - develop
 

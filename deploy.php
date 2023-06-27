@@ -6,7 +6,7 @@ require 'recipe/rsync.php';
 
 // Hosts
 
-host('staging.wacken-foundation-11.tnt-digitalagentur.de')
+host('staging.wacken-foundation.tnt-digitalagentur.de')
     ->stage('staging')
     //->branch('develop')
     ->user('p510242')
@@ -15,7 +15,7 @@ host('staging.wacken-foundation-11.tnt-digitalagentur.de')
     ->addSshOption('UserKnownHostsFile', '/dev/null')
     ->addSshOption('StrictHostKeyChecking', 'no')
     ->addSshOption('ServerAliveInterval', '30')
-    ->set('deploy_path', '/home/www/p510242/html/staging-wacken-foundation-v11');
+    ->set('deploy_path', '/home/www/p510242/html/staging-wacken-foundation_com');
 
 // Project name
 set('application', 'wacken-foundation');
