@@ -1,6 +1,5 @@
 stages:
   - build
-  - test
   - deployment
 
 build application with dev dependencies:
