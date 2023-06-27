@@ -45,7 +45,7 @@ task('deploy', [
     'deploy:release',
     'rsync',
     'deploy:shared',
-    //'deploy:typo3_fixfolderstructure',
+    'deploy:typo3_fixfolderstructure',
     //'deploy:typo3_database_updateschema',
     //'deploy:typo3_language_update',
     //'deploy:typo3_clear_cache',
