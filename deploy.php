@@ -61,7 +61,7 @@ task('deploy:typo3_language_update', function () {
 
 
 task('deploy:typo3_fixfolderstructure', function () {
-    run('{{bin/php}} {{release_path}}/vendor/bin/typo3cms  install:fixfolderstructure ');
+    run('{{bin/php}} {{release_path}}/vendor/bin/typo3cms install:fixfolderstructure ');
 })->desc('TYPO3: Fix Folder Structure');
 
 task('deploy:typo3_database_updateschema', function () {
