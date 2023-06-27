@@ -1,4 +1,4 @@
-name: www-wacken-foundation-v11
+name: www-wacken-foundation
 type: typo3
 docroot: public
 php_version: "7.4"
