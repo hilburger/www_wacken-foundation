@@ -24,7 +24,7 @@ set('release_name', function () {
 });
 
 // Project repository
-set('repository', 'git@gitlab.com:tnt_hilburger/www_wacken-foundation.git');
+set('repository', 'git@gitlab.com:tnt-internal/www_wacken-foundation.git');
 
 // [Optional] Allocate tty for git clone. Default value is false.
 set('git_tty', true);
