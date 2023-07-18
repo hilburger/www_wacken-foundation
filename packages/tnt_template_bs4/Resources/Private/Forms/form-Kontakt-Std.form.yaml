@@ -10,7 +10,7 @@ finishers:
     options:
       subject: 'Nachricht via Website: {subject}'
       recipients:
-        info@tnt-digitalagentur.de: GCM
+        info@wacken-foundation.com: Wacken Foundation
       senderAddress: '{email}'
       senderName: '{name}'
       attachUploads: false

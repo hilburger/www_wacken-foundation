@@ -32,7 +32,7 @@
             'MAIL' => [
                 'transport' => getenv('TYPO3_INSTALL_MAIL_TRANSPORT'),
                 'transport_smtp_server' => getenv('TYPO3_INSTALL_MAIL_TRANSPORT_SMTP_SERVER'),
-                //'transport_sendmail_command' => getenv('TYPO3_INSTALL_MAIL_TRANSPORT_SENDMAIL_COMMAND'),
+                'transport_sendmail_command' => getenv('TYPO3_INSTALL_MAIL_TRANSPORT_SENDMAIL_COMMAND'),
                 'defaultMailFromAddress' => getenv('TYPO3_INSTALL_MAIL_DEFAULTMAILFROMADDRESS'),
             ],
             'SYS' => [
