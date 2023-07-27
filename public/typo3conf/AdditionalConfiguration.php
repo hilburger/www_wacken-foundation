@@ -30,10 +30,14 @@
             ],
             // This mail configuration sends all emails to mailhog
             'MAIL' => [
-                'transport' => getenv('TYPO3_INSTALL_MAIL_TRANSPORT'),
-                'transport_smtp_server' => getenv('TYPO3_INSTALL_MAIL_TRANSPORT_SMTP_SERVER'),
-                'transport_sendmail_command' => getenv('TYPO3_INSTALL_MAIL_TRANSPORT_SENDMAIL_COMMAND'),
                 'defaultMailFromAddress' => getenv('TYPO3_INSTALL_MAIL_DEFAULTMAILFROMADDRESS'),
+                'defaultMailFromName' => getenv('TYPO3_INSTALL_MAIL_DEFAULTMAILFROMNAME'),
+                'transport' => getenv('TYPO3_INSTALL_MAIL_TRANSPORT'),
+                'transport_sendmail_command' => getenv('TYPO3_INSTALL_MAIL_TRANSPORT_SENDMAIL_COMMAND'),
+                'transport_smtp_encrypt' => getenv('TYPO3_INSTALL_MAIL_TRANSPORT_SMTP_ENCRYPT'),
+                'transport_smtp_password' => getenv('TYPO3_INSTALL_MAIL_TRANSPORT_SMTP_PASSWORD'),
+                'transport_smtp_server' => getenv('TYPO3_INSTALL_MAIL_TRANSPORT_SMTP_SERVER'),
+                'transport_smtp_username' => getenv('TYPO3_INSTALL_MAIL_TRANSPORT_SMTP_USERNAME'),
             ],
             'SYS' => [
                 'trustedHostsPattern' => getenv('TYPO3_INSTALL_SYS_TRUSTEDHOSTSPATTERN'),
