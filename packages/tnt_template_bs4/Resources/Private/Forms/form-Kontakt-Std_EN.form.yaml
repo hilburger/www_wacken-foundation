@@ -1,0 +1,109 @@
+
+renderingOptions:
+  submitButtonLabel: 'Send Message'
+identifier: form-Kontakt-Std-EN
+label: Form-Kontakt-Std-EN
+type: Form
+prototypeName: standard
+finishers:
+  -
+    options:
+      subject: 'Nachricht via englischer Website: {subject}'
+      recipients:
+        info@wacken-foundation.com: Wacken Foundation
+      senderAddress: '{email}'
+      senderName: '{name}'
+      attachUploads: false
+      translation:
+        language: ''
+      useFluidEmail: true
+      title: 'Confirmation'
+      addHtmlPart: true
+    identifier: EmailToReceiver
+  -
+    options:
+      message: 'Thanks for your message! \nWe will take care of your request as soon as possible.'
+      contentElementUid: ''
+    identifier: Confirmation
+renderables:
+  -
+    renderingOptions:
+      previousButtonLabel: Back
+      nextButtonLabel: Next
+    identifier: page-1
+    label: ''
+    type: Page
+    renderables:
+      -
+        properties:
+          options:
+            Frau: Mrs
+            Herr: Mr
+            Divers: 'Other / Prefer not to say'
+          prependOptionLabel: 'Please choose your title'
+        type: SingleSelect
+        identifier: singleselect-1
+        label: Title
+      -
+        defaultValue: ''
+        identifier: name
+        label: 'Your name'
+        type: Text
+        properties:
+          fluidAdditionalAttributes:
+            placeholder: 'first and last name'
+            required: required
+          validationErrorMessages:
+            -
+              code: 1221560910
+              message: 'Please enter at least your last name.'
+            -
+              code: 1221560718
+              message: 'Please enter at least your last name.'
+            -
+              code: 1347992400
+              message: 'Please enter at least your last name.'
+            -
+              code: 1347992453
+              message: 'Please enter at least your last name.'
+        validators:
+          -
+            identifier: NotEmpty
+      -
+        defaultValue: ''
+        identifier: subject
+        label: 'Your request'
+        type: Text
+        properties:
+          fluidAdditionalAttributes:
+            placeholder: 'Subject of your message'
+            required: required
+        validators:
+          -
+            identifier: NotEmpty
+      -
+        defaultValue: ''
+        identifier: email
+        label: 'Your email'
+        type: Text
+        properties:
+          fluidAdditionalAttributes:
+            placeholder: your-name@domain.de
+            required: required
+        validators:
+          -
+            identifier: NotEmpty
+          -
+            identifier: EmailAddress
+      -
+        defaultValue: ''
+        identifier: message
+        label: 'Your message'
+        type: Textarea
+        properties:
+          fluidAdditionalAttributes:
+            placeholder: ''
+            required: required
+        validators:
+          -
+            identifier: NotEmpty

@@ -7,11 +7,11 @@ TYPO3:
                         Form:
                             renderingOptions:
                                 templateRootPaths:
-                                    20: 'EXT:tnt_template_bs4/Resources/Private/Extesions/forms/Templates/Frontend/'
+                                    20: 'EXT:tnt_template_bs4/Resources/Private/Extensions/forms/Templates/Frontend/'
                                 partialRootPaths:
-                                    20: 'EXT:tnt_template_bs4/Resources/Private/Extesions/forms/Partials/Frontend/'
+                                    20: 'EXT:tnt_template_bs4/Resources/Private/Extensions/forms/Partials/Frontend/'
                                 layoutRootPaths:
-                                    20: 'EXT:tnt_template_bs4/Resources/Private/Extesions/forms/Layouts/Frontend/'
+                                    20: 'EXT:tnt_template_bs4/Resources/Private/Extensions/forms/Layouts/Frontend/'
             persistenceManager:
                 allowedExtensionPaths:
                     110: EXT:tnt_template_bs4/Resources/Private/Forms/
