@@ -1,24 +1,16 @@
 <?php
 
-/**
- * ddev-generated: Automatically generated TYPO3 AdditionalConfiguration.php file.
- * ddev manages this file and may delete or overwrite the file unless this comment is removed.
- * It is recommended that you leave this file alone.
- */
-
-//if (getenv('IS_DDEV_PROJECT') == 'true') {
-    $GLOBALS['TYPO3_CONF_VARS'] = array_replace_recursive(
-        $GLOBALS['TYPO3_CONF_VARS'],
-        [
-            'DB' => [
-                'Connections' => [
-                    'Default' => [
-                        'dbname' => getenv('TYPO3_INSTALL_DB_DBNAME'),
-                        'host' => getenv('TYPO3_INSTALL_DB_HOST'),
-                        'password' => getenv('TYPO3_INSTALL_DB_PASSWORD'),
-                        'port' => getenv('TYPO3_INSTALL_DB_PORT'),
-                        'user' => getenv('TYPO3_INSTALL_DB_USER'),
-                    ],
+$GLOBALS['TYPO3_CONF_VARS'] = array_replace_recursive(
+    $GLOBALS['TYPO3_CONF_VARS'],
+    [
+        'DB' => [
+            'Connections' => [
+                'Default' => [
+                    'dbname' => getenv('TYPO3_INSTALL_DB_DBNAME'),
+                    'host' => getenv('TYPO3_INSTALL_DB_HOST'),
+                    'password' => getenv('TYPO3_INSTALL_DB_PASSWORD'),
+                    'port' => getenv('TYPO3_INSTALL_DB_PORT'),
+                    'user' => getenv('TYPO3_INSTALL_DB_USER'),
                 ],
             ],
             // This GFX configuration allows processing by installed ImageMagick 6
@@ -49,5 +41,5 @@
                 'debug' => getenv('TYPO3_INSTALL_BE_DEBUG'),
             ]
         ]
-    );
-//}
+    ]
+);
