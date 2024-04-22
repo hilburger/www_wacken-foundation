@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "04a28ea843ac63236d5f6aaae30cb4f9",
+    "content-hash": "7fc714a92ab7cf1209f3e9b6f4c6b527",
     "packages": [
         {
             "name": "b13/container",
@@ -1615,26 +1615,26 @@
         },
         {
             "name": "helhum/dotenv-connector",
-            "version": "v3.0.1",
+            "version": "v3.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/helhum/dotenv-connector.git",
-                "reference": "d95a808e9ff408116800eb60cd820bd9ff4d5b46"
+                "reference": "36ad148c1ac934b011d50116395f885bd379f9ae"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/helhum/dotenv-connector/zipball/d95a808e9ff408116800eb60cd820bd9ff4d5b46",
-                "reference": "d95a808e9ff408116800eb60cd820bd9ff4d5b46",
+                "url": "https://api.github.com/repos/helhum/dotenv-connector/zipball/36ad148c1ac934b011d50116395f885bd379f9ae",
+                "reference": "36ad148c1ac934b011d50116395f885bd379f9ae",
                 "shasum": ""
             },
             "require": {
                 "composer-plugin-api": "^1.0 || ^2.0",
                 "php": ">=7.2",
-                "symfony/dotenv": "^5.1"
+                "symfony/dotenv": "^5.1 || ^6.4 || ^7.0"
             },
             "require-dev": {
-                "composer/composer": "^1.0 || 2.0.*@dev",
-                "composer/semver": "^1.0 || ^2.0 || 3.0.*@dev",
+                "composer/composer": "^1.0 || ^2.0",
+                "composer/semver": "^1.0 || ^2.0 || ^3.0",
                 "mikey179/vfsstream": "^1.6.0",
                 "phpunit/phpunit": "^5"
             },
@@ -1670,7 +1670,7 @@
             ],
             "support": {
                 "issues": "https://github.com/helhum/dotenv-connector/issues",
-                "source": "https://github.com/helhum/dotenv-connector/tree/v3.0.1"
+                "source": "https://github.com/helhum/dotenv-connector/tree/v3.1.0"
             },
             "funding": [
                 {
@@ -1682,7 +1682,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2021-10-06T09:02:51+00:00"
+            "time": "2024-02-07T13:03:15+00:00"
         },
         {
             "name": "helhum/php-error-reporting",
@@ -8563,5 +8563,5 @@
     "prefer-lowest": false,
     "platform": [],
     "platform-dev": [],
-    "plugin-api-version": "2.3.0"
+    "plugin-api-version": "2.6.0"
 }
