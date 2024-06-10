@@ -18,3 +18,5 @@
 db.sql
 /packages/tnt_template_bs4/Resources/Public/Scss/Theme/.sass-cache/
 /staging.txt
+
+.ddev/
