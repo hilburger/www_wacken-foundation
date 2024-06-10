@@ -1,14 +1,14 @@
 <?php
-defined('TYPO3_MODE') || die('Access denied.');
+defined('TYPO3_MODE') || die();
 
 /***************
  * PageTS
  */
-\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPageTSConfig('<INCLUDE_TYPOSCRIPT: source="FILE:EXT:' . $_EXTKEY . '/Configuration/TSconfig/Page.tsconfig">');
-\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addUserTSConfig('<INCLUDE_TYPOSCRIPT: source="FILE:EXT:' . $_EXTKEY . '/Configuration/TSconfig/User.tsconfig">');
+\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPageTSConfig('<INCLUDE_TYPOSCRIPT: source="FILE:EXT:tnt_ces/Configuration/TSconfig/Page.tsconfig">');
+\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addUserTSConfig('<INCLUDE_TYPOSCRIPT: source="FILE:EXT:tnt_ces/Configuration/TSconfig/User.tsconfig">');
 
 call_user_func(
-    function($extKey)
+    function()
 	{
 		
 		if (TYPO3_MODE === 'BE') {
@@ -59,5 +59,5 @@ call_user_func(
 		  }'
 		);
     },
-    $_EXTKEY
+    // $_EXTKEY
 );

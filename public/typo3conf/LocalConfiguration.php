@@ -88,6 +88,9 @@ return [
             'maxLifetime' => '1440',
             'showSampleTasks' => '1',
         ],
+        'sf_banners' => [
+            'allowHtmlBannerForNonAdmins' => '0',
+        ],
     ],
     'FE' => [
         'debug' => true,
