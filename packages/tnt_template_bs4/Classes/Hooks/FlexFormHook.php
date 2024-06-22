@@ -7,11 +7,6 @@ use TYPO3\CMS\Core\Utility\GeneralUtility;
 
 class FlexFormHook
 {
-   /**
-   * @param array $dataStructure
-   * @param array $identifier
-   * @return array
-   */
    public function parseDataStructureByIdentifierPostProcess(array $dataStructure, array $identifier): array
    {
      if ($identifier['type'] === 'tca' && $identifier['tableName'] === 'tt_content' && $identifier['dataStructureKey'] === 'news_pi1,list') {

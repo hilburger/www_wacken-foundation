@@ -72,7 +72,9 @@
         ]
     },
     "require-dev": {
-        "deployer/deployer": "^6.8"
+        "deployer/deployer": "^6.8",
+        "phpstan/phpstan": "^1.11",
+        "saschaegerer/phpstan-typo3": "^1.10"
     },
     "config": {
         "allow-plugins": {
