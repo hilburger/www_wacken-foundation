@@ -47,13 +47,11 @@
         "typo3/cms-t3editor": "^11.5",
         "typo3/cms-tstemplate": "^11.5",
         "typo3/cms-viewpage": "^11.5",
-        "tnt-digitalagentur/tnt-template-bs4": "dev-develop",
-        "tnt-digitalagentur/tnt-ces": "@dev",
+        "tnt-digitalagentur/tnt-template-bs4": "@dev",
         "helhum/typo3-console": "^7",
         "helhum/dotenv-connector": "^3.1",
         "georgringer/news": "^9.4",
         "derhansen/sf_banners": "^6",
-        "deployer/recipes": "^6.2",
         "typo3/cms-filemetadata": "^11.5",
         "b13/container": "^2.2",
         "tpwd/ke_search": "^4.6"
@@ -74,7 +72,10 @@
         ]
     },
     "require-dev": {
-        "deployer/deployer": "^6.8"
+        "deployer/deployer": "^6.8",
+        "phpstan/phpstan": "^1.11",
+        "saschaegerer/phpstan-typo3": "^1.10",
+        "ssch/typo3-rector": "^2.6"
     },
     "config": {
         "allow-plugins": {

@@ -138,7 +138,20 @@ $GLOBALS['TCA']['tt_content']['types']['1col-container']['previewRenderer'] = 'B
 
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTCAcolumns(
     'tt_content',
-    $tempColumns,
-    1
+    [
+        'tnt_hideon_device' => [
+            'exclude' => 1,
+            'label' => 'Verstecke den Inhalt auf bestimmten Geräten',
+            'config' => [
+                'type' => 'check',
+                'items' => [
+                    ['Smartphone', ''],
+                    ['Tablet', ''],
+                    ['Computer', ''],
+                ],
+                'cols' => '3',
+            ],
+        ],
+    ],
 );
 
