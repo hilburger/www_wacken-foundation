@@ -1,51 +1,27 @@
 stages:
-  - build
   - deployment
 
-build application with dev dependencies:
-  image: chialab/php:7.4
-  before_script:
-    - composer config -g cache-dir "$(pwd)/.composer-cache"
-  cache:
-    paths:
-      - composer-cache/
-  stage: build
-  script:
-    - echo "Builing..."
-    - export COMPOSER_CACHE_DIR=composer-cache; composer install --no-progress --no-ansi --no-interaction --no-scripts --ignore-platform-reqs
-  artifacts:
-    name: typo3
-    paths:
-      - ./vendor/
-      - ./public/
-      - ./composer.json
-      - ./composer.lock
-    expire_in: '3h'
-  tags:
-    - docker
-
 Deploy to stage:
-  image: chialab/php:7.4
-  cache:
-    paths:
-      - .apt/
-  before_script:
-    - export APT_DIR=$CI_PROJECT_DIR/.apt && export APT_STATE_LISTS=$APT_DIR/lists && export APT_CACHE_ARCHIVES=$APT_DIR/archives
-    - printf "dir::state::lists    ${APT_STATE_LISTS};\ndir::cache::archives    ${APT_CACHE_ARCHIVES};\n" > /etc/apt/apt.conf
-    - mkdir -p "${APT_STATE_LISTS}/partial" && mkdir -p "${APT_CACHE_ARCHIVES}/partial"
-    - apt-get update -qy
-    - apt-get install rsync -y
-    - 'command -v ssh-agent >/dev/null || ( apt-get install openssh-client -y )'
-    - eval $(ssh-agent -s)
-    - echo "$SSH_PRIVATE_KEY" | tr -d '\r' | ssh-add -
-    - mkdir -p ~/.ssh
-    - chmod 700 ~/.ssh
   stage: deployment
+  image:
+    name: minkbear/php-deployer:7
+    entrypoint: [ "" ]
+  before_script:
+    - eval $(ssh-agent -s)
+    - ssh-add <(echo "$SSH_PRIVATE_KEY")
+    - ssh-deactivate-key-checking
+    - echo "$SSH_KNOWN_HOSTS" >> ~/.ssh/known_hosts
+    - chmod 644 ~/.ssh/known_hosts
+    - apk add --no-cache icu-dev
+    - docker-php-ext-install intl
   script:
-    #- lftp -e "set sftp:auto-confirm yes; open -u $FTP_USERNAME,$FTP_PASSWORD -p 22 sftp://$TARGET_SERVER_TNT; mirror -X .* -X .*/ --reverse --verbose --delete . /; bye"
-    #- lftp -e "set sftp:auto-confirm yes; set ftp:use-mdtm off; open -u $FTP_USERNAME,$FTP_PASSWORD -p 22 sftp://$TARGET_SERVER_TNT; mirror --ignore-time --parallel=100  -X .* -X .*/ --reverse --verbose . /; bye"
-    # ssh pxxxxxx@staging.client.tnt-digitalagentur.de -o StrictHostKeyChecking=no -vvv
-    - vendor/bin/dep deploy staging -vv
+    - echo "Deploy to Staging..."
+    # Fix permissions
+    - find /builds/`echo $CI_PROJECT_PATH` -type d -print0 | xargs -0 chmod 0755
+    - find /builds/`echo $CI_PROJECT_PATH` -type f -print0 | xargs -0 chmod 0664
+    - composer install --no-dev --no-ansi --no-interaction --no-scripts --prefer-dist --ignore-platform-reqs
+    - dep deploy staging -vvv
+  resource_group: staging
   environment:
     name: staging
     url: https://wacken-foundation.tnt-digitalagentur.de

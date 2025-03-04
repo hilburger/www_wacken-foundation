@@ -2,6 +2,7 @@
 namespace Deployer;
 
 require 'recipe/common.php';
+require 'contrib/cachetool.php';
 require 'recipe/rsync.php';
 
 // Hosts
