@@ -4,47 +4,56 @@ declare(strict_types=1);
 
 use Rector\Config\RectorConfig;
 use Rector\PostRector\Rector\NameImportingPostRector;
-use Rector\TypeDeclaration\Rector\ClassMethod\AddVoidReturnTypeWhereNoReturnRector;
 use Rector\ValueObject\PhpVersion;
 use Ssch\TYPO3Rector\CodeQuality\General\ConvertImplicitVariablesToExplicitGlobalsRector;
-use Ssch\TYPO3Rector\CodeQuality\General\ExtEmConfRector;
-use Ssch\TYPO3Rector\Configuration\Typo3Option;
 use Ssch\TYPO3Rector\Set\Typo3LevelSetList;
 use Ssch\TYPO3Rector\Set\Typo3SetList;
+use Ssch\TYPO3Rector\Configuration\Typo3Option;
+use Ssch\TYPO3Rector\Rector\General\ExtEmConfRector;
 
-return RectorConfig::configure()
-    ->withPaths([
+return static function (RectorConfig $rectorConfig): void {
+    $rectorConfig->paths([
         __DIR__ . '/packages',
-    ])
-    // uncomment to reach your current PHP version
-    // ->withPhpSets()
-    ->withPhpVersion(PhpVersion::PHP_82)
-    ->withSets([
+    ]);
+
+    $rectorConfig->phpVersion(PhpVersion::PHP_82);
+
+    // FQN classes are imported by default
+    $rectorConfig->importNames();
+
+    // Define sets of rules
+    $rectorConfig->sets([
         Typo3SetList::CODE_QUALITY,
         Typo3SetList::GENERAL,
-        Typo3LevelSetList::UP_TO_TYPO3_11,
-    ])
-    # To have a better analysis from PHPStan, we teach it here some more things
-    ->withPHPStanConfigs([
-        Typo3Option::PHPSTAN_FOR_RECTOR_PATH
-    ])
-    ->withRules([
-        AddVoidReturnTypeWhereNoReturnRector::class,
-        ConvertImplicitVariablesToExplicitGlobalsRector::class,
-    ])
-    ->withConfiguredRule(ExtEmConfRector::class, [
+        Typo3LevelSetList::UP_TO_TYPO3_12,
+    ]);
+
+    // Additional configuration for TYPO3
+    $rectorConfig->ruleWithConfiguration(ExtEmConfRector::class, [
         ExtEmConfRector::PHP_VERSION_CONSTRAINT => '8.2.0-8.2.99',
-        ExtEmConfRector::TYPO3_VERSION_CONSTRAINT => '11.5.0-11.5.99',
-        ExtEmConfRector::ADDITIONAL_VALUES_TO_BE_REMOVED => []
-    ])
-    # If you use withImportNames(), you should consider excluding some TYPO3 files.
-    ->withSkip([
-        // @see https://github.com/sabbelasichon/typo3-rector/issues/2536
-        __DIR__ . '/**/Configuration/ExtensionBuilder/*',
+        ExtEmConfRector::TYPO3_VERSION_CONSTRAINT => '12.4.0-12.4.99',
+    ]);
+
+    // Register additional rules
+    $rectorConfig->rule(ConvertImplicitVariablesToExplicitGlobalsRector::class);
+
+    // TYPO3 PHPStan configuration for better analysis
+    $rectorConfig->phpstanConfig(Typo3Option::PHPSTAN_FOR_RECTOR_PATH);
+
+    // Skip certain paths/files
+    $rectorConfig->skip([
+        // Skip some paths
+        __DIR__ . '/packages/*/Resources/*',
+        __DIR__ . '/packages/*/node_modules/*',
+        __DIR__ . '/packages/*/vendor/*',
+
+        // Skip specific post-rector in certain files/paths
         NameImportingPostRector::class => [
-            'ext_localconf.php', // This line can be removed since TYPO3 11.4, see https://docs.typo3.org/c/typo3/cms-core/main/en-us/Changelog/11.4/Important-94280-MoveContentsOfExtPhpIntoLocalScopes.html
-            'ext_tables.php', // This line can be removed since TYPO3 11.4, see https://docs.typo3.org/c/typo3/cms-core/main/en-us/Changelog/11.4/Important-94280-MoveContentsOfExtPhpIntoLocalScopes.html
-            'ClassAliasMap.php',
-        ]
-    ])
-;
+            __DIR__ . '/packages/*/ext_localconf.php',
+            __DIR__ . '/packages/*/ext_tables.php',
+            __DIR__ . '/packages/*/Configuration/TCA/*',
+            __DIR__ . '/**/Configuration/ExtensionBuilder/*',
+            __DIR__ . '/**/ClassAliasMap.php',
+        ],
+    ]);
+};
