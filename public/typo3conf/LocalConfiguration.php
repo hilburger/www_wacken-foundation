@@ -28,7 +28,7 @@ return [
         'backend' => [
             'backendFavicon' => '',
             'backendLogo' => '',
-            'loginBackgroundImage' => 'fileadmin/internal/bullhead_2560x1440.jpg',
+            'loginBackgroundImage' => 'fileadmin/internal/pyro-2018.jpg',
             'loginFootnote' => 'Powered by TNT Digitalagentur',
             'loginHighlightColor' => '#1a1a1a',
             'loginLogo' => 'EXT:tnt_template_bs4/Resources/Public/Images/logo_dummy.png',
