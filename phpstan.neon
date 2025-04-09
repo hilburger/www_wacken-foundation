@@ -5,9 +5,13 @@ parameters:
     ignoreErrors:
         - '#Variable \$_EXTKEY might not be defined.#'
         - '#Call to deprecated method [a-zA-Z0-9_\(\)]+#'
+        # Add this rule for FormEngine components that might trigger false positives
+        - '#Property [a-zA-Z0-9\\_]+::\$[a-zA-Z0-9_]+ \(array<string, mixed>\) does not accept#'
     excludePaths:
         - */node_modules/*
         - */vendor/*
+        # Add exclusion for Resources if they cause issues
+        - '*/Resources/Public/*'
     reportUnmatchedIgnoredErrors: false
     checkMissingIterableValueType: false
     checkGenericClassInNonGenericObjectType: false

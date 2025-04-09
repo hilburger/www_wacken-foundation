@@ -9,7 +9,8 @@ use Ssch\TYPO3Rector\CodeQuality\General\ConvertImplicitVariablesToExplicitGloba
 use Ssch\TYPO3Rector\Set\Typo3LevelSetList;
 use Ssch\TYPO3Rector\Set\Typo3SetList;
 use Ssch\TYPO3Rector\Configuration\Typo3Option;
-use Ssch\TYPO3Rector\Rector\General\ExtEmConfRector;
+
+// Remove the ExtEmConfRector import since the class structure has changed
 
 return static function (RectorConfig $rectorConfig): void {
     $rectorConfig->paths([
@@ -28,11 +29,8 @@ return static function (RectorConfig $rectorConfig): void {
         Typo3LevelSetList::UP_TO_TYPO3_12,
     ]);
 
-    // Additional configuration for TYPO3
-    $rectorConfig->ruleWithConfiguration(ExtEmConfRector::class, [
-        ExtEmConfRector::PHP_VERSION_CONSTRAINT => '8.2.0-8.2.99',
-        ExtEmConfRector::TYPO3_VERSION_CONSTRAINT => '12.4.0-12.4.99',
-    ]);
+    // Remove the ExtEmConfRector configuration as it's no longer needed in this form
+    // In newer versions, this is handled by the rule sets automatically
 
     // Register additional rules
     $rectorConfig->rule(ConvertImplicitVariablesToExplicitGlobalsRector::class);

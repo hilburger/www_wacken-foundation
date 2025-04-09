@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "ba8a8c1fa7eefbf8358de471c7826ef3",
+    "content-hash": "8011e173d32a87d2a89706d51031a6e2",
     "packages": [
         {
             "name": "b13/container",
@@ -1095,16 +1095,16 @@
         },
         {
             "name": "georgringer/news",
-            "version": "9.4.0",
+            "version": "10.0.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/georgringer/news.git",
-                "reference": "dbecd7289de6554c06b733de7c8337c52cb3a130"
+                "reference": "5325ea6a7bf490a9deabdf1f86372ad128a5e205"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/georgringer/news/zipball/dbecd7289de6554c06b733de7c8337c52cb3a130",
-                "reference": "dbecd7289de6554c06b733de7c8337c52cb3a130",
+                "url": "https://api.github.com/repos/georgringer/news/zipball/5325ea6a7bf490a9deabdf1f86372ad128a5e205",
+                "reference": "5325ea6a7bf490a9deabdf1f86372ad128a5e205",
                 "shasum": ""
             },
             "require": {
@@ -1121,15 +1121,16 @@
                 "typo3/cms-install": "^10.4 || ^11"
             },
             "suggest": {
+                "georgringer/news-tagsuggest": "On the fly creation of tag records within a news record",
                 "georgringer/numbered-pagination": "Improved pagination API",
                 "reelworx/rx-shariff": "GDPR compliant social sharing"
             },
             "type": "typo3-cms-extension",
             "extra": {
                 "typo3/cms": {
-                    "extension-key": "news",
                     "app-dir": ".Build",
-                    "web-dir": ".Build/public"
+                    "web-dir": ".Build/public",
+                    "extension-key": "news"
                 }
             },
             "autoload": {
@@ -1144,6 +1145,7 @@
             "authors": [
                 {
                     "name": "Georg Ringer",
+                    "homepage": "https://ringer.it",
                     "role": "Developer"
                 }
             ],
@@ -1162,15 +1164,23 @@
             },
             "funding": [
                 {
-                    "url": "https://www.paypal.me/GeorgRinger/10",
+                    "url": "https://paypal.me/GeorgRinger/10",
                     "type": "custom"
+                },
+                {
+                    "url": "https://www.amazon.de/hz/wishlist/ls/8F573K08TSDG",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/georgringer",
+                    "type": "github"
                 },
                 {
                     "url": "https://www.patreon.com/georgringer",
                     "type": "patreon"
                 }
             ],
-            "time": "2022-04-26T17:07:12+00:00"
+            "time": "2022-11-21T12:32:44+00:00"
         },
         {
             "name": "guzzlehttp/guzzle",
