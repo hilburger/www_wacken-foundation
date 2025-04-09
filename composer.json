@@ -75,7 +75,8 @@
         "deployer/deployer": "^6.8",
         "phpstan/phpstan": "^1.10",
         "saschaegerer/phpstan-typo3": "^1.10",
-        "ssch/typo3-rector": "^2.0"
+        "ssch/typo3-rector": "^2.0",
+        "gaya/typo3-content-usage": "^11.0"
     },
     "config": {
         "allow-plugins": {

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "262cf3ddd892902d9c2e855e7c509b0c",
+    "content-hash": "ba8a8c1fa7eefbf8358de471c7826ef3",
     "packages": [
         {
             "name": "b13/container",
@@ -8534,6 +8534,64 @@
             },
             "abandoned": true,
             "time": "2019-12-12T13:45:57+00:00"
+        },
+        {
+            "name": "gaya/typo3-content-usage",
+            "version": "11.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/agence-gaya/typo3-content-usage.git",
+                "reference": "3ee150f0e006ddddb60525981abd2be8577426b7"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/agence-gaya/typo3-content-usage/zipball/3ee150f0e006ddddb60525981abd2be8577426b7",
+                "reference": "3ee150f0e006ddddb60525981abd2be8577426b7",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^8.2",
+                "typo3/cms-core": "^11.4.0",
+                "typo3/cms-extbase": "^11.4.0"
+            },
+            "type": "typo3-cms-extension",
+            "extra": {
+                "typo3/cms": {
+                    "extension-key": "content_usage"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "GAYA\\ContentUsage\\": "Classes/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "authors": [
+                {
+                    "name": "GAYA",
+                    "email": "contact@gaya.fr",
+                    "homepage": "https://www.gaya.fr",
+                    "role": "maintainer"
+                }
+            ],
+            "description": "Content usage analysis",
+            "keywords": [
+                "content",
+                "ctype",
+                "doktype",
+                "list_type",
+                "report",
+                "typo3",
+                "usage"
+            ],
+            "support": {
+                "issues": "https://github.com/agence-gaya/typo3-content-usage/issues",
+                "source": "https://github.com/agence-gaya/typo3-content-usage/tree/11.0.1"
+            },
+            "time": "2024-09-03T21:46:20+00:00"
         },
         {
             "name": "league/flysystem",
