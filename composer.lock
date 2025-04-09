@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "9c0dcafb79436cf7f491e0489d911a2e",
+    "content-hash": "960efce40be4a71d45bdca22904c3e39",
     "packages": [
         {
             "name": "b13/container",
@@ -339,6 +339,67 @@
                 "source": "https://github.com/DASPRiD/Enum/tree/1.0.6"
             },
             "time": "2024-08-09T14:30:48+00:00"
+        },
+        {
+            "name": "derhansen/sf_banners",
+            "version": "7.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/derhansen/sf_banners.git",
+                "reference": "37ab8befed57043f8fa965af290724060467709f"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/derhansen/sf_banners/zipball/37ab8befed57043f8fa965af290724060467709f",
+                "reference": "37ab8befed57043f8fa965af290724060467709f",
+                "shasum": ""
+            },
+            "require": {
+                "typo3/cms-core": "^12.4"
+            },
+            "type": "typo3-cms-extension",
+            "extra": {
+                "typo3/cms": {
+                    "extension-key": "sf_banners"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "DERHANSEN\\SfBanners\\": "Classes"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Torben Hansen",
+                    "email": "torben@derhansen.com",
+                    "homepage": "https://www.derhansen.com",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Banner-Management Extension based on Extbase and Fluid. Loads banners asynchronously using JavaScript.",
+            "homepage": "https://github.com/derhansen/sf_banners",
+            "keywords": [
+                "TYPO3 CMS",
+                "banner management",
+                "banners",
+                "extbase",
+                "fluid"
+            ],
+            "support": {
+                "issues": "https://github.com/derhansen/sf_banners/issues",
+                "source": "https://github.com/derhansen/sf_banners/tree/7.1.0"
+            },
+            "funding": [
+                {
+                    "url": "https://www.paypal.me/derhansen",
+                    "type": "custom"
+                }
+            ],
+            "time": "2024-04-21T16:46:32+00:00"
         },
         {
             "name": "doctrine/annotations",

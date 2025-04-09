@@ -53,7 +53,8 @@
         "georgringer/news": "^11.4",
         "typo3/cms-filemetadata": "^12.4",
         "b13/container": "^3.1",
-        "tpwd/ke_search": "^5.1"
+        "tpwd/ke_search": "^5.1",
+        "derhansen/sf_banners": "^7.1"
     },
     "extra": {
         "typo3/cms": {
