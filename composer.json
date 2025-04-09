@@ -62,9 +62,9 @@
     },
     "scripts": {
         "typo3-cms-scripts": [
-            "typo3cms install:fixfolderstructure",
-            "typo3cms database:updateschema '*.add,*.change'",
-            "typo3cms cache:flush"
+            "typo3 install:fixfolderstructure",
+            "typo3 database:updateschema '*.add,*.change'",
+            "typo3 cache:flush"
         ],
         "post-autoload-dump": [
             "@typo3-cms-scripts"
