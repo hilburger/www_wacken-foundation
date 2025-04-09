@@ -145,9 +145,9 @@ $GLOBALS['TCA']['tt_content']['types']['1col-container']['previewRenderer'] = 'B
             'config' => [
                 'type' => 'check',
                 'items' => [
-                    ['Smartphone', ''],
-                    ['Tablet', ''],
-                    ['Computer', ''],
+                    ['label' => 'Smartphone', ''],
+                    ['label' => 'Tablet', ''],
+                    ['label' => 'Computer', ''],
                 ],
                 'cols' => '3',
             ],

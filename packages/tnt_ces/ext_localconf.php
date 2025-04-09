@@ -1,4 +1,6 @@
 <?php
+use TYPO3\CMS\Core\Imaging\IconRegistry;
+
 defined('TYPO3') || die();
 
 /***************
@@ -10,10 +12,10 @@ defined('TYPO3') || die();
 call_user_func(
     function()
 	{
-		
-		if (TYPO3_MODE === 'BE') {
-			/** @var \TYPO3\CMS\Core\Imaging\IconRegistry $iconRegistry */
-			$iconRegistry = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance(\TYPO3\CMS\Core\Imaging\IconRegistry::class);
+
+		if (TYPO3 === 'BE') {
+			/** @var IconRegistry $iconRegistry */
+   $iconRegistry = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance(\TYPO3\CMS\Core\Imaging\IconRegistry::class);
 			$iconRegistry->registerIcon(
 				'tnt_ces_partner',
 				\TYPO3\CMS\Core\Imaging\IconProvider\SvgIconProvider::class,

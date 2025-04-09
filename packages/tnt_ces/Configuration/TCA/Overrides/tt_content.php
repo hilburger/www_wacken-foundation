@@ -68,10 +68,10 @@ $customFields = [
 				'size' => 4,
 				'maxitems' => 4,
 				'items' => [
-					['Flugzeug', 1],
-					['Bahn', 2],
-					['Bus', 3],
-					['World Metal Camp', 4],
+					['label' => 'Flugzeug', 'value' => 1],
+					['label' => 'Bahn', 'value' => 2],
+					['label' => 'Bus', 'value' => 3],
+					['label' => 'World Metal Camp', 'value' => 4],
 				]
 			],
 		],
