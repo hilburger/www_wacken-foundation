@@ -2,7 +2,6 @@
 return [
     'BE' => [
         'debug' => true,
-        'explicitADmode' => 'explicitAllow',
         'installToolPassword' => '$argon2i$v=19$m=65536,t=16,p=1$LnhpWUhkMXpEYjJPYVFSTg$HuKdW7XoXKB1oicWGtUXcDeffJ8L9kpnIK1n+RZpIww',
         'passwordHashing' => [
             'className' => 'TYPO3\\CMS\\Core\\Crypto\\PasswordHashing\\Argon2iPasswordHash',
@@ -50,6 +49,7 @@ return [
             'offlineMode' => '0',
         ],
         'ke_search' => [
+            'additionalWordCharacters' => '',
             'allowEmptySearch' => '1',
             'enableExplicitAnd' => '0',
             'enablePartSearch' => '1',
@@ -88,9 +88,6 @@ return [
             'maxLifetime' => '1440',
             'showSampleTasks' => '1',
         ],
-        'sf_banners' => [
-            'allowHtmlBannerForNonAdmins' => '0',
-        ],
     ],
     'FE' => [
         'debug' => true,
@@ -107,7 +104,6 @@ return [
         'processor_effects' => true,
         'processor_enabled' => true,
         'processor_path' => '/usr/bin/',
-        'processor_path_lzw' => '/usr/bin/',
     ],
     'LOG' => [
         'TYPO3' => [
@@ -145,12 +141,6 @@ return [
                     ],
                 ],
                 'pages' => [
-                    'backend' => 'TYPO3\\CMS\\Core\\Cache\\Backend\\Typo3DatabaseBackend',
-                    'options' => [
-                        'compression' => 1,
-                    ],
-                ],
-                'pagesection' => [
                     'backend' => 'TYPO3\\CMS\\Core\\Cache\\Backend\\Typo3DatabaseBackend',
                     'options' => [
                         'compression' => 1,
