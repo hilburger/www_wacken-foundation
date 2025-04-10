@@ -165,6 +165,7 @@ return [
             'felogin.extbase' => true,
             'fluidBasedPageModule' => true,
             'rearrangedRedirectMiddlewares' => true,
+            'security.usePasswordPolicyForFrontendUsers' => true,
             'unifiedPageTranslationHandling' => true,
         ],
         'sitename' => 'TYPO3',

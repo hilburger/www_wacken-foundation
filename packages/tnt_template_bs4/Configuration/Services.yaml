@@ -1,0 +1,15 @@
+services:
+    _defaults:
+        autowire: true
+        autoconfigure: true
+        public: false
+
+    TntDigitalagentur\TntTemplateBs4\:
+        resource: '../Classes/*'
+        exclude: '../Classes/Domain/Model/*'
+
+    TntDigitalagentur\TntTemplateBs4\EventListener\FlexFormParsingListener:
+        tags:
+            - name: event.listener
+              identifier: 'tnt-template-bs4/flex-form-parsing'
+              event: TYPO3\CMS\Core\Configuration\Event\AfterFlexFormDataStructureParsedEvent
